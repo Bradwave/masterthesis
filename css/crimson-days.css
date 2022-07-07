@@ -26,10 +26,9 @@
 
 /* -- Fonts -- */
 
-/* Robot Mono from Google Font */
+/* STIX Two Text & Robot Mono from Google Font */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap');
-/**/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');/**/
 
 /* -- Variables -- */
 
@@ -137,7 +136,7 @@
 body {
     margin: 0;
     background-color: var(--background);
-    font-family: 'Linux Libertine', serif;
+    font-family: 'STIX Two Text', serif;
     color: var(--secondary);
     counter-reset: chapter section subsection definition definition theorem;
     scroll-behavior: smooth;
@@ -153,7 +152,7 @@ body {
 
 h1 {
     margin-top: 80px;
-    font-size: 40px;
+    font-size: 32pt;
     font-weight: bold;
 }
 
@@ -161,7 +160,7 @@ h1 {
 
 h2 {
     margin-top: 60px;
-    font-size: 32px;
+    font-size: 24pt;
     font-weight: bold;
     padding-left: 56px;
     text-indent: -56px;
@@ -177,7 +176,7 @@ h2::before {
 /* Section */
 
 h3 {
-    font-size: 28px;
+    font-size: 20pt;
     counter-set: subsection definition theorem;
 }
 
@@ -190,7 +189,7 @@ h3::before {
 /* Subsection */
 
 h4 {
-    font-size: 22px;
+    font-size: 18pt;
 }
 
 h4::before {
@@ -200,20 +199,20 @@ h4::before {
 }
 
 h5 {
-    font-size: 20px;
+    font-size: 16pt;
 }
 
 /* -- Div -- */
 
 div {
-    font-size: 18px;
+    font-size: 13pt;
 }
 
 /* -- Paragraphs -- */
 
 p {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 13pt;
 }
 
 li {
@@ -326,19 +325,19 @@ div.play-pause-controls {
     color: var(--dark-grey);
 }
 
-.material-icons.button {
+.material-symbols-sharp.button {
     cursor: pointer;
     user-select: none;
     color: var(--dark-grey);
 }
 
-span.material-icons.button.pause {
+span.material-symbols-sharp.button.pause {
     position: absolute;
     visibility: collapse;
     opacity: 0;
 }
 
-span.material-icons.button.play {
+span.material-symbols-sharp.button.play {
     position: absolute;
 }
 
