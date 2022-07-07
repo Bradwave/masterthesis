@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1">
+
+    <meta name="description" content="Turing Pattern">
+    <meta name="keywords" content="maths, turing pattern, educational">
+
+    <title>Turing Pattern</title>
+
+    <link rel="stylesheet" href="css/crimson-days.css">
+    <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@2.1.3/lib/bundle.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- SPINNING LOADER -->
+
+    <div id="loading-container" class="loading-container">
+        <div class="general loader"></div>
+    </div>
+
+    <!-- PAGE CONTENT -->
+
+    <div class="page-container" id="page-container" style="visibility: hidden; opacity: 0;">
+        <nav class="page-sidebar">
+
+        </nav>
+        <main class="page-content" id="page-content">
+            <div id="title">
+                <p style="margin-top: 30pt;">
+                    Università degli Studi di Torino<br>
+                    Dipartimento di Matematica <i>Giuseppe Peano</i>
+                </p>
+                <p>
+                    <b>Tesi di Laurea Magistrale</b> — A.A. 2021/2022
+                </p>
+                <h1 style="margin-top: 30pt;">
+                    Gabor Transform and Uncertainty Principle:<br>
+                    Theoretical Aspects and Graphical Visualizations
+                </h1>
+                <p style="margin-top: 30pt;">
+                    Relatore — <b>Prof. Paolo Boggiatto</b><br>
+                    Candidato — <b>Matteo Bramardi</b>
+                </p>
+            </div>
+
+            <div style="height: 40px;"></div>
+
+            <!-- INTRODUZIONE -->
+
+            <div class="slide">
+                <h2>A Brief Introduction to Harmonic<br> and Time-Frequency Analysis</h2>
+            </div>
+
+            <div class="slide">
+                <h3>Spaces of Integrable Functions</h3>
+                <div class="definition">
+                    hey, this is a test
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="theorem">
+
+                </div>
+            </div>
+
+            <div class="slide">
+                <h3>Spaces of Integrable Functions</h3>
+                <h3></h3>
+                <div class="theorem corollary">
+
+                </div>
+                <div class="theorem property">
+
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="theorem lemma">
+
+                </div>
+            </div>
+
+        </main>
+
+        <div class="play-pause-controls">
+            <span id="presentation-play" class="material-icons button play">
+                present_to_all
+            </span>
+            <span id="presentation-pause" class="material-icons button pause">
+                pause_presentation
+            </span>
+        </div>
+
+        <div id="presentation-controls" class="presentation-controls">
+            <div class="arrows">
+                <span id="previous" class="material-icons button">
+                    arrow_back_ios
+                </span>
+                <span id="next" class="material-icons button">
+                    arrow_forward_ios
+                </span>
+            </div>
+            <div id="progress-bar" class="progress-bar">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                tags: 'ams',
+            }
+        }
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="js/src/presentation-controller.js"></script>
+    <script src="js/src/utils.js"></script>
+    <script src="js/src/plots-manager.js"></script>
+
+</body>
+
+</html>

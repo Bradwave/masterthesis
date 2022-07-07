@@ -1,0 +1,618 @@
+/* Styling for the Turing Pattern */
+
+/* ==================================
+    Table of content
+    ----------------
+    1. Global
+        - Fonts
+        - Variables
+        - Selection
+        - Scrollbar
+    2. Components
+        2.1 Body
+        2.2 Formulas
+        2.3 Canvas
+        2.4 Presentation
+        2.5 Tooltip
+        2.6 Loaders
+        2.7 Input Box
+        2.8 Math Environments
+        
+===================================== */
+
+/* ============================
+    1. Global
+    =============================== */
+
+/* -- Fonts -- */
+
+/* Robot Mono from Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap');
+/**/
+
+/* -- Variables -- */
+
+:root {
+    --background: #FFFFFF;
+    --hidden: #ffffff;
+    /* #686868 */
+    --accent: #1484E6;
+    --crimson-red: #B01A00;
+    --primary: #000000;
+    --dark-grey: #222222;
+    --secondary: #333333;
+    --thm-blue: #1484E6;
+    --def-orange: #FD8B28;
+}
+
+/* -- Selection -- */
+
+/* Disable highlight rectangle on mobile */
+
+* {
+    -webkit-tap-highlight-color: #ffffff00;
+}
+
+/* -- Selection -- */
+
+::-moz-selection {
+    color: #eeeeee;
+    background: var(--accent);
+}
+
+::selection {
+    color: #eeeeee;
+    background: var(--accent);
+}
+
+/* -- Scrollbar -- */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff00;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00000015;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00000030;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--accent);
+}
+
+/* -- Focus -- */
+
+* {
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-in-out;
+}
+
+*:focus-visible:not(input.input-box) {
+    padding: 4px;
+    margin-right: 4px;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #00000030;
+}
+
+/* ============================
+    2. Components
+=============================== */
+
+/* -- 2.1 Page container -- */
+
+.page-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: minmax(150px, 1fr) 4fr 1fr;
+}
+
+.page-content {
+    padding: 10px;
+}
+
+@media (max-width: 768px), (orientation: portrait), (hover: none) {
+    .page-container {
+        grid-template-columns: none;
+    }
+
+    .page-content {
+        padding: 40px;
+    }
+}
+
+/* -- 2.2 Body -- */
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    font-family: 'Linux Libertine', serif;
+    color: var(--secondary);
+    counter-reset: chapter section subsection definition definition theorem;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    transition: all .3s ease-in-out;
+}
+
+/* -- 2.2.1 Text -- */
+
+/* -- Headers -- */
+
+/* Title */
+
+h1 {
+    margin-top: 80px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Part */
+
+h2 {
+    margin-top: 60px;
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 56px;
+    text-indent: -56px;
+    counter-set: section subsection;
+}
+
+h2::before {
+    counter-increment: chapter;
+    content: counter(chapter);
+    margin-right: 40px;
+}
+
+/* Section */
+
+h3 {
+    font-size: 28px;
+    counter-set: subsection definition theorem;
+}
+
+h3::before {
+    counter-increment: section;
+    content: counter(chapter) "."counter(section);
+    margin-right: 20px;
+}
+
+/* Subsection */
+
+h4 {
+    font-size: 22px;
+}
+
+h4::before {
+    counter-increment: subsection;
+    content: counter(chapter) "."counter(section) "."counter(subsection);
+    margin-right: 20px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+/* -- Div -- */
+
+div {
+    font-size: 18px;
+}
+
+/* -- Paragraphs -- */
+
+p {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+li {
+    margin: 5px -5px;
+}
+
+/* -- Highlight -- */
+
+mark {
+    background-color: #00000020;
+}
+
+/* -- Links -- */
+
+a {
+    color: var(--accent);
+}
+
+/* -- 2.2 Formulas -- */
+
+div.formula-container {
+    display: grid;
+    place-items: center;
+    margin: 5px;
+}
+
+div.formula-container.compact {
+    margin: -15px;
+}
+
+div.formula {
+    width: fit-content;
+    border-radius: 10px;
+    padding: 5px 30px;
+}
+
+div.formula.grey {
+    background-color: #00000010;
+}
+
+/* -- 2.3 Canvas -- */
+
+div.plot-container {
+    position: relative;
+}
+
+canvas {
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-in-out;
+}
+
+canvas.ring-plot {
+    width: 100%;
+    height: 50%;
+}
+
+canvas.tissue-plot {
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.canvas-container {
+    display: grid;
+    place-items: center;
+}
+
+/* Activate for focus outline */
+
+canvas.ring-plot:focus {
+    padding: 4px;
+    margin-right: 4px;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #00000030;
+}
+
+/* */
+
+div.plot-controls {
+    display: grid;
+    place-items: center;
+    transition: all .3s ease-in-out;
+    user-select: none;
+}
+
+div.play-pause-plot {
+    position: relative;
+}
+
+/* -- 2.4 Presentation -- */
+
+div.slide {
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: var(--background);
+    opacity: 1;
+    transition: all .3s ease-in-out;
+}
+
+div.play-pause-controls {
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    user-select: none;
+    color: var(--dark-grey);
+}
+
+.material-icons.button {
+    cursor: pointer;
+    user-select: none;
+    color: var(--dark-grey);
+}
+
+span.material-icons.button.pause {
+    position: absolute;
+    visibility: collapse;
+    opacity: 0;
+}
+
+span.material-icons.button.play {
+    position: absolute;
+}
+
+div.presentation-controls {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    user-select: none;
+    color: var(--dark-grey);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+div.arrows {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: var(--dark-grey);
+    transition: all .3s ease-in-out;
+}
+
+div.progress-bar {
+    position: absolute;
+    display: block;
+    top: -5px;
+    width: 0%;
+    height: 5px;
+    background-color: var(--accent);
+    transition: all .4s ease-in-out;
+}
+
+/* -- 2.5 Tooltip -- */
+
+/* Tooltip container */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* If you want dots under the hoverable text */
+    border-bottom: dotted var(--secondary) 1pt;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+
+.tooltip .tooltip-text {
+    visibility: collapse;
+    width: auto;
+    background-color: var(--background);
+    color: var(--secondary);
+    box-shadow: #0000004a 0 0 20px;
+    text-align: center;
+    padding: 5px 15px;
+    border-radius: 10px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.tooltip-text.top {
+    bottom: 130%;
+}
+
+.tooltip-text.bottom {
+    top: 100%;
+}
+
+/* Tooltip arrow */
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--background) transparent;
+}
+
+.tooltip-text.tooltip-text.top::after {
+    top: 98%;
+}
+
+.tooltip-text.tooltip-text.bottom::after {
+    bottom: 98%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip:hover .tooltip-text.top {
+    transform: translate(-50%, -10px);
+}
+
+.tooltip:hover .tooltip-text.bottom {
+    transform: translate(-50%, 10px);
+}
+
+/* -- 2.6 Loaders -- */
+
+.loader, .loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+
+.loader {
+    margin: 4px;
+    text-indent: 0em;
+    border-top: 1.75em solid #00000015;
+    border-right: 1.75em solid #00000015;
+    border-bottom: 1.75em solid #00000015;
+    transform: translateZ(0);
+    animation: load 1.1s infinite linear;
+    animation-play-state: paused;
+    visibility: collapse;
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Plot loader */
+
+.loader.plot {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 2px;
+    border-left: 1.75em solid #00000090;
+}
+
+/* General loader */
+
+.loader.general {
+    top: 6pt;
+    left: 2pt;
+    font-size: 3px;
+    border-left: 1.75em solid #00000090;
+    visibility: visible;
+    animation-play-state: running;
+}
+
+/* Loading container */
+
+div.loading-container {
+    position: absolute;
+    width: 100%;
+    top: 42%;
+    display: grid;
+    place-items: center;
+}
+
+/* -- 2.7 Input Box -- */
+
+div.input-container {
+    display: grid;
+    place-items: center;
+    margin-top: 10px;
+    font-family: 'Roboto-Mono', monospace;
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+input.input-box {
+    min-width: 10px;
+    width: 40px;
+    margin-left: -2px;
+    margin-right: 5px;
+    background-color: #00000000;
+    outline: none;
+    border-width: 0;
+    border-bottom: #00000050 solid 2px;
+    color: var(--secondary);
+    text-align: center;
+    font-family: 'Roboto-Mono', monospace;
+    font-weight: 600;
+    font-size: 10pt;
+    caret-color: #8d8d8d;
+    transition: all .3 ease-in-out;
+}
+
+input.input-box:active {
+    border-color: #B01A00;
+}
+
+input.input-box:hover {
+    border-color: #d43417;
+}
+
+/* Hides arrows of input box */
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* -- 2.8 Math Environments -- */
+
+/* Definition */
+
+div.definition {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: var(--def-orange) solid 3pt;
+}
+
+div.definition::before {
+    counter-increment: definition;
+    content: "Definition "counter(chapter) "."counter(section) "/"counter(definition) "\00a0\00a0—\00a0\00a0";
+    font-weight: bold;
+}
+
+/* Theorem */
+
+div.theorem {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: var(--thm-blue) solid 3pt;
+}
+
+div.theorem::before {
+    counter-increment: theorem;
+    content: "Theorem "counter(chapter) "."counter(section) "/"counter(theorem) "\00a0\00a0—\00a0\00a0";
+    font-weight: bold;
+}
+
+/* Lemma */
+
+div.theorem.lemma::before {
+    content: "Lemma "counter(chapter) "."counter(section) "/"counter(theorem) "\00a0\00a0—\00a0\00a0";
+}
+
+/* Corollary */
+
+div.theorem.corollary::before {
+    content: "Corollary "counter(chapter) "."counter(section) "/"counter(theorem) "\00a0\00a0—\00a0\00a0";
+}
+
+/* Proposition */
+
+div.theorem.proposition::before {
+    content: "Proposition "counter(chapter) "."counter(section) "/"counter(theorem) "\00a0\00a0—\00a0\00a0";
+}
+
+/* Property */
+
+div.theorem.property::before {
+    content: "Property "counter(chapter) "."counter(section) "/"counter(theorem) "\00a0\00a0—\00a0\00a0";
+}
+
+/* Properties */
+
+div.theorem.properties::before {
+    content: "Properties "counter(chapter) "."counter(section) "/"counter(theorem) "\00a0\00a0—\00a0\00a0";
+}
