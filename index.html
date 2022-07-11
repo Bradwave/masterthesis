@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1">
 
-    <meta name="description" content="Turing Pattern">
-    <meta name="keywords"
+    <meta name="description" content="Gabor Transform and Uncertainty Principles>
+    <meta name=" keywords"
         content="maths, gabor, uncertainty principle, time-frequency analysis, educational, master's thesis">
 
     <title>Gabor e Indeterminazione</title>
 
     <link rel="stylesheet" href="css/crimson-days.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@2.1.3/lib/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@latest/lib/bundle.min.js"></script>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -35,6 +35,41 @@
 
         </nav>
         <main class="page-content" id="page-content">
+            \(
+            \newcommand{\tc}{\: : \:}
+            \newcommand{\spR}{\mathbb{R}}
+            \newcommand{\spC}{\mathbb{C}}
+            \newcommand{\spZ}{\mathbb{Z}}
+            \newcommand{\spNa}{\mathbb{N}}
+            \newcommand{\spLd}{L^1(\mathbb{R}^d)}
+            \newcommand{\spLLd}{L^2(\mathbb{R}^d)}
+            \newcommand{\spLdd}{L^1(\mathbb{R}^{2d})}
+            \newcommand{\spLLdd}{L^2(\mathbb{R}^{2d})}
+            \newcommand{\intRd}{\int_{\spR^d}}
+            \newcommand{\intRdd}{\int_{\spR^{2d}}}
+            \newcommand{\norma}[1]{\Vert #1 \Vert}
+            \newcommand{\normaL}[1]{\Vert #1 \Vert_{L^1}}
+            \newcommand{\normaLL}[1]{\Vert #1 \Vert_{L^2}}
+            \newcommand{\normaLd}[1]{\Vert #1 \Vert_{L^1(\spR^d)}}
+            \newcommand{\normaLdd}[1]{\Vert #1 \Vert_{L^1(\spR^{2d})}}
+            \newcommand{\normaLLd}[1]{\Vert #1 \Vert_{L^2(\spR^d)}}
+            \newcommand{\normaLLdd}[1]{\Vert #1 \Vert_{L^2(\spR^{2d})}}
+            \newcommand{\inprod}[2]{\langle \, #1, \, #2 \, \rangle}
+            \newcommand{\Ftr}{\mathcal{F}}
+            \newcommand{\eFtr}[2]{e^{-2 \pi i #1 \cdot #2}}
+            \newcommand{\eIFtr}[2]{e^{2 \pi i #1 \cdot #2}}
+            \DeclareMathOperator{\Sinc}{sinc}
+            \DeclareMathOperator{\Rect}{rect}
+            \DeclareMathOperator{\Span}{span}
+            \newcommand{\vertarrowbox}[3][3pt]{
+            \begin{array}[t]{@{}c@{}}
+            #2 \\[-.4em]
+            \uparrow \\[-.4em]
+            {\scriptsize #3}
+            \end{array}%
+            }
+            \)
+
             <div id="title">
                 <p style="margin-top: 30pt; font-size: 10pt;">
                     UNIVERSITÀ DEGLI STUDI DI TORINO<br>
@@ -58,39 +93,377 @@
             <!-- INTRODUZIONE -->
 
             <div class="slide">
-                <h2>A Brief Introduction to Harmonic<br> and Time-Frequency Analysis</h2>
+                <h2>Introduzione all'analisi armonica e tempo-frequenza</h2>
             </div>
 
             <div class="slide">
-                <h3>Spaces of Integrable Functions</h3>
+                <h3>Spazi di funzioni integrabili</h3>
+
                 <div class="definition">
-                    hey, this is a test
+                    Dato un insieme non vuoto $\Omega$, una $\sigma$-algebra $\mathfrak{M}$ su $\Omega$ e una misura
+                    positiva $\mu$, uno <b>spazio di misura</b> è definito da $(\Omega, \mathfrak{M}, \mu)$.
+                </div>
+
+                <div class="definition">
+                    Per $p \in (0, \infty)$, lo <b>spazio $L^p$</b> delle funzioni a $p$-esima potenza sommabile è
+                    definito da
+                    \[
+                    L^p(\Omega, \mathfrak{M}, \mu) \triangleq \Big\{ \, f \in \mathcal{M}(\Omega, \spR) \tc
+                    \int_{\Omega} |f(x)|^p \, d \mu \lt \infty \, \Big\}
+                    \]
+                    dove $\mathcal{M}(\Omega, \spR) \triangleq \big\{ \ f \tc \Omega \, \longrightarrow \,
+                    \spR \tc f \; \text{è misurabile} \, \big\}$. Per $p = \infty$,
+                    \[
+                    L^\infty(\Omega, \mathfrak{M}, \mu) \triangleq \big\{ \, f \in \mathcal{M}(\Omega, \spR) \: :
+                    \: \exists \, C \geq 0 \tc |f(x)| \lt C \; \text{per q.o.} \; x \in \spR \, \big\} \, .
+                    \]
+                    Le definizioni sono analoghe per $\mathcal{M}(\Omega, \mathbb{C})$.
                 </div>
             </div>
 
             <div class="slide">
-                <div class="theorem">
+                Gli spazi $L^p$ sono spazi vettoriali $\forall p \in (0, \infty]$ e di Banach $\forall p \in [1,
+                \infty]$.
 
+                <div class="definition">
+                    Sugli spazi $L^p$, la <b>norma</b> è definita come
+                    \[
+                    \norma{f}_{L^p} \triangleq \big( \textstyle\int_\Omega |f|^p \, d\mu \big)^{\frac{1}{p}}
+                    \quad \forall f \in L^p, \; \forall p \in (0, \infty) \, ;
+                    \]
+                    \[
+                    \norma{f}_{L^\infty} \triangleq \inf \big\{ C \geq 0 \tc |f| \lt C \; \text{q.o. su} \;
+                    \Omega \big\} \quad \forall f \in L^\infty \, .
+                    \]
                 </div>
             </div>
 
             <div class="slide">
-                <h3>Spaces of Integrable Functions</h3>
-                <h3></h3>
-                <div class="theorem corollary">
+                <p>
+                    In particolare, siamo interessati al caso $\Omega = \spR^d$.
+                </p>
+                <p>
+                    Per $\spLLd$, è possibile definire un prodotto interno
+                    \[
+                    \inprod{f}{g} \triangleq \intRd f(x) \, \overline{g(x)} \, dx
+                    \]
+                    che induce la norma $\norma{f} = \sqrt{\inprod{f}{f}} = \normaLL {f}$. Pertanto, lo spazio $\spLLd$
+                    è di <b>Hilbert</b> e vale quindi il <b>teorema di rappresentazione di Riesz-Fréchet</b>.
+                </p>
+            </div>
 
+            <!-- Definizione e principali proprietà -->
+
+            <div class="slide">
+                <h3>La trasformata di Fourier</h3>
+
+                <div class="definition highlighted">
+                    La <b>Trasformata di Fourier</b> su $L^1$ è un operatore lineare definito da
+                    \[
+                    \Ftr \tc f \in \spLd \, \longmapsto \, \hat{f} \tc \spR^d \, \longrightarrow \, \hat{f}(\omega)
+                    \triangleq \intRd f(x) \, \eFtr{x}{\omega} \, dx \, .
+                    \]
                 </div>
+            </div>
+
+            <!-- div class="slide">
+                <div class="theorem propertis">
+                    Se $f \in \spLd$, allora
+                    <ul style="margin-top: 5px;">
+                        <li>
+                            $\hat{f} \in C(\spR^d) \cap L^\infty(\spR^d)$;
+                        </li>
+                        <li>
+                            $\norma{\hat{f}}_{L^\infty(\spR^d)} \geq \normaLd{f}$;
+                        </li>
+                        <li style="margin-top: 10px;">
+                            $\Ftr \tc \spLd \, \longrightarrow \, L^\infty (\spR^d)$ è lineare e limitato.
+                        </li>
+                    </ul>
+                </div>
+            </div -->
+
+            <div class="slide">
+                <div class="theorem lemma named">
+                    <span class="theorem-label">Riemann-Lebesgue</span>
+                    Se $f \in \spLd$, allora $\hat{f}$ è uniformemente continua e $\lim_{\, |\omega| \, \to \, \infty}
+                    |\hat{f}(\omega)| = 0$. Quindi
+                    \[
+                    \Ftr \tc \spLd \, \longrightarrow \, C_0(\spR^d) \triangleq \big\{ f \in C(\spR^d) \tc
+                    \textstyle\lim_{\, |\omega| \, \to \, \infty} |\hat{f}(\omega)| = 0 \, \big\}
+                    \]
+                </div>
+
+                <div class="theorem named">
+                    <span class="theorem-label">Plancherel</span>
+                    Se $f \in \spLd \cap \spLLd$, allora
+                    \[
+                    \normaLLd{f} = \normaLLd{\hat{f}} \, .
+                    \]
+                    Quindi, $\Ftr$ può essere estesa su $\spLLd$ come operatore unitario e
+                    \[
+                    \underbracket{\inprod{f}{g}_{\spLd} = \inprod{\hat{f}}{\hat{g}}_{\spLLd}}_{\textit{Formula di
+                    Parseval}}
+                    \, , \quad \forall f, g \in \spLLd \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="theorem proposition">
+                    Per $x, \omega \in \spR$,
+                    \[
+                    \Rect(x) \, \stackrel{\Ftr \,}{\longmapsto} \, \Sinc(\pi \omega) \, .
+                    \]
+                </div>
+            </div>
+
+            <!-- Visualizzazione grafica della trasformata di Fourier -->
+
+            <div class="slide">
+                <h4>Visualizzazione grafica della trasformata di Fourier</h4>
+
+                <p>
+                    Per $f \tc \spR \, \longrightarrow \, \spR$, l'espressione $c(t) = f(t) \, \eFtr{\omega}{t}$ per $t
+                    \in \spR$ può essere interpretata come la curva nel piano complessa ottenuta dalle rotazioni intorno
+                    all'origine con frequenza $\omega$ a distanza variabile nel tempo $f(t)$.
+                </p>
+                <p>
+                    Il centro di massa della curva per $t \in [T_1, T_2] \subset \spR$ è dato da
+                    \[
+                    c_{\text{cdm}} = \frac{1}{T_2 - T_1} \int_{T_1}^{T_2} \! c(t) \, dt
+                    \]
+                    e quindi anche la trasformata di Fourier $\hat{f}(\omega) = \int_{\spR} c(t, \omega) \, dt$ può
+                    essere interpreta come una misura del centro di massa della curva $c(t, \omega) = f(t) \,
+                    \eFtr{\omega}{t}, \; t \in \spR$.
+                </p>
+            </div>
+
+            <!-- Esempi -->
+
+            <div class="slide">
+                <h4>Esempi</h4>
+
+                <div class="theorem proposition">
+                    Per $a \in \spR, \; a \gt 0$, se $\, \varphi_a (x) \triangleq e^{-\pi \frac{x^2}{a}}$ è una
+                    <b>gaussiana</b> non normalizzata di larghezza $a$ su $\spR^d$, allora
+                    \[
+                    \varphi_a (x) \, \stackrel{\Ftr \,}{\longmapsto} \, a^{\frac{d}{2}} \varphi_{\frac{1}{a}} (x) \, .
+                    \]
+                </div>
+            </div>
+
+            <!-- Estensione della trasformata di Fourier -->
+
+            <div class="slide">
+                <h4>Estensioni della trasformata di Fourier</h4>
+                <p>
+                    Nonostante, in generale, non esistano relazioni di inclusione tra gli spazi $L^p$, la trasformata di
+                    Fourier — precedentemente definita su $L^1$ — può essere estesa su $L^2$.
+                </p>
+                <p>
+                    Sia $f \in \spLLd$. Poiché $\spLd \cap \spLLd$ è denso in $\spLLd$, esiste una successione
+                    \[
+                    (f_n)_{n \in \spNa} \subset \spLd \cap \spLLd \tc \normaLL{f_n - f} \, \longrightarrow \, 0 \, .
+                    \]
+                    Si ha che $\hat{f}_n$ è ben definita $\forall n \in \spNa$. Inoltre, $\normaLL{\hat{f}_n -
+                    \hat{f}_m} = \normaLL{f_n - f_m}$
+                    per il teorema i Plancherel, da cui segue che $(\hat{f}_n)_{n \in \spNa}$ è una successione di
+                    Cauchy su $\spLLd$. Poiché $\spLLd$ è uno spazio di Hilbert e quindi uno spazio metrico completo,
+                    $\exists ! \, \tilde{f} \tc \lim_{\, n \, \to \, \infty} \hat{f}_n = \tilde{f}$ con convergenza in
+                    $\spLLd$. La trasformata di Fourier $\hat{f}$ di $f \in \spLLd$ è definita come $\hat{f} \triangleq
+                    \tilde{f}$.
+                </p>
+            </div>
+
+            <div class="slide">
+                Alternativamente, la trasformata di Fourier su $L^2$ può essere definita sfruttando la densità della
+                classe di Schwartz in $L^2$.
+
+                <div class="definition">
+                    Lo <b>spazio di Schwartz</b> è lo spazio delle funzioni lisce che decrescono rapidamente, cioè
+                    \[
+                    \mathcal{S}(\spR^d) \triangleq \big\{\, f \tc \spR^d \, \longrightarrow \, \spR \; (\text{o} \;
+                    \spC) \tc f \in C^\infty \; \text{e decresce rapidamente} \, \big\} \, ,
+                    \]
+                    dove una funzione $f$ decresce rapidamente se
+                    \[
+                    \sup_{x \, \in \, \spR^d} |x^{\beta} D^\alpha f| \lt \infty \quad \forall \alpha, \beta \in \spNa^d
+                    \]
+                    e $D$ è l'operatore di derivazione parziale per cui $D^\alpha f \triangleq \partial_{x_1}^{\alpha_1}
+                    \dots \partial_{x_d}^{\alpha_d} f$.
+                </div>
+            </div>
+
+            <div class="slide">
+                Si ha che $\mathcal{S}(\spR^d) \subset L^p(\spR^d)$, $\forall p \in [1, \infty]$, ed è denso $\forall p
+                \in [1, \infty)$. Inoltre, la trasformata di Fourier è una biiezione $\Ftr \tc \mathcal{S}(\spR^d) \,
+                \longrightarrow \, \mathcal{S}(\spR^d)$ ed è un'isometria su $\mathcal{S}(\spR^d)$ con la norma $L^2$.
+                Allora
+                \[
+                \Ftr \tc \mathcal{S}(\spR^d) \subset \spLLd \, \longrightarrow \, \spLLd
+                \]
+                può essere esteso ad un'isometria su $\spLLd$.
+            </div>
+
+            <div class="slide">
+                <h3>Operatori</h3>
+
+                <h4>Shift tempo-frequenza</h4>
+
+                <div class="definition">
+                    Dati $f \tc \spR^d \, \longrightarrow \, \spR$ (o $\spC$) e $\omega \in \spR^d$, l'<b>operatore di
+                        traslazione</b> $T_x$ è definito da
+                    \[
+                    T_x f(t) \triangleq f(t - x) \, ,
+                    \]
+                    mentre l'<b>operatore di modulazione</b> $M_\omega$ da
+                    \[
+                    M_\omega f(t) \triangleq \eIFtr{\omega}{t} f(t) \, .
+                    \]
+                    Le composizioni di una traslazione e una modulazione, ovvero $T_x M_\omega$ oppure $M_\omega T_x$,
+                    sono dette <b>shift tempo-frequenza</b>.
+                </div>
+            </div>
+
+            <div class="slide">
+                Gli shift tempo-frequenza sono isometrie su $L^p$, $\forall p \in [1, \infty]$ ed esiste una relazione
+                di commutazione:
+                \[
+                T_x M_\omega = \eFtr{\omega}{x} \, M_\omega T_x
+                \]
+
+                <div class="theorem property named">
+                    \[
+                    (T_x f)\,\hat{} \, = M_{-x} \hat{f} \, ,
+                    \]
+                    \[
+                    (M_\omega f)\,\hat{} \, = T_{\omega} \hat{f} \, ,
+                    \]
+                    \[
+                    (T_x M_\omega f)\, \hat{} \, = \eFtr{\omega}{x} \, T_\omega M_{-x} \hat{f} \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <h4>Convoluzione, involuzione e riflessione</h4>
+
+                <div class="definition">
+                    Date $f, g \in \spLd$, la <b>convoluzione</b> di $f$ e $g$ è definita come
+                    \[
+                    (f * g)(x) \triangleq \intRd f(y) g(x - y) \, dy \, .
+                    \]
+                </div>
+
                 <div class="theorem property">
-
+                    Per $f, g \in L^1$,
+                    \[
+                    (f * g)\,\hat{} \, = \hat{f} \cdot \hat{g} \, .
+                    \]
                 </div>
             </div>
 
             <div class="slide">
-                <div class="theorem lemma">
+                <div class="definition">
+                    La <b>riflessione</b> è un operatore definito come
+                    \[
+                    \mathcal{I} \tc f \, \longmapsto \, \mathcal{I} f \tc \mathcal{I} f(x) \triangleq f(-x) \, ,
+                    \]
+                    mentre l'<b>involuzione</b> su $\spLd$ è definita come
+                    \[
+                    ^* \tc f \, \longmapsto \, f^* \triangleq \overline{\mathcal{I}f} \tc f^*(x) \triangleq
+                    \overline{f(-x)} \, .
+                    \]
+                </div>
 
+                <div class="theorem property">
+                    Per $f, g \in \spLd$,
+                    \[
+                    \widehat{f^*} = \bar{\hat{f}} \, , \quad \widehat{\mathcal{I} f} = \mathcal{I} \hat{f}
+                    \]
+                    e, se entrambi i lati dell'equazione sono definiti,
+                    \[
+                    (f * g)(x) = \inprod{f, T_x g^*} \, .
+                    \]
                 </div>
             </div>
 
+            <div class="slide">
+                <h3>La trasformata di Fourier inversa</h3>
+
+                <div class="theorem named highlighted">
+                    \[
+                    f, \hat{f} \in \spLd \; \Longrightarrow \; f(x) = \intRd \hat{f}(\omega) \, \eIFtr{x}{\omega} \,
+                    d\omega \quad \forall x \in \spR^d \, .
+                    \]
+                </div>
+
+                Il segnale $f$ può essere ricostruito perfettamente — usando la sua trasformata $\hat{f}$ — come
+                "<i>somma continua</i>" di frequenze pure $\eIFtr{\omega\,}{\boldsymbol{\,\cdot}}$. Pertanto, ne
+                deduciamo che la trasformata di Fourier non causa alcuna perdita di informazione.
+            </div>
+
+            <div class="slide">
+                <div class="theorem proposition">
+                    Il teorema di inversione è equivalente al teorema di Plancherel.
+                </div>
+
+                <div class="proof ending-formula">
+                    $\framebox{$\Longleftarrow \,$}$ Supponendo vero il teorema di Placherel,
+                    \[
+                    \Ftr \; \text{unitario} \; \Longrightarrow \; \Ftr^{-1} = \Ftr^* \, ,
+                    \]
+                    dove $\Ftr^*$ è l'operatore aggiunto. Segue immediatamente la formula di inversione.
+
+                    <p></p>
+
+                    $\framebox{$\Longrightarrow \,$}$ Supponendo vera la formula di inversione $\forall f \tc f, \hat{f}
+                    \in \spLd$,
+                    \[
+                    \begin{split}
+                    \normaLL{f}^2 & = \intRd |f(x)|^2 \, dx = \intRd f(x) \overline{f(x)} \, dx \\
+                    & = \intRd f(x) \underbracket{f^*(-x)}_{f^*(0 - x)} \, fx = f * f^*(0) \\
+                    & = \intRd (f * f^*)\,\hat{}\, (\omega) \, d\omega = \intRd \hat{f}(\omega) \widehat{f^*}(\omega) \,
+                    d\omega \\
+                    & = \intRd \hat{f}(\omega) \bar{\hat{f}}(\omega) \, d\omega = \intRd |\hat{f}(\omega)|^2 \, d\omega
+                    = \normaLL{\hat{f}}^2 \, .
+                    \end{split}
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <h3>Teorema di Plancherel</h3>
+
+                La dimostrazione del teorema di Plancherel si basa sul seguente lemma, riguardate la densità dello span
+                degli shift tempo-frequenza delle gaussiane non normalizzate in $\spLLd$:
+
+                <div class="theorem lemma">
+                    $\forall a \gt 0$,
+                    \[
+                    X_a \triangleq \Span\{\, T_x M_\omega \varphi_a \tc x, \omega \in \spR^d \} \mathop{\subset}_{\textrm{dense}}
+                    \spLLd \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="proof named">
+                    <span class="proof-label">Dim. del teorema di Plancherel</span>
+                    \[
+                    (T_x M_\omega \varphi_1)\,\hat{} \, \vertarrowbox[2pt]{\; = \;}{\hat{\varphi}_1 = \varphi_1} \eFtr{\omega}{x} T_\omega M_{-x} \varphi_1 \, .
+                    \]
+                    Quindi, $\Ftr \tc X_1 \, \longrightarrow \, X_1 \,$ e $\, \Ftr(X_1) \displaystyle\mathop{\subset}_{\textrm{dense}}
+                    \spLLd$. Segue che
+                    \[
+                    \inprod{T_x M_\omega \varphi_1}{T_x M_\omega \varphi_1} = \inprod{\Ftr(T_x M_\omega \varphi)}{\Ftr(T_x M_\omega \varphi)} \, ,
+                    \]
+                    per cui la trasformata di Fourier è un isomorfismo su $X_1$. Poiché $X_1$ è denso in $\spLLd$, $\Ftr$ si estende ad operatore unitario su $\spLLd$.
+                </div>
+            </div>
+
+            <div style="margin-top: 1000px;"></div>
         </main>
 
         <div class="play-pause-controls">
@@ -121,7 +494,9 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
         MathJax = {
+            loader: { load: ['[tex]/mathtools'] },
             tex: {
+                packages: { '[+]': ['mathtools'] },
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 tags: 'ams',
             }
