@@ -313,10 +313,9 @@ div.play-pause-plot {
 
 /* -- 2.4 Presentation -- */
 
-div.slide {
+div.slide, div.slide.hidden {
     padding: 5px 10px;
     border-radius: 10px;
-    background-color: var(--background);
     opacity: 1;
     transition: all .3s ease-in-out;
 }
@@ -582,6 +581,33 @@ div.definition::before {
     font-weight: bold;
 }
 
+div.definition.named::before {
+    content: "Definition "counter(chapter) "."counter(section) "/"counter(definition);
+}
+
+/* Definition Label */
+
+span.definition-label {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--def-orange);
+}
+
+span.definition-label::before {
+    content: "\00a0(";
+    color: #000000;
+}
+
+span.definition-label::after {
+    content: ")\00a0 —";
+    color: #000000;
+}
+
+span.definition-label.no-dash::after {
+    content: ")\00a0";
+}
+
+
 /* Theorem */
 
 div.theorem {
@@ -689,7 +715,7 @@ div.proof::before {
 
 div.proof.named::before {
     content: "";
-    ;
+    margin-right: 0px;
 }
 
 div.proof::after {

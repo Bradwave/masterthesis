@@ -35,6 +35,11 @@ let presentationController = new function () {
     let slides;
 
     /**
+     * Hidden slides div elements.
+     */
+    let hiddenSlides;
+
+    /**
      * Play presentation button.
      */
     let presentationPlay;
@@ -91,7 +96,10 @@ let presentationController = new function () {
         title = document.getElementById("title");
 
         // Gets the slide div elements
-        slides = [...document.getElementsByClassName("slide")];
+        slides = [...document.querySelectorAll(".slide:not(.hidden)")];
+
+        // Gets the hidden slide div elements
+        hiddenSlides = [...document.querySelectorAll(".slide.hidden")];
 
         // Gets the presentation controls elements and the progress bar
         presentationPlay = document.getElementById("presentation-play");
@@ -148,6 +156,11 @@ let presentationController = new function () {
 
         // Sets the opacity of the title div element
         title.style.opacity = presentationMode ? "0.2" : "1";
+
+        // Sets the opacity of the hidden slides div elements
+        hiddenSlides.forEach(slide => {
+            slide.style.opacity = presentationMode ? "0.2" : "1";
+        })
 
         // Shows or hides the controls for the presentation
         presentationControls.style.opacity = presentationMode ? "1" : "0";

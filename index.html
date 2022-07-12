@@ -61,6 +61,7 @@
             \DeclareMathOperator{\Sinc}{sinc}
             \DeclareMathOperator{\Rect}{rect}
             \DeclareMathOperator{\Span}{span}
+            \DeclareMathOperator{\Dom}{dom}
             \newcommand{\vertarrowbox}[3][3pt]{
             \begin{array}[t]{@{}c@{}}
             #2 \\[-.4em]
@@ -90,11 +91,13 @@
 
             <div style="height: 40px;"></div>
 
-            <!-- INTRODUZIONE -->
+            <!-- Introduzione -->
 
             <div class="slide">
                 <h2>Introduzione all'analisi armonica e tempo-frequenza</h2>
             </div>
+
+            <!-- Spazi di funzioni integrabili -->
 
             <div class="slide">
                 <h3>Spazi di funzioni integrabili</h3>
@@ -115,7 +118,7 @@
                     \spR \tc f \; \text{è misurabile} \, \big\}$. Per $p = \infty$,
                     \[
                     L^\infty(\Omega, \mathfrak{M}, \mu) \triangleq \big\{ \, f \in \mathcal{M}(\Omega, \spR) \: :
-                    \: \exists \, C \geq 0 \tc |f(x)| \lt C \; \text{per q.o.} \; x \in \spR \, \big\} \, .
+                    \: \exists \, C \geqslant 0 \tc |f(x)| \lt C \; \text{per q.o.} \; x \in \spR \, \big\} \, .
                     \]
                     Le definizioni sono analoghe per $\mathcal{M}(\Omega, \mathbb{C})$.
                 </div>
@@ -132,7 +135,7 @@
                     \quad \forall f \in L^p, \; \forall p \in (0, \infty) \, ;
                     \]
                     \[
-                    \norma{f}_{L^\infty} \triangleq \inf \big\{ C \geq 0 \tc |f| \lt C \; \text{q.o. su} \;
+                    \norma{f}_{L^\infty} \triangleq \inf \big\{ C \geqslant 0 \tc |f| \lt C \; \text{q.o. su} \;
                     \Omega \big\} \quad \forall f \in L^\infty \, .
                     \]
                 </div>
@@ -157,7 +160,8 @@
             <div class="slide">
                 <h3>La trasformata di Fourier</h3>
 
-                <div class="definition highlighted">
+                <div class="definition named highlighted">
+                    <span class="definition-label">Trasformata di Fourier</span>
                     La <b>Trasformata di Fourier</b> su $L^1$ è un operatore lineare definito da
                     \[
                     \Ftr \tc f \in \spLd \, \longmapsto \, \hat{f} \tc \spR^d \, \longrightarrow \, \hat{f}(\omega)
@@ -166,22 +170,22 @@
                 </div>
             </div>
 
-            <!-- div class="slide">
-                <div class="theorem propertis">
+            <div class="slide">
+                <div class="theorem properties">
                     Se $f \in \spLd$, allora
                     <ul style="margin-top: 5px;">
                         <li>
                             $\hat{f} \in C(\spR^d) \cap L^\infty(\spR^d)$;
                         </li>
                         <li>
-                            $\norma{\hat{f}}_{L^\infty(\spR^d)} \geq \normaLd{f}$;
+                            $\norma{\hat{f}}_{L^\infty(\spR^d)} \geqslant \normaLd{f}$;
                         </li>
                         <li style="margin-top: 10px;">
                             $\Ftr \tc \spLd \, \longrightarrow \, L^\infty (\spR^d)$ è lineare e limitato.
                         </li>
                     </ul>
                 </div>
-            </div -->
+            </div>
 
             <div class="slide">
                 <div class="theorem lemma named">
@@ -202,18 +206,9 @@
                     \]
                     Quindi, $\Ftr$ può essere estesa su $\spLLd$ come operatore unitario e
                     \[
-                    \underbracket{\inprod{f}{g}_{\spLd} = \inprod{\hat{f}}{\hat{g}}_{\spLLd}}_{\textit{Formula di
-                    Parseval}}
+                    \underbracket{\inprod{f}{g}_{\spLd} =
+                    \inprod{\hat{f}}{\hat{g}}_{\spLLd}}_{\textit{Formula di Parseval}}
                     \, , \quad \forall f, g \in \spLLd \, .
-                    \]
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="theorem proposition">
-                    Per $x, \omega \in \spR$,
-                    \[
-                    \Rect(x) \, \stackrel{\Ftr \,}{\longmapsto} \, \Sinc(\pi \omega) \, .
                     \]
                 </div>
             </div>
@@ -253,10 +248,19 @@
                 </div>
             </div>
 
+            <div class="slide">
+                <div class="theorem proposition">
+                    Per $x, \omega \in \spR$,
+                    \[
+                    \Rect(x) \, \stackrel{\Ftr \,}{\longmapsto} \, \Sinc(\pi \omega) \, .
+                    \]
+                </div>
+            </div>
+
             <!-- Estensione della trasformata di Fourier -->
 
             <div class="slide">
-                <h4>Estensioni della trasformata di Fourier</h4>
+                <h4>Estensione della trasformata di Fourier</h4>
                 <p>
                     Nonostante, in generale, non esistano relazioni di inclusione tra gli spazi $L^p$, la trasformata di
                     Fourier — precedentemente definita su $L^1$ — può essere estesa su $L^2$.
@@ -305,6 +309,8 @@
                 \]
                 può essere esteso ad un'isometria su $\spLLd$.
             </div>
+
+            <!-- Operatori -->
 
             <div class="slide">
                 <h3>Operatori</h3>
@@ -384,9 +390,13 @@
                     \]
                     e, se entrambi i lati dell'equazione sono definiti,
                     \[
-                    (f * g)(x) = \inprod{f, T_x g^*} \, .
+                    (f * g)(x) = \inprod{f}{T_x g^*} \, .
                     \]
                 </div>
+            </div>
+
+            <div class="slide">
+
             </div>
 
             <div class="slide">
@@ -434,7 +444,7 @@
             </div>
 
             <div class="slide">
-                <h3>Teorema di Plancherel</h3>
+                <h4>Dimostrazione del teorema di Plancherel</h4>
 
                 La dimostrazione del teorema di Plancherel si basa sul seguente lemma, riguardate la densità dello span
                 degli shift tempo-frequenza delle gaussiane non normalizzate in $\spLLd$:
@@ -442,7 +452,8 @@
                 <div class="theorem lemma">
                     $\forall a \gt 0$,
                     \[
-                    X_a \triangleq \Span\{\, T_x M_\omega \varphi_a \tc x, \omega \in \spR^d \} \mathop{\subset}_{\textrm{dense}}
+                    X_a \triangleq \Span\{\, T_x M_\omega \varphi_a \tc x, \omega \in \spR^d \}
+                    \mathop{\subset}_{\textrm{dense}}
                     \spLLd \, .
                     \]
                 </div>
@@ -452,14 +463,494 @@
                 <div class="proof named">
                     <span class="proof-label">Dim. del teorema di Plancherel</span>
                     \[
-                    (T_x M_\omega \varphi_1)\,\hat{} \, \vertarrowbox[2pt]{\; = \;}{\hat{\varphi}_1 = \varphi_1} \eFtr{\omega}{x} T_\omega M_{-x} \varphi_1 \, .
+                    (T_x M_\omega \varphi_1)\,\hat{} \, \vertarrowbox[2pt]{\; = \;}{\hat{\varphi}_1 = \varphi_1}
+                    \eFtr{\omega}{x} T_\omega M_{-x} \varphi_1 \, .
                     \]
-                    Quindi, $\Ftr \tc X_1 \, \longrightarrow \, X_1 \,$ e $\, \Ftr(X_1) \displaystyle\mathop{\subset}_{\textrm{dense}}
+                    Quindi, $\Ftr \tc X_1 \, \longrightarrow \, X_1 \,$ e $\, \Ftr(X_1)
+                    \displaystyle\mathop{\subset}_{\textrm{dense}}
                     \spLLd$. Segue che
                     \[
-                    \inprod{T_x M_\omega \varphi_1}{T_x M_\omega \varphi_1} = \inprod{\Ftr(T_x M_\omega \varphi)}{\Ftr(T_x M_\omega \varphi)} \, ,
+                    \inprod{T_x M_\omega \varphi_1}{T_x M_\omega \varphi_1} = \inprod{\Ftr(T_x M_\omega
+                    \varphi)}{\Ftr(T_x M_\omega \varphi)} \, ,
                     \]
-                    per cui la trasformata di Fourier è un isomorfismo su $X_1$. Poiché $X_1$ è denso in $\spLLd$, $\Ftr$ si estende ad operatore unitario su $\spLLd$.
+                    per cui la trasformata di Fourier è un isomorfismo su $X_1$. Poiché $X_1$ è denso in $\spLLd$,
+                    $\Ftr$ si estende ad operatore unitario su $\spLLd$.
+                </div>
+            </div>
+
+            <div class="slide">
+                <h3>La serie di Fourier</h3>
+
+                L'analisi dei segnali periodici può essere condotta per mezzo della <b><i>serie di Fourier</i></b>.
+
+                <div class="theorem proposition">
+                    Per $f, \in L^2(\mathbb{T}^d)$, dove $\mathbb{T}^d = \spR^d /spZ^d$,
+                    \[
+                    \underbracket{\hat{f}(n) \triangleq \int_{[0, 1]^d} f(x) \, \eFtr{n}{x} \, dx}_{n\textit{-esimo
+                    coefficiente di Fourier}} \quad \land \quad f = \underbracket{\sum_{n \, \in \, \spZ^d} \hat{f} (n)
+                    \, \eIFtr{n}{x}}_{\textit{serie di Fourier}}
+                    \]
+                    Inoltre,
+                    \[
+                    \underbracket{\!\int_{[0, 1]^d} |f(x)|^2 \, dx = \normaLL{f}^2 = \sum_{n \, \in \, \spZ^d
+                    |\hat{f}(n)|^2}}_{\textit{identità di Parseval}} \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <h4>Visualizzazione grafica della serie di Fourier</h4>
+            </div>
+
+            <div class="slide">
+                <h3>Applicazioni</h3>
+            </div>
+
+            <div class="slide hidden">
+                <h3>Limitazioni della Trasformata di Fourier</h3>
+            </div>
+
+            <div class="slide">
+                <h2>Il principio di indeterminazione</h2>
+            </div>
+
+            <div class="slide">
+                <h3>Disuguaglianza di Heisenberg-Pauli-Weyl</h3>
+
+                <div class="theorem named">
+                    <span class="theorem-label">Disuguaglianza HPW</span>
+                    $\forall f \in L^2(\spR), \; a, b \in \spR$,
+                    \[
+                    \Big( \int_\spR (x - a)^2 |f(x)|^2 \, dx \Big)^{\! \frac{1}{2}} \Big( \int_\spR (\omega - b)
+                    |\hat{f}(\omega)|^2 \, d\omega \Big)^{\! \frac{1}{2}} \geqslant \frac{1}{4\pi} \normaLL{f}^2 \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="definition">
+                    L'<i>operatore di moltiplicazione</i> $X$ e quello di <i>differenziazione</i> $P$ sono operatori
+                    autoaggiunti definiti rispettivamente da
+                    \[
+                    X f(x) \triangleq x f(x) \quad \text{e} \quad P f(x) \triangleq \frac{1}{2 \pi i} f^\prime (x) \, .
+                    \]
+                </div>
+
+                La dimostrazione della disuguaglianza HPW si basa sul seguente lemma, che è già di per sé una versione
+                astratta del principio di indeterminazione:
+
+                <div class="theorem lemma">
+                    Dati due operatori autoaggiunti $A$ e $B$ su uno spazio di Hilbert $H$,
+                    \[
+                    \norma{(A - a) f} \, \norma{(B - b) f} \geqslant \frac{1}{2} |\inprod{[A, B] f}{f}| \, ,
+                    \]
+                    $\forall a, b \in \spR, \; \forall f \in \Dom AB \cap \Dom BA$, dove $[A, B] \triangleq AB - BA$ è
+                    il commutatore.
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="proof named ending-formula">
+                    <span class="proof-label">Dim. della disuguaglianza HPW</span>
+                    Per $f \in \cap \, \{ \Dom X, \Dom P, \Dom XP \, \Dom PX \}$,
+                    \[
+                    [X, P] f(x) = \frac{1}{2 \pi i} \big( x f^\prime(x) - (x f)^\prime (x) \big) = - \frac{1}{2 \pi i}
+                    f(x) \, .
+                    \]
+                    Allora,
+                    \[
+                    \frac{1}{4 \pi} \normaLL{f}^2 = \frac{1}{2} |\inprod{[X, P], f}| \vertarrowbox{\; =
+                    \;}{\text{Lemma}} \normaLL{(X - a) f} \, \normaLL{(P - b) f}
+                    \]
+                    dove
+                    \[
+                    \begin{split}
+                    \normaLL{(P - b) f} & \vertarrowbox{\; = \;}{\text{Parseval}}
+                    \normaLL{\Ftr(\underbracket{Pf}_{\mathclap{\frac{1}{2\pi i}D f}} - bf)} \\
+                    & \quad = \normaLL{\frac{1}{\cancel{2 \pi i}} \cancel{(2 \pi i)} x \hat{f} - (b f)\,\hat{} \,} =
+                    \normaLL{(X - b) \hat{f}} \\
+                    & \quad = \Big( \intRd (\omega - b)^2 |\hat{f}|^2 \, d\omega \Big)^{\frac{1}{2}} \, , \\[1em]
+                    \normaLL{(X - a) f} & \quad = \Big( \intRd (x - a)^2 |f(x)|^2 \, d\omega \Big)^{\frac{1}{2}} \, .
+                    \end{split}
+                    \]
+                </div>
+            </div>
+
+            <div class="slide" style="margin-top: 5px;">
+                <div class="definition named">
+                    <span class="definition-label no-dash">Deviazioni standard</span>
+                    \[
+                    \begin{array}{l l l}
+                    \Delta_f \, x
+                    & \!\!\! \triangleq \, \displaystyle\min_{a \, \in \, \spR}
+                    \Big( \int_{\spR} (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\frac{1}{\, 2}}
+                    & \!\!\!\! = \, \displaystyle\min_{a \, \in \, \spR}
+                    \normaLL{(X - a) f} \, , \\[1em]
+                    \Delta_f \, \omega
+                    & \!\!\! \, \triangleq \displaystyle\min_{b \, \in \, \spR}
+                    \Big( \int_{\spR} (\omega - b)^2 \, |\hat{f}(\omega)|^2 \, d\omega \Big)^{\frac{1}{\, 2}}
+                    & \!\!\!\! = \, \displaystyle\min_{b \, \in \, \spR}
+                    \normaLL{(X - b) \hat{f}} \, .
+                    \end{array}
+                    \]
+                </div>
+
+                Se $\Delta_f \, x \lt \infty$ e $\Delta_f \, \omega \lt \infty$, le deviazioni standard sono minimizzate
+                per
+                \[
+                a = \intRd x |f(x)|^2 \, dx
+                \quad e \quad
+                b = \intRd \omega |\hat{f}(\omega)|^2 \, d\omega \, .
+                \]
+                $\Delta_f \, x$ e $\Delta_f \, \omega$ possono essere interpretate come la dispersione dell'energia del
+                segnale.
+            </div>
+
+            <div class="slide">
+                Con questa notazione, il principio di indeterminazione di Heisenberg-Pauli-Weyl diventa
+                \[
+                \normaLL{f} = 1 \quad \Longrightarrow \quad \Delta_f \, x \cdot \Delta_f \, \omega \geqslant \frac{1}{4
+                \pi} \, .
+                \]
+                ovvero <i>non è possibile ottenere una dispersione piccola a piacere sia nel dominio dei tempi sia in
+                    quello delle frequenze.</i>
+            </div>
+
+            <div class="slide">
+                <h3>Il principio di indeterminazione di Donoho-Stark</h3>
+
+                Tale principio si fonda sul concetto di $\varepsilon$-concentrazione.
+
+                <div class="definition">
+                    Dati $f \in \spLLd$ e un insieme misurabile $T \subseteq \spR^d$, $f$ è detta
+                    <b>$\varepsilon$-concentrata</b> su $T$, se
+                    \[
+                    \Big( \int_{T^c} |f(x)|^2 \, dx \Big)^{\frac{1}{2}} \leqslant \varepsilon \normaLL{f} \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="theorem named">
+                    <span class="theorem-label">Principio di indeterminazione di Donoho-Stark</span>
+                    Se $f \in \spLLd$ tale che $f \neq 0$ è $\varepsilon_T$-concentrata su $T \subseteq \spR^d$ e
+                    $\hat{f}$ è $\varepsilon_\Omega$-concentrata su $\Omega \subseteq \spR^d$, allora
+                    \[
+                    |T| \, |\Omega| \geqslant (1 - \varepsilon_T - \varepsilon_\Omega)^2 \, ,
+                    \]
+                    dove $|\, \cdot \,|$ + la misura di un insieme misurabile.
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>La trasformata di Gabor</h2>
+            </div>
+
+            <div class="slide">
+                <h3>Fondamenti della trasformata di Gabor</h3>
+
+                <div class="definition named highlighted">
+                    <span>Trasformata di Gabor</span>
+                    Fissata una funzione fissa $g \tc g \neq 0$, detta funzione finestra, la <b>trasformata di Gabor</b>
+                    — detta anche Short Time Fourier Transform (STFT) — di una funzione $f$ rispetto a $g$ è definita da
+                    \[
+                    \begin{gathered}
+                    V_g \tc f \, \longmapsto V_g f \\
+                    V_g f(x, \omega) \triangleq \intRd f(t) \overline{g(t - x)} \, \eFtr{\omega}{t} \, dt \, , \quad
+                    \text{per} \; x, \omega \in \spR^d \, ,
+                    \end{gathered}
+                    \]
+                    quando l'integrale è definito.
+                </div>
+            </div>
+
+            <div class="slide">
+                Essendo $V_g f$ in generale complesso, per visualizzare la trasformata di Gabor è solitamente impiegato
+                lo <b>spettrogramma</b>, ovvero $|V_g f(x, \omega)|^2$ per $x \in \Dom f, \; \omega \in \Dom \hat{f}$.
+            </div>
+
+            <div class="slide">
+                La trasformata di Gabor può essere espressa in varie forme.
+
+                <div class="theorem lemma">
+                    Per $f, g \in \spLLd$,
+                    \[
+                    \begin{split}
+                    V_g f(x, \omega) & = (f \cdot T_x \bar{g})\,\hat{}\: (\omega) \\[.5em]
+                    & = \inprod{f}{M_\omega T_x g} \\[.5em]
+                    & = \inprod{\hat{f}}{T_\omega M_x \hat{g}} \\[.5em]
+                    & = \eFtr{\omega}{x} V_{\hat{g}} \hat{f} (\omega, -x) \\
+                    & = (\hat{f} * M:x \hat{g}^*)(\omega)
+                    \end{split}
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                Da $V_g f(x, \omega) = (f \cdot T_x \bar{g})\,\hat{}\: (\omega)$ segue che, per $f, g \in \spLLd$, $f
+                \cdot T_x \bar{g} \in \spLd$ e quindi la trasformata è definita puntualmente.
+
+                <div class="definition named">
+                    <span>Trasformata di Gabor su $L^2$</span>
+                    Se $g, \in \spLLd \tc g \neq 0$, la trasformata di gabor definisce una mappa lineare
+                    \[
+                    \begin{array}{r c c c}
+                    V_g \tc \!\!\! & \spLLd & \! \longrightarrow & \! \spLLdd \\
+                    & f & \! \longmapsto & \! V_g f \, .
+                    \end{array}
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                Inoltre, è possibile definire la trasformata di Gabor come composizione:
+                \[
+                \begin{array}{c c c c c c c c c}
+                V
+                & \tc & \spLLd
+                & \!\! \longrightarrow \!\! & \spLLdd
+                & \!\! \longrightarrow \!\! & \spLLdd
+                & \!\! \longrightarrow \!\! & \spLLdd \\
+
+                && f, g
+                & \!\! \stackrel{\overline{\otimes}}{\longmapsto}
+                \!\! & f \otimes \bar{g}
+                & \!\! \stackrel{\mathcal{T}_a}{\longmapsto}
+                \!\! & \mathcal{T_a} (f \otimes \bar{g})
+                & \!\! \stackrel{\Ftr_2}{\longmapsto}
+                \!\! & \Ftr_2 \mathcal{T}_a (f \otimes \bar{g}) \, ,
+                \end{array}
+                \]
+                dove $\overline{\otimes}$ è un <i>prodotto tensoriale</i>, $\mathcal{T}_a$ una <i>trasformazione
+                    asimmetrica di coordinate</i> e $\Ftr_2$ una <i>trasformata parziale di Fourier</i>, definiti
+                rispettivamente come
+                \[
+                \begin{array}{c c c c r c l}
+                \overline{\otimes} & \tc & \spLLd & \longrightarrow \spLLdd \tc
+                & f \overline{\otimes} g \, (x, t)
+                & \triangleq & f \otimes \bar{g} (x, t) \triangleq f(x) \, \bar{g}(t) \, , \\[.5em]
+                \mathcal{T}_a & \tc & \spLLdd & \longrightarrow \spLLdd \tc
+                & \mathcal{T}_a F(x, t)
+                & \triangleq & F(t, t - x) \, , \\[.5em]
+                \Ftr_2 & \tc &\spLLdd & \longrightarrow \spLLdd \tc
+                & \Ftr_2 F(x, w)
+                & \triangleq & \intRd F(x, t) \eFtr{t}{w} dt \, .
+                \end{array}
+                \]
+            </div>
+
+            <div class="slide">
+                Gli operatori $\mathcal{T}_a$ e $\Ftr_2$ sono isometrici su $\spLLd$. Inoltre, se $f, g \in \spLLd$,
+                allora
+                \[
+                \normaLLdd{f \overline{\otimes} g} = \normaLLd{f} \, \normaLLd{g} \, .
+                \]
+            </div>
+
+            <div class="slide">
+                <h4>Ortogonalità</h4>
+
+                <div class="theorem">
+                    Per $j = 1, 2$, se $f_j, g_j \in \spLLd$, allora $V_{g_j} f_j \in \spLLdd$ e vale l'<b>equivalenza
+                        di ortogonalità</b>
+                    \[
+                    \inprod{V_{g_1} f_1}{V_{g_2} f_2}_{\spLLdd}
+                    = \inprod{f_1}{f_2} \overline{\inprod{g_1}{g_2}} \, .
+                    \]
+                </div>
+
+                <div class="proof ending-formula">
+                    RIcordando che l'isometria $\Ftr_2 \mathcal{T}_a$ preserva il prodotto interno, segue che
+                    \[
+                    \begin{split}
+                    \inprod{V_{g_1} f_1}{V_{g_2} f_2}_{\spLLd}
+                    & =
+                    \inprod{\Ftr_2 \mathcal{T}_a (f_1 \otimes \bar{g}_1)}{\Ftr_2 \mathcal{T}_a (f_2 \otimes \bar{g}_2)}
+                    \\
+                    & = \inprod{f_1 \otimes \bar{g}_1}{f_2 \otimes \bar{g}_2} \mathop{=}^{\text{def}} \inprod{f_1
+                    \bar{g}_1}{f_2
+                    \bar{g}_2} \\[.2em]
+                    & = \intRd f_1(t) \overline{f_2(t)} \, \Big( \intRd \overline{g_1(t - x)} g_2(t - x) dx \Big) \ dt
+                    \\[.2em]
+                    & = \inprod{f_1}{f_2} \overline{\inprod{g_1}{g_2}} \, .
+                    \end{split}
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <h3>Formula di inversione</h3>
+
+                Come per la trasformata di Fourier, è possibile ricostruire il segnale un segnale a partire dalla sua
+                trasformata di Gabor. Tuttavia, occorre prestare attenzione all'integrazione dell'operatore $\phi \tc
+                \spR^{2d} \, \longrightarrow \, \spLLdd$, dato dalla combinazione della trasformata di Gabor e una
+                finestra di decodifica \, .
+            </div>
+
+            <div class="slide">
+                Sia $\phi \tc \spR^n \, \longrightarrow \, H$ dove $H$ è uno spazio di Hilbert. Vogliamo pertanto
+                definire
+                \[
+                \int_{\spR^n} \phi(t) \, dt \in H \, .
+                \]
+                Poiché $H$ è uno spazio di Hilbert, si può definire una biiezione tra $H$ e il suo duale $H^*$
+                \[
+                \begin{array}{c c c}
+                x & \longleftrightarrow & h_x \\
+                H & \longleftrightarrow & H^*
+                \end{array}
+                \quad \text{con} \quad
+                h_x (y) = \inprod{y, x}, \forall y \in H \, .
+                \]
+            </div>
+
+            <div class="slide">
+                Possiamo quindi definire
+                \[
+                \ell \tc y \in H \, \longmapsto \, \int_{\spR^n} \inprod{y}{\phi(t)} \, dt \, ,
+                \]
+                che è lineare in $y$. Se $\int \norma{\phi(t)} \, dt = C$, allora $|\ell(y)| \leqslant C \norma{y}$ e
+                quindi $\ell$ è lineare e limitato, cioè $l \in H^*$. Pertanto, dal teorema di rappresentazione di
+                Riesz-Fréchet, si ha
+                \[
+                \exists ! \; x \in H \tc \ell(y) = \inprod{y}{x} \;\; forall y \in H
+                \]
+                e possiamo identificare $\ell \equiv x \in H$. Quindi
+                \[
+                \ell(y) = \int_{\spR^n} \inprod{y, \phi(t)} \, dt \mathop{=}^{\text{def}}
+                \overbracket{\inprod{y}{\underbracket{\int_{\spR^n} \phi(t) \, dt}_{x \, \equiv \ell}}}^{\inprod{y}{x}}
+                \, .
+                \]
+            </div>
+
+            <div class="slide">
+                Ciò significa che possiamo formalmente definire
+                \[
+                \int_{\spR^n} \phi(t) \, dt \mathop{=}^{\text{def}} x
+                \quad \text{dove} \quad
+                x \in H \tc \underbracket{\int_{\spR^n} \inprod{y}{\phi(t)} \, dt}_{\ell(y)} = \inprod{y}{x} \;\;
+                \forall y \in H \, .
+                \]
+                Nel caso di nostro interesse, abbiamo $H = \spLLd$, $F \in \spLLdd$ e la finestra di decodifica fissata
+                $\gamma \in \spLLd \tc \gamma \neq 0$. Pertanto
+                \[
+                \begin{gathered}
+                \phi \tc t = (x, \omega) \in \spR^{2d} \, \longmapsto \, F(x, \omega) M_\omega T_x \gamma \in \spLLdd =
+                H \, , \\
+                \ell \tc h \in \spLLd \, \longmapsto \, \int_{\spR^{2d}} F(x, \omega) \overline{\inprod{h}{M_\omega T_x
+                \gamma}_{\spLLd}} \, dx \, d\omega \, .
+                \end{gathered}
+                \]
+            </div>
+
+            <div class="slide">
+                Chiaramente, $\ell$ è lineare e si $|\ell(h)| \leqslant \normaLLdd{f} \normaLLd {\gamma} \normaLLd{h}$.
+                Quindi $\ell$ è un funzionale lineare e limitato e si può applicare il teorema di rappresentazione di
+                Riesz-Fréchet, da cui
+                \[
+                \exists ! \; f = \int_{\spR^{2d}} F(x, \omega) M_\omega T_x \gamma \, dx \, d\omega \in \spLLd \tc
+                \ell(h) = \inprod{h}{f}_{\spLLd} \, .
+                \]
+                con $\normaLLd{f} \leqslant \normaLLdd{F} \normaLLd{\gamma}$
+            </div>
+
+            <div class="slide">
+                <div class="theorem named highligted">
+                    <span class="theorem-label">Formula di inversione della trasformata di Gabor</span>
+                    Date due funzioni finestra $g, \gamma \in \spLLd \tc \inprod{g, \gamma} \neq 0$,
+                    \[
+                    f = \frac{1}{\gamma} \int_{\spR^{2d}} V_g f(x, \omega) M_\omega T_x \gamma \, d\omega \, dx \quad
+                    \forall f \in \spLLd \, .
+                    \]
+                </div>
+
+                <div class="proof">
+                    L'integrale
+                    \[
+                    \tilde{f} = \frac{1}{\gamma} \int_{\spR^{2d}} V_g f(x, \omega) M_\omega T_x \gamma \, d\omega \, dx
+                    \]
+                    è ben definito in $\spLLd$ poiché $V_g f \in \spLLdd$. Inoltre,
+                    \[
+                    \begin{split}
+                    \inprod{\widetilde{f}}{h}
+                    & = \dfrac{1}{\inprod{\gamma}{g}} \intRdd \! V_g f (x, \omega) \, \overline{\inprod{h}{M_\omega T_x
+                    \gamma}} \, dx \, d\omega \\
+                    & = \dfrac{1}{\inprod{\gamma}{g}} \inprod{V_g f}{V_\gamma \, h}
+                    \, = \, \inprod{f}{h} \, ,
+                    \end{split}
+                    \]
+                    poiché dalla relazione di ortogonalità si ha $\inprod{V_g f}{V_\gamma h} = \inprod{f}{h}
+                    \inprod{\gamma}{g}$. Quindi $\tilde{f} = f$.
+                </div>
+            </div>
+
+            <div class="slide">
+                <h3>Analisi tempo-frequenza e operatori di localizzazione</h3>
+
+                L'analisi di un segnale si divide in tre fasi
+                <ul>
+                    <li>
+                        <b>Analisi</b>: viene fornita una nuova rappresentazione dl segnale nello spazio tempo-frequenza
+                        per mezzo della trasformata di Gabor.
+                        \[
+                        f(x) \, \longmapsto \, V_g f(x, \omega)
+                        \]
+                    </li>
+                    <li>
+                        <b>Processing</b> (o <b>elaborazione</b>): $V_g f$ è trasformato ulteriormente
+                        \[
+                        \mathfrak{F} \tc V_g f(x, \omega) \, \longmapsto \, \mathfrak{F} V_g f(x, \omega) \, .
+                        \]
+                        Ad esempio, $V_g f(x, \omega)$ può essere moltiplicato per una funzione $a(x, \omega)$ che
+                        assume valore zero in alcune aree
+                        \[
+                        \mathfrak{F} \tc V_g f(x, \omega) \, \longmapsto \, a(x, \omega) \, V_g f(x, \omega) \, .
+                        \]
+                    </li>
+                    <li>
+                        <b>Sintesi</b> (o <b>ricostruzione</b>): il segnale $f$ è ricostruito a partire dalla sua
+                        rappresentazione, eventualmente processata.
+                        \[
+                        \widetilde{f}(x) = \intRdd \! \mathfrak{F} \, V_g f(x, \omega) M_\omega T_x \gamma \, dx \,
+                        d\omega \, .
+                        \]
+                    </li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <div class="definition named">
+                    <span class="definition-label">Operatore di localizzazione</span>
+                    La seguente combinazione di analisi, elaborazione e sintesi è detta <b>operatore di
+                        localizzazione</b> con simbolo $a \in \spLLdd$:
+                    \[
+                    f(t) \: \longmapsto \:
+                    \widetilde{f}(t) \triangleq \underbracket{\intRdd \overbracket{a(x, \omega) \, \underbracket{V_g
+                    f(x, \omega)}_{\text{analisi}}}^{\text{elaborazione}} M_\omega T_x \gamma \, dx \,
+                    d\omega}_{\text{sintesi}}
+                    \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                Consideriamo ora l'operatore di localizzazione della forma
+                \[
+                D_{F, \varphi, \psi} f (t) \triangleq \intRdd \underbracket{F(z)}_{\text{symbol}}
+                \inprod{f}{\varphi_z}_{\spLLd} \, \psi_z (t) \, dz \quad t \in \spR^d
+                \]
+                dove $z = (x, \omega)$ e $\varphi_z(t) = e^{i t \cdot \omega} \varphi(t - x)$.
+            </div>
+
+            <div class="slide">
+                <div class="theorem">
+                    Per $p \in [1, \infty]$, se $F \in \spLdd$, $\psi \in L^p(\spR^d)$, $\varphi \in
+                    L^{p^\prime}(\spR^d)$, allora $D_{F, \psi, \varphi} \tc L^p(\spR^d) \, \longrightarrow \,
+                    L^p(spR^d)$ è limitato e
+                    \[
+                    \normaLp{D_{F, \varphi, \psi}} \lesq \normaLp{\psi} \, \normaof[L^{p\primex}]{\varphi} \, \normaL{F}
+                    \, .
+                    \]
                 </div>
             </div>
 
