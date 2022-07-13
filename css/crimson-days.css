@@ -17,6 +17,7 @@
         2.6 Loaders
         2.7 Input Box
         2.8 Math Environments
+        2.9 Grid Layout & Images
         
 ===================================== */
 
@@ -728,4 +729,42 @@ div.proof::after {
 
 div.proof.ending-formula::after {
     margin-top: -1.1em;
+}
+
+/* -- 2.9 Grid Layout & Images -- */
+
+/* 2 Column Grid Layout */
+
+.grid-2 {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* 3 Column Grid Layout */
+
+.grid-3 {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Grid element */
+
+.centered-element {
+    text-align: center;
+}
+
+/* Labels */
+
+span.img-label.light-blue {
+    color: var(--thm-blue);
+}
+
+span.img-label.orange {
+    color: var(--def-orange);
+}
+
+span.img-label.grey {
+    color: #333333;
 }

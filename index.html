@@ -62,6 +62,7 @@
             \DeclareMathOperator{\Rect}{rect}
             \DeclareMathOperator{\Span}{span}
             \DeclareMathOperator{\Dom}{dom}
+            \DeclareMathOperator{\Real}{Re}
             \newcommand{\vertarrowbox}[3][3pt]{
             \begin{array}[t]{@{}c@{}}
             #2 \\[-.4em]
@@ -95,6 +96,18 @@
 
             <div class="slide">
                 <h2>Introduzione all'analisi armonica e tempo-frequenza</h2>
+
+                Il concetto di <b><i>segnale</i></b> è alla base dell'analisi tempo-frequenza. I segnali
+                <ul>
+                    <li>
+                        possono descrivere un'ampia pletora di quantità misurabili che variano nel tempo o nello spazio;
+                    </li>
+                    <li>
+                        matematicamente, sono modellizzati da funzioni.
+                    </li>
+                </ul>
+                Uno degli obiettivi dell'analisi tempo-frequenza è quello di fornire diversi tipi di rappresentazione
+                per un segnale, in modo da evidenziarne diverse caratteristiche e operare efficacemente su di essi.
             </div>
 
             <!-- Spazi di funzioni integrabili -->
@@ -246,14 +259,60 @@
                     \varphi_a (x) \, \stackrel{\Ftr \,}{\longmapsto} \, a^{\frac{d}{2}} \varphi_{\frac{1}{a}} (x) \, .
                     \]
                 </div>
+
+                <div class="grid-2">
+                    <div class="centered-element">
+                        <img src="imgs/gaussian-ft-1.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue">━</span> $\scriptsize \; \varphi_3, \quad$
+                        <span class="img-label grey">┈</span> $\scriptsize \; \Ftr \varphi_3$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/gaussian-ft-2.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue">━</span> $\scriptsize \; \Ftr \varphi_3, \quad$
+                        <span class="img-label grey">┈</span> $\scriptsize \; \varphi_3$
+                    </div>
+                </div>
             </div>
 
-            <div class="slide">
-                <div class="theorem proposition">
-                    Per $x, \omega \in \spR$,
-                    \[
-                    \Rect(x) \, \stackrel{\Ftr \,}{\longmapsto} \, \Sinc(\pi \omega) \, .
-                    \]
+            <div class="slide" style="margin-top: 20px;">
+                <div class="grid-2">
+                    <div>
+                        <div class="theorem proposition">
+                            Per $x, \omega \in \spR$,
+                            \[
+                            \Rect(x) \, \stackrel{\Ftr \,}{\longmapsto} \, \Sinc(\pi \omega) \, ,
+                            \]
+                            dove
+                            \[
+                            \Rect(x) \triangleq
+                            \begin{cases}
+                            0 & \text{se} \; |x| \gt \frac{1}{2} \\
+                            \frac{1}{2} & \text{se} \; |x| = \frac{1}{2} \\
+                            1 & \text{se} \; |x| \lt \frac{1}{2} \\
+                            \end{cases}
+                            \]
+                            \[
+                            \Sinc(\pi \omega) \triangleq \frac{\sin(\pi \omega)}{\pi \omega} \, .
+                            \]
+                        </div>
+                    </div>
+                    <div class="centered-element" style="display: grid; place-items: center;">
+                        <img src="imgs/rect-ft-1.svg" style="width: 50%;">
+
+                        <div>
+                            <span class="img-label light-blue">━</span> $\scriptsize \; \varphi_3, \quad$
+                            <span class="img-label grey">┈</span> $\scriptsize \; \Ftr \varphi_3$
+                        </div>
+
+                        <img src="imgs/rect-ft-2.svg" style="width: 50%; margin-top: 20px;">
+
+                        <div>
+                            <span class="img-label light-blue">━</span> $\scriptsize \; \Ftr \varphi_3, \quad$
+                            <span class="img-label grey">┈</span> $\scriptsize \; \varphi_3$
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -332,7 +391,35 @@
                 </div>
             </div>
 
-            <div class="slide">
+            <div class="slide" style="margin-top: 10px;">
+                <div class="grid-2">
+                    <div class="centered-element">
+                        <span class="img-label orange">━</span> $\scriptsize \; T_x f, \quad$
+                        <span class="img-label grey">┈</span> $\scriptsize \; f \triangleq e^{-t^2}$<br>
+
+                        <img src="imgs/translation.svg" style="width: 100%;">
+                    </div>
+                    <div class="centered-element">
+                        <span class="img-label orange">━</span> $\scriptsize \; \Real(M_\omega f), \quad$
+                        <span class="img-label grey">┈</span> $\scriptsize \; f$<br>
+
+                        <img src="imgs/modulation.svg" style="width: 100%;">
+                    </div>
+                    <div class="centered-element" style="margin-top: 10px;">
+                        <span class="img-label orange">━</span> $\scriptsize \; \Real(M_\omega T_x f), \quad$
+                        <span class="img-label grey">┈</span> $\scriptsize \; f$<br>
+
+                        <img src="imgs/time-frequency-shift-1.svg" style="width: 100%;">
+                    </div>
+                    <div class="centered-element" style="margin-top: 10px;">
+                        <span class="img-label orange">━</span> $\scriptsize \; M_\omega T_x f$<br>
+
+                        <img src="imgs/time-frequency-shift-2.svg" style="width: 55%;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" style="margin-top: 20px;">
                 Gli shift tempo-frequenza sono isometrie su $L^p$, $\forall p \in [1, \infty]$ ed esiste una relazione
                 di commutazione:
                 \[
@@ -362,6 +449,26 @@
                     \]
                 </div>
 
+                <div class="grid-3" style="margin-top: 10px;">
+                    <div class="centered-element">
+                        <img src="imgs/convolution-1.svg">
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/convolution-2.svg">
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/convolution-3.svg">
+                    </div>
+                </div>
+                <div class="centered-element">
+                    <span class="img-label orange">■</span> $\scriptsize \; (f * g)(\boldsymbol{\cdot}), \quad$
+                    <span class="img-label orange">━</span> $\scriptsize \; f \cdot g(x - \boldsymbol{\cdot}), \quad$
+                    <span class="img-label grey">┈</span> $\scriptsize \; f, \quad$
+                    <span class="img-label grey">━</span> $\scriptsize \; g$<br>
+                </div>
+            </div>
+
+            <div class="slide" style="margin-top: 10px;">
                 <div class="theorem property">
                     Per $f, g \in L^1$,
                     \[
@@ -396,10 +503,6 @@
             </div>
 
             <div class="slide">
-
-            </div>
-
-            <div class="slide">
                 <h3>La trasformata di Fourier inversa</h3>
 
                 <div class="theorem named highlighted">
@@ -412,6 +515,18 @@
                 Il segnale $f$ può essere ricostruito perfettamente — usando la sua trasformata $\hat{f}$ — come
                 "<i>somma continua</i>" di frequenze pure $\eIFtr{\omega\,}{\boldsymbol{\,\cdot}}$. Pertanto, ne
                 deduciamo che la trasformata di Fourier non causa alcuna perdita di informazione.
+            </div>
+
+            <div class="slide">
+                <div class="centered-element">
+                    <img src="imgs/inverse-ft-1.svg" style="width: 100%;">
+
+                    <span class="img-label light-blue">━</span> $\scriptsize \; |\hat{f}|$
+
+                    <img src="imgs/inverse-ft-2.svg" style="width: 100%">
+
+                    <span class="img-label light-blue">━</span> $\scriptsize \; f$
+                </div>
             </div>
 
             <div class="slide">
@@ -934,6 +1049,8 @@
             </div>
 
             <div class="slide">
+                <h4>Limitatezza e compattezza</h4>
+
                 Consideriamo ora l'operatore di localizzazione della forma
                 \[
                 D_{F, \varphi, \psi} f (t) \triangleq \intRdd \underbracket{F(z)}_{\text{symbol}}
@@ -946,12 +1063,78 @@
                 <div class="theorem">
                     Per $p \in [1, \infty]$, se $F \in \spLdd$, $\psi \in L^p(\spR^d)$, $\varphi \in
                     L^{p^\prime}(\spR^d)$, allora $D_{F, \psi, \varphi} \tc L^p(\spR^d) \, \longrightarrow \,
-                    L^p(spR^d)$ è limitato e
+                    L^p(\spR^d)$ è limitato e
                     \[
-                    \normaLp{D_{F, \varphi, \psi}} \lesq \normaLp{\psi} \, \normaof[L^{p\primex}]{\varphi} \, \normaL{F}
+                    \norma{D_{F, \varphi, \psi}}_{L^p} \leqslant \norma{\psi}_{L^p} \, \norma{\varphi}_{L^{p^\prime}} \,
+                    \normaL{F}
                     \, .
                     \]
                 </div>
+
+                <div class="theorem">
+                    Per $p \in [1, \infty]$, se $F \in L^p(\spR^d)$ e $\varphi, \psi \in \spLLd$, allora $D_{F, \psi,
+                    \varphi} \tc \spLLd \, \longrightarrow \, \spLLd$ è un operatore lineare e limitato e
+                    \[
+                    \normaLL{D_{F, \varphi, \psi}} \leqslant \norma{F}_{L^p} \, \normaLL{\psi} \, \normaLL{\varphi} \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                In ultima istanza, la compattezza e la Limitatezza di $D_{F, \varphi, \psi} \tc L^q(\spR^d) \,
+                \longrightarrow
+                \, L^q(\spR^d)$ possono essere dimostrate per $F \in L^p(\spR^{2d})$, $p \in [1, \infty]$, $\varphi,
+                \psi
+                \in \spLd \cap L^\infty(\spR^d)$
+                e
+                \[
+                q \in \big[ \tfrac{2p}{p + 1}, \tfrac{2p}{p - 1} \big] \, .
+                \]
+                Inoltre, possono essere fornite delle stime di $\norma{D_{F, \varphi, \psi}}_{L^q}$.
+            </div>
+
+            <div class="slide">
+                <h4><i>Denoising</i> di un segnale audio</h4>
+
+                Consideriamo un segnale reale $f \tc \spR \, \longrightarrow \, \spR$ degradato da <i>rumore bianco</i>
+                con volume inferiore a quello del segnale pulito. La rimozione del rumore (<b><i>denoising</i></b>) può
+                essere condotta moltiplicando $V_g f(x, \omega)$ per una funzione $a(x, \omega)$ nulla per $(x, \omega)$
+                tali che $|V_g f(x, \omega)|^2 \lt A$, dove $A$ è una certa soglia.
+                \[
+                \hspace{-1.5em} V_g f(x, \omega) \, \longrightarrow \, a(x, \omega) V_g f(x, \omega)
+                \quad \text{dove} \quad
+                a(x, \omega) = \begin{cases}
+                0 & \text{se} \; |V_g f(x, \omega)|^2 \lt A \\
+                1 & \text{altrimenti}.
+                \end{cases}
+                \]
+                Tale operazione comporta una perdita di informazione, che occorre limitare il più possibile al solo
+                rumore. Sussiste un compromesso tra rumore rimosso e qualità del segnale sintetizzato.
+            </div>
+
+            <div class="slide">
+                <h4>Taglio tempo-frequenza</h4>
+
+                È inoltre possibile rimuovere — con maggior efficacia rispetto a quanto reso possibile dall'elaborazione
+                della trasformata di Fourier — una frequenza indesiderate moltiplicando $V_g f (x, \omega)$ per una
+                funzione nulla nell'area $R \in \spR^{2d}$ (ad esempio $R = [x_1, x_2] \times [\omega_1, \omega_2]$) in
+                cui tale frequenza è localizzata.
+                \[
+                \hspace{-1.5em} V_g f(x, \omega) \, \longrightarrow \, a(x, \omega) V_g f(x, \omega)
+                \quad \text{dove} \quad
+                a(x, \omega) = \begin{cases}
+                0 & \text{se} \; (x, \omega) \in R \\
+                1 & \text{altrimenti}.
+                \end{cases}
+                \]
+            </div>
+
+            <div class="slide">
+                <h3>Analogia con lo spartito musicale</h3>
+            </div>
+
+            <div class="slide">
+                <h3>Principio di indeterminazione per la trasformata di Gabor</h3>
             </div>
 
             <div style="margin-top: 1000px;"></div>
