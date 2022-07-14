@@ -10,14 +10,13 @@
         - Scrollbar
     2. Components
         2.1 Body
-        2.2 Formulas
+        2.2 Grid Layout & Images
         2.3 Canvas
         2.4 Presentation
         2.5 Tooltip
         2.6 Loaders
         2.7 Input Box
         2.8 Math Environments
-        2.9 Grid Layout & Images
         
 ===================================== */
 
@@ -236,32 +235,48 @@ a {
     color: var(--accent);
 }
 
-/* -- 2.2 Formulas -- */
+/* -- 2.2 Grid Layout & Images -- */
 
-div.formula-container {
+.grid-2 {
     display: grid;
-    place-items: center;
-    margin: 5px;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
 }
 
-div.formula-container.compact {
-    margin: -15px;
+/* 3 Column Grid Layout */
+
+.grid-3 {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-div.formula {
-    width: fit-content;
-    border-radius: 10px;
-    padding: 5px 30px;
+/* Grid element */
+
+.centered-element {
+    text-align: center;
 }
 
-div.formula.grey {
-    background-color: #00000010;
+/* Labels */
+
+span.img-label.light-blue {
+    color: var(--thm-blue);
+}
+
+span.img-label.orange {
+    color: var(--def-orange);
+}
+
+span.img-label.grey {
+    color: #333333;
 }
 
 /* -- 2.3 Canvas -- */
 
 div.plot-container {
     position: relative;
+    display: grid;
+    place-items: center;
 }
 
 canvas {
@@ -272,30 +287,31 @@ canvas {
     transition: all .2s ease-in-out;
 }
 
-canvas.ring-plot {
+canvas.plot {
     width: 100%;
     height: 50%;
+    z-index: 9;
+    border-radius: 10px;
+    cursor: crosshair;
 }
 
-canvas.tissue-plot {
-    width: 300px;
-    height: 300px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-div.canvas-container {
-    display: grid;
-    place-items: center;
+canvas.plot.stacked {
+    position: absolute;
 }
 
 /* Activate for focus outline */
 
-canvas.ring-plot:focus {
-    padding: 4px;
-    margin-right: 4px;
+canvas.plot:focus {
     outline: none;
-    border-radius: 5px;
+}
+
+canvas.plot.main:focus {
+    transform: translate(0px, -2px);
+    box-shadow: 0 0 20px #00000030;
+}
+
+canvas.focused {
+    /* transform: translate(0px, -2px); */
     box-shadow: 0 0 20px #00000030;
 }
 
@@ -483,8 +499,7 @@ div.progress-bar {
 
 .loader.plot {
     position: absolute;
-    top: 4px;
-    left: 4px;
+    z-index: 8;
     font-size: 2px;
     border-left: 1.75em solid #00000090;
 }
@@ -729,42 +744,4 @@ div.proof::after {
 
 div.proof.ending-formula::after {
     margin-top: -1.1em;
-}
-
-/* -- 2.9 Grid Layout & Images -- */
-
-/* 2 Column Grid Layout */
-
-.grid-2 {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr;
-}
-
-/* 3 Column Grid Layout */
-
-.grid-3 {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-/* Grid element */
-
-.centered-element {
-    text-align: center;
-}
-
-/* Labels */
-
-span.img-label.light-blue {
-    color: var(--thm-blue);
-}
-
-span.img-label.orange {
-    color: var(--def-orange);
-}
-
-span.img-label.grey {
-    color: #333333;
 }

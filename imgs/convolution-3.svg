@@ -8,8 +8,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="44.291538mm"
-   height="23.322256mm"
-   viewBox="0 0 44.291538 23.322256"
+   height="16.308897mm"
+   viewBox="0 0 44.291538 16.308897"
    version="1.1"
    id="svg2220"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6"
-     inkscape:cx="81.952669"
-     inkscape:cy="48.237286"
+     inkscape:cx="81.952675"
+     inkscape:cy="40.700122"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -53,7 +53,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-352.05066,-270.30911)">
+     transform="translate(-352.05066,-272.30331)">
     <g
        id="g2975"
        transform="matrix(0.21166666,0,0,0.21166666,252.91144,260.66064)">
@@ -65,7 +65,7 @@
     <g
        id="g2979"
        transform="matrix(0.21166666,0,0,0.21166666,252.91144,260.66064)"
-       style="stroke-width:1.41732288;stroke-miterlimit:4;stroke-dasharray:none">
+       style="stroke-width:1.41732;stroke-miterlimit:4;stroke-dasharray:none">
       <path
          d="M 478.9888,122.375 H 479.18839 H 572.62323 L 573.37677,121.19765 L 591.46094,64.684616 L 592.21442,64.92009 L 610.29858,121.43311 L 611.05212,122.375 H 666.81165 H 667.01117"
          style="fill:none;stroke:#555555;stroke-width:1.41732;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -75,7 +75,7 @@
     <g
        id="g2983"
        transform="matrix(0.21166666,0,0,0.21166666,252.91144,260.66064)"
-       style="stroke-width:1.65354336;stroke-miterlimit:4;stroke-dasharray:none">
+       style="stroke-width:1.65354;stroke-miterlimit:4;stroke-dasharray:none">
       <path
          id="path2985"
          style="fill:none;stroke:#fd8b28;stroke-width:1.65354;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -84,7 +84,7 @@
     <g
        id="g2987"
        transform="matrix(0.21166666,0,0,0.21166666,252.91144,260.66064)"
-       style="stroke-width:1.65354336;stroke-miterlimit:4;stroke-dasharray:none">
+       style="stroke-width:1.65354;stroke-miterlimit:4;stroke-dasharray:none">
       <path
          id="path2989"
          style="fill:#fd8b28;fill-opacity:0.2;fill-rule:nonzero;stroke:none;stroke-width:1.65354;stroke-miterlimit:4;stroke-dasharray:none"

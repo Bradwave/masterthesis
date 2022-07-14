@@ -1,6 +1,16 @@
 // patch all methods
 seamless.polyfill();
 
+window.onload = () => {
+    // Removes the spinning loader
+    document.getElementById("loading-container").style.opacity = 0;
+    document.getElementById("loading-container").remove();
+    // Makes page content visible 
+    document.getElementById("page-container").style = "visibility: visible; opacity: 1;";
+
+    plotsManager.init();
+}
+
 /**
  * Presentation mode controller.
  */
@@ -70,7 +80,7 @@ let presentationController = new function () {
         // Executes if the hash exists, meaning the presentation was ongoing
         if (hash) {
             // Sets the current slide to the hash value
-            currentSlideIndex = parseInt(hash.substr(1));
+            currentSlideIndex = parseInt(hash.substring(1));
             presentationMode = true;
         }
     });
@@ -155,11 +165,11 @@ let presentationController = new function () {
         presentationMode = isActive;
 
         // Sets the opacity of the title div element
-        title.style.opacity = presentationMode ? "0.2" : "1";
+        title.style.opacity = presentationMode ? "0.1" : "1";
 
         // Sets the opacity of the hidden slides div elements
         hiddenSlides.forEach(slide => {
-            slide.style.opacity = presentationMode ? "0.2" : "1";
+            slide.style.opacity = presentationMode ? "0.1" : "1";
         })
 
         // Shows or hides the controls for the presentation

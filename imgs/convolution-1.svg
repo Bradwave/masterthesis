@@ -8,8 +8,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="44.291538mm"
-   height="23.322256mm"
-   viewBox="0 0 44.291538 23.322256"
+   height="16.308897mm"
+   viewBox="0 0 44.291538 16.308897"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6"
-     inkscape:cx="70.669178"
-     inkscape:cy="59.619183"
+     inkscape:cx="57.698198"
+     inkscape:cy="47.016041"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -53,7 +53,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-202.37209,-128.19006)">
+     transform="translate(-202.3721,-130.18428)">
     <g
        id="g1025"
        transform="matrix(0.21166666,0,0,0.21166666,194.88452,118.54159)">
@@ -65,17 +65,17 @@
     <g
        id="g1029"
        transform="matrix(0.21166666,0,0,0.21166666,194.88452,118.54159)"
-       style="stroke-width:1.41732288;stroke-miterlimit:1;stroke-dasharray:none">
+       style="stroke-width:1.41732;stroke-miterlimit:1;stroke-dasharray:none">
       <path
          d="M 45.988785,122.375 H 46.188381 C 64.774887,122.375 83.361394,122.375 101.9479,122.375 L 102.7014,121.43311 C 108.72941,102.59542 114.75757,83.757783 120.78557,64.92009 L 121.53908,64.684616 C 127.56713,83.522297 133.5952,102.35997 139.62325,121.19765 L 140.37675,122.375 C 171.58823,122.375 202.79972,122.375 234.0112,122.375"
-         style="fill:none;stroke:#555555;stroke-width:1.41732288;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;stroke:#555555;stroke-width:1.41732;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
          id="path1031"
          sodipodi:nodetypes="ccccccccc" />
     </g>
     <g
        id="g1033"
        transform="matrix(0.21166666,0,0,0.21166666,194.88452,118.54159)"
-       style="stroke-width:1.65354336;stroke-miterlimit:1;stroke-dasharray:none">
+       style="stroke-width:1.65354;stroke-miterlimit:1;stroke-dasharray:none">
       <path
          id="path1035"
          style="fill:none;stroke:#fd8b28;stroke-width:1.65354;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"

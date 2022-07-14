@@ -247,6 +247,48 @@
                 </p>
             </div>
 
+            <div class="slide">
+                <div class="grid-2">
+                    <div class="centered-element">
+                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \;\, c(t), \quad \bullet \;
+                        c_{\textrm{cdm}}$<br>
+
+                        <div class="plot-container" id="ft-winding" style="margin-top: 5px;">
+                            <canvas name="plot" class="plot main" id="canvas-ft-winding" tabindex="3"
+                                style="width: 200px; height: 200px;"></canvas>
+                            <div name="plot-loader" id="loader-3" class="plot loader"></div>
+                        </div>
+                        <div class="plot-controls" style="margin-top: 10px;">
+                            <div>
+                                <span class="material-symbols-sharp button" id="play-pause-winding">
+                                    play_arrow
+                                </span>
+                                <span class="material-symbols-sharp button" id="skip-prev-winding">
+                                    skip_previous
+                                </span>
+                                <span class="material-symbols-sharp button" id="skip-winding">
+                                    skip_next
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/visualization-ft.svg" style="width: 100%; margin-top: 20px;">
+
+                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; f$
+
+                        <div class="plot-container" id="ft-transform" style="margin-top: 20px;">
+                            <canvas name="plot" class="plot main" id="canvas-ft-transform" tabindex="2"
+                                style="height: 100px;"></canvas>
+                            <div name="plot-loader" id="loader-2" class="plot loader"></div>
+                        </div>
+
+                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; |\hat{f}|, \quad \bullet \;\,
+                        |c_{\textrm{cdm}}|$
+                    </div>
+                </div>
+            </div>
+
             <!-- Esempi -->
 
             <div class="slide">
@@ -264,13 +306,13 @@
                     <div class="centered-element">
                         <img src="imgs/gaussian-ft-1.svg" style="width: 100%;">
 
-                        <span class="img-label light-blue">━</span> $\scriptsize \; \varphi_3, \quad$
+                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; \varphi_3, \quad$
                         <span class="img-label grey">┈</span> $\scriptsize \; \Ftr \varphi_3$
                     </div>
                     <div class="centered-element">
                         <img src="imgs/gaussian-ft-2.svg" style="width: 100%;">
 
-                        <span class="img-label light-blue">━</span> $\scriptsize \; \Ftr \varphi_3, \quad$
+                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; \Ftr \varphi_3, \quad$
                         <span class="img-label grey">┈</span> $\scriptsize \; \varphi_3$
                     </div>
                 </div>
@@ -302,14 +344,14 @@
                         <img src="imgs/rect-ft-1.svg" style="width: 50%;">
 
                         <div>
-                            <span class="img-label light-blue">━</span> $\scriptsize \; \varphi_3, \quad$
+                            <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; \varphi_3, \quad$
                             <span class="img-label grey">┈</span> $\scriptsize \; \Ftr \varphi_3$
                         </div>
 
                         <img src="imgs/rect-ft-2.svg" style="width: 50%; margin-top: 20px;">
 
                         <div>
-                            <span class="img-label light-blue">━</span> $\scriptsize \; \Ftr \varphi_3, \quad$
+                            <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; \Ftr \varphi_3, \quad$
                             <span class="img-label grey">┈</span> $\scriptsize \; \varphi_3$
                         </div>
                     </div>
@@ -394,25 +436,25 @@
             <div class="slide" style="margin-top: 10px;">
                 <div class="grid-2">
                     <div class="centered-element">
-                        <span class="img-label orange">━</span> $\scriptsize \; T_x f, \quad$
+                        <span class="img-label orange"><b>━</b></span> $\scriptsize \; T_x f, \quad$
                         <span class="img-label grey">┈</span> $\scriptsize \; f \triangleq e^{-t^2}$<br>
 
                         <img src="imgs/translation.svg" style="width: 100%;">
                     </div>
                     <div class="centered-element">
-                        <span class="img-label orange">━</span> $\scriptsize \; \Real(M_\omega f), \quad$
+                        <span class="img-label orange"><b>━</b></span> $\scriptsize \; \Real(M_\omega f), \quad$
                         <span class="img-label grey">┈</span> $\scriptsize \; f$<br>
 
                         <img src="imgs/modulation.svg" style="width: 100%;">
                     </div>
                     <div class="centered-element" style="margin-top: 10px;">
-                        <span class="img-label orange">━</span> $\scriptsize \; \Real(M_\omega T_x f), \quad$
+                        <span class="img-label orange"><b>━</b></span> $\scriptsize \; \Real(M_\omega T_x f), \quad$
                         <span class="img-label grey">┈</span> $\scriptsize \; f$<br>
 
                         <img src="imgs/time-frequency-shift-1.svg" style="width: 100%;">
                     </div>
                     <div class="centered-element" style="margin-top: 10px;">
-                        <span class="img-label orange">━</span> $\scriptsize \; M_\omega T_x f$<br>
+                        <span class="img-label orange"><b>━</b></span> $\scriptsize \; M_\omega T_x f$<br>
 
                         <img src="imgs/time-frequency-shift-2.svg" style="width: 55%;">
                     </div>
@@ -449,22 +491,29 @@
                     \]
                 </div>
 
-                <div class="grid-3" style="margin-top: 10px;">
+                <div class="grid-3" style="margin-top: 15px;">
                     <div class="centered-element">
-                        <img src="imgs/convolution-1.svg">
+                        <img src="imgs/convolution-1.svg" style="width: 100%;">
+
+                        $\scriptsize (f * g)(-1)$
                     </div>
                     <div class="centered-element">
-                        <img src="imgs/convolution-2.svg">
+                        <img src="imgs/convolution-2.svg" style="width: 100%;">
+
+                        $\scriptsize (f * g)(0)$
                     </div>
                     <div class="centered-element">
-                        <img src="imgs/convolution-3.svg">
+                        <img src="imgs/convolution-3.svg" style="width: 100%;">
+
+                        $\scriptsize (f * g)(+1)$
                     </div>
                 </div>
-                <div class="centered-element">
+                <div class="centered-element" style="margin-top: 10px;">
                     <span class="img-label orange">■</span> $\scriptsize \; (f * g)(\boldsymbol{\cdot}), \quad$
-                    <span class="img-label orange">━</span> $\scriptsize \; f \cdot g(x - \boldsymbol{\cdot}), \quad$
+                    <span class="img-label orange"><b>━</b></span> $\scriptsize \; f \cdot g(x - \boldsymbol{\cdot}),
+                    \quad$
                     <span class="img-label grey">┈</span> $\scriptsize \; f, \quad$
-                    <span class="img-label grey">━</span> $\scriptsize \; g$<br>
+                    <span class="img-label grey"><b>━</b></span> $\scriptsize \; g$<br>
                 </div>
             </div>
 
@@ -511,21 +560,21 @@
                     d\omega \quad \forall x \in \spR^d \, .
                     \]
                 </div>
-
-                Il segnale $f$ può essere ricostruito perfettamente — usando la sua trasformata $\hat{f}$ — come
-                "<i>somma continua</i>" di frequenze pure $\eIFtr{\omega\,}{\boldsymbol{\,\cdot}}$. Pertanto, ne
-                deduciamo che la trasformata di Fourier non causa alcuna perdita di informazione.
             </div>
 
             <div class="slide">
-                <div class="centered-element">
-                    <img src="imgs/inverse-ft-1.svg" style="width: 100%;">
+                Il segnale $f$ può essere ricostruito perfettamente — usando la sua trasformata $\hat{f}$ — come
+                "<i>somma continua</i>" di frequenze pure $\eIFtr{\omega\,}{\boldsymbol{\,\cdot}}$. Pertanto, ne
+                deduciamo che la trasformata di Fourier non causa alcuna perdita di informazione.
 
-                    <span class="img-label light-blue">━</span> $\scriptsize \; |\hat{f}|$
+                <div class="centered-element" style="margin-top: 15px;">
+                    <img src="imgs/inverse-ft-1.svg" style="width: 100%; margin-top: 15px;">
 
-                    <img src="imgs/inverse-ft-2.svg" style="width: 100%">
+                    <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; |\hat{f}|$
 
-                    <span class="img-label light-blue">━</span> $\scriptsize \; f$
+                    <img src="imgs/inverse-ft-2.svg" style="width: 100%; margin-top: 20px;">
+
+                    <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; f$
                 </div>
             </div>
 
@@ -601,8 +650,9 @@
                 <div class="theorem proposition">
                     Per $f, \in L^2(\mathbb{T}^d)$, dove $\mathbb{T}^d = \spR^d /spZ^d$,
                     \[
-                    \underbracket{\hat{f}(n) \triangleq \int_{[0, 1]^d} f(x) \, \eFtr{n}{x} \, dx}_{n\textit{-esimo
-                    coefficiente di Fourier}} \quad \land \quad f = \underbracket{\sum_{n \, \in \, \spZ^d} \hat{f} (n)
+                    \underbracket{\hat{f}(n) \triangleq \int_{[0, 1]^d} f(x) \, \eFtr{n}{x} \, dx}_{
+                    n\textit{-esimo coefficiente di Fourier}} \quad \land \quad f = \underbracket{\sum_{n \, \in \,
+                    \spZ^d} \hat{f} (n)
                     \, \eIFtr{n}{x}}_{\textit{serie di Fourier}}
                     \]
                     Inoltre,
@@ -1180,8 +1230,10 @@
 
     <script src="js/src/presentation-controller.js"></script>
     <script src="js/src/utils.js"></script>
+    <script src="js/src/math-utils.js"></script>
+    <script src="js/src/plot-structure.js"></script>
+    <script src="js/src/fourier-visualizations.js"></script>
     <script src="js/src/plots-manager.js"></script>
-
 </body>
 
 </html>

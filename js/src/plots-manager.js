@@ -14,20 +14,35 @@ let plotsManager = new function () {
     /**
      * Plots.
      */
-    plots = [];
+    plots = new Map();
 
     /**
      * Spinning loaders
      */
     let loaders = [...document.getElementsByClassName("plot loader")];
 
-    window.onresize = () => {
+    let canvases = [...document.getElementsByName("plot")];
+
+    function init() {
+        plots.set('ft-winding', new ftvPlots(["ft-transform", "ft-winding"]));
+
         plots.forEach((plot) => {
-            // Resize the canvas
-            plot.resizeCanvas();
+            plot.drawPlot();
+        });
+    }
+
+    window.onresize = () => {
+        plots.forEach(plot => {
+            // Clear the canvas
+            plot.clearPlot();
         });
 
-        loaders.forEach((loader) => {
+        canvases.forEach(canvas => {
+            canvas.style.opacity = 0;
+            canvas.style.visibility = "collapse";
+        })
+
+        loaders.forEach(loader => {
             // Displays the loader while waiting
             loader.style.visibility = "visible";
             loader.style.animationPlayState = "running";
@@ -35,15 +50,22 @@ let plotsManager = new function () {
 
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            plots.forEach((plot) => {
-                // Draws the ring after waiting (for better performances)
-                plot.drawCells();
+            loaders.forEach(loader => {
+                // Displays the loader while waiting
+                loader.style.visibility = "collapse";
+                loader.style.animationPlayState = "paused";
             });
 
-            loaders.forEach((loader) => {
-                // Displays the loader while waiting
-                loader.style.visibility = "hidden";
-                loader.style.animationPlayState = "paused";
+            canvases.forEach(canvas => {
+                canvas.style.visibility = "visible";
+                canvas.style.opacity = 1;
+            })
+
+            plots.forEach(plot => {
+                // Resize the after waiting (for better performances)
+                plot.resizeCanvas();
+                // Draws the plot
+                plot.drawPlot();
             });
         }, waitTime);
     }
@@ -63,4 +85,5 @@ let plotsManager = new function () {
         return newValue;
     }
 
+    init();
 }
