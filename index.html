@@ -63,6 +63,7 @@
             \DeclareMathOperator{\Span}{span}
             \DeclareMathOperator{\Dom}{dom}
             \DeclareMathOperator{\Real}{Re}
+            \DeclareMathOperator{\Spectrogram}{Sp}
             \newcommand{\vertarrowbox}[3][3pt]{
             \begin{array}[t]{@{}c@{}}
             #2 \\[-.4em]
@@ -250,7 +251,7 @@
             <div class="slide">
                 <div class="grid-2">
                     <div class="centered-element">
-                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \;\, c(t), \quad \bullet \;
+                        <span class="img-label light-blue dash"></span> $\scriptsize\, c(t), \quad \bullet \;
                         c_{\textrm{cdm}}$<br>
 
                         <div class="plot-container" id="ft-winding" style="margin-top: 5px;">
@@ -273,9 +274,9 @@
                         </div>
                     </div>
                     <div class="centered-element">
-                        <img src="imgs/visualization-ft.svg" style="width: 100%; margin-top: 20px;">
+                        <img src="imgs/svg/visualization-ft.svg" style="width: 100%; margin-top: 20px;">
 
-                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; f$
+                        <span class="img-label light-blue dash"></span> $\scriptsize f$
 
                         <div class="plot-container" id="ft-transform" style="margin-top: 20px;">
                             <canvas name="plot" class="plot main" id="canvas-ft-transform" tabindex="2"
@@ -283,7 +284,7 @@
                             <div name="plot-loader" id="loader-2" class="plot loader"></div>
                         </div>
 
-                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; |\hat{f}|, \quad \bullet \;\,
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|, \quad \bullet \;\,
                         |c_{\textrm{cdm}}|$
                     </div>
                 </div>
@@ -302,23 +303,23 @@
                     \]
                 </div>
 
-                <div class="grid-2">
-                    <div class="centered-element">
-                        <img src="imgs/gaussian-ft-1.svg" style="width: 100%;">
+                <div class="grid-2" style="margin-bottom: 20px;">
+                    <div class=" centered-element">
+                        <img src="imgs/svg/gaussian-ft-1.svg" style="width: 100%;">
 
-                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; \varphi_3, \quad$
-                        <span class="img-label grey">┈</span> $\scriptsize \; \Ftr \varphi_3$
+                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3, \quad$
+                        <span class="img-label grey dots"></span> $\scriptsize \Ftr \varphi_3$
                     </div>
                     <div class="centered-element">
-                        <img src="imgs/gaussian-ft-2.svg" style="width: 100%;">
+                        <img src="imgs/svg/gaussian-ft-2.svg" style="width: 100%;">
 
-                        <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; \Ftr \varphi_3, \quad$
-                        <span class="img-label grey">┈</span> $\scriptsize \; \varphi_3$
+                        <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3, \quad$
+                        <span class="img-label grey dots"></span> $\scriptsize \varphi_3$
                     </div>
                 </div>
             </div>
 
-            <div class="slide" style="margin-top: 20px;">
+            <div class="slide">
                 <div class="grid-2">
                     <div>
                         <div class="theorem proposition">
@@ -341,18 +342,18 @@
                         </div>
                     </div>
                     <div class="centered-element" style="display: grid; place-items: center;">
-                        <img src="imgs/rect-ft-1.svg" style="width: 50%;">
+                        <img src="imgs/svg/rect-ft-1.svg" style="width: 50%;">
 
                         <div>
-                            <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; \varphi_3, \quad$
-                            <span class="img-label grey">┈</span> $\scriptsize \; \Ftr \varphi_3$
+                            <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3, \quad$
+                            <span class="img-label grey dots"></span> $\scriptsize \Ftr \varphi_3$
                         </div>
 
-                        <img src="imgs/rect-ft-2.svg" style="width: 50%; margin-top: 20px;">
+                        <img src="imgs/svg/rect-ft-2.svg" style="width: 50%; margin-top: 20px;">
 
                         <div>
-                            <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; \Ftr \varphi_3, \quad$
-                            <span class="img-label grey">┈</span> $\scriptsize \; \varphi_3$
+                            <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3, \quad$
+                            <span class="img-label grey dots"></span> $\scriptsize \varphi_3$
                         </div>
                     </div>
                 </div>
@@ -433,35 +434,35 @@
                 </div>
             </div>
 
-            <div class="slide" style="margin-top: 10px;">
+            <div class="slide" style="margin-top: 10px; margin-bottom: 20px;">
                 <div class="grid-2">
                     <div class="centered-element">
-                        <span class="img-label orange"><b>━</b></span> $\scriptsize \; T_x f, \quad$
-                        <span class="img-label grey">┈</span> $\scriptsize \; f \triangleq e^{-t^2}$<br>
+                        <span class="img-label orange dash"></span> $\scriptsize T_x f, \quad$
+                        <span class="img-label grey dots"></span> $\scriptsize f \triangleq e^{-t^2}$<br>
 
-                        <img src="imgs/translation.svg" style="width: 100%;">
+                        <img src="imgs/svg/translation.svg" style="width: 100%;">
                     </div>
                     <div class="centered-element">
-                        <span class="img-label orange"><b>━</b></span> $\scriptsize \; \Real(M_\omega f), \quad$
-                        <span class="img-label grey">┈</span> $\scriptsize \; f$<br>
+                        <span class="img-label orange dash"></span> $\scriptsize \Real(M_\omega f), \quad$
+                        <span class="img-label grey dots"></span> $\scriptsize f$<br>
 
-                        <img src="imgs/modulation.svg" style="width: 100%;">
+                        <img src="imgs/svg/modulation.svg" style="width: 100%;">
                     </div>
                     <div class="centered-element" style="margin-top: 10px;">
-                        <span class="img-label orange"><b>━</b></span> $\scriptsize \; \Real(M_\omega T_x f), \quad$
-                        <span class="img-label grey">┈</span> $\scriptsize \; f$<br>
+                        <span class="img-label orange dash"></span> $\scriptsize \Real(M_\omega T_x f), \quad$
+                        <span class="img-label grey dots"></span> $\scriptsize f$<br>
 
-                        <img src="imgs/time-frequency-shift-1.svg" style="width: 100%;">
+                        <img src="imgs/svg/time-frequency-shift-1.svg" style="width: 100%;">
                     </div>
                     <div class="centered-element" style="margin-top: 10px;">
-                        <span class="img-label orange"><b>━</b></span> $\scriptsize \; M_\omega T_x f$<br>
+                        <span class="img-label orange dash"></span> $\scriptsize M_\omega T_x f$<br>
 
-                        <img src="imgs/time-frequency-shift-2.svg" style="width: 55%;">
+                        <img src="imgs/svg/time-frequency-shift-2.svg" style="width: 55%;">
                     </div>
                 </div>
             </div>
 
-            <div class="slide" style="margin-top: 20px;">
+            <div class="slide">
                 Gli shift tempo-frequenza sono isometrie su $L^p$, $\forall p \in [1, \infty]$ ed esiste una relazione
                 di commutazione:
                 \[
@@ -493,31 +494,31 @@
 
                 <div class="grid-3" style="margin-top: 15px;">
                     <div class="centered-element">
-                        <img src="imgs/convolution-1.svg" style="width: 100%;">
+                        <img src="imgs/svg/convolution-1.svg" style="width: 100%;">
 
                         $\scriptsize (f * g)(-1)$
                     </div>
                     <div class="centered-element">
-                        <img src="imgs/convolution-2.svg" style="width: 100%;">
+                        <img src="imgs/svg/convolution-2.svg" style="width: 100%;">
 
                         $\scriptsize (f * g)(0)$
                     </div>
                     <div class="centered-element">
-                        <img src="imgs/convolution-3.svg" style="width: 100%;">
+                        <img src="imgs/svg/convolution-3.svg" style="width: 100%;">
 
                         $\scriptsize (f * g)(+1)$
                     </div>
                 </div>
-                <div class="centered-element" style="margin-top: 10px;">
-                    <span class="img-label orange">■</span> $\scriptsize \; (f * g)(\boldsymbol{\cdot}), \quad$
-                    <span class="img-label orange"><b>━</b></span> $\scriptsize \; f \cdot g(x - \boldsymbol{\cdot}),
+                <div class="centered-element" style="margin-top: 10px; margin-bottom: 10px;">
+                    <span class="img-label orange square"></span> $\scriptsize (f * g)(\boldsymbol{\cdot}), \quad$
+                    <span class="img-label orange dash"></span> $\scriptsize f \cdot g(x - \boldsymbol{\cdot}),
                     \quad$
-                    <span class="img-label grey">┈</span> $\scriptsize \; f, \quad$
-                    <span class="img-label grey"><b>━</b></span> $\scriptsize \; g$<br>
+                    <span class="img-label grey dots"></span> $\scriptsize f, \quad$
+                    <span class="img-label grey dash"></span> $\scriptsize g$<br>
                 </div>
             </div>
 
-            <div class="slide" style="margin-top: 10px;">
+            <div class="slide">
                 <div class="theorem property">
                     Per $f, g \in L^1$,
                     \[
@@ -551,6 +552,8 @@
                 </div>
             </div>
 
+            <!-- La trasformata di Fourier inversa -->
+
             <div class="slide">
                 <h3>La trasformata di Fourier inversa</h3>
 
@@ -568,13 +571,13 @@
                 deduciamo che la trasformata di Fourier non causa alcuna perdita di informazione.
 
                 <div class="centered-element" style="margin-top: 15px;">
-                    <img src="imgs/inverse-ft-1.svg" style="width: 100%; margin-top: 15px;">
+                    <img src="imgs/svg/inverse-ft-1.svg" style="width: 100%; margin-top: 15px;">
 
-                    <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; |\hat{f}|$
+                    <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|$
 
-                    <img src="imgs/inverse-ft-2.svg" style="width: 100%; margin-top: 20px;">
+                    <img src="imgs/svg/inverse-ft-2.svg" style="width: 100%; margin-top: 20px;">
 
-                    <span class="img-label light-blue"><b>━</b></span> $\scriptsize \; f$
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$
                 </div>
             </div>
 
@@ -642,6 +645,8 @@
                 </div>
             </div>
 
+            <!-- La serie di Fourier -->
+
             <div class="slide">
                 <h3>La serie di Fourier</h3>
 
@@ -667,16 +672,122 @@
                 <h4>Visualizzazione grafica della serie di Fourier</h4>
             </div>
 
+            <!-- Applicazioni -->
+
             <div class="slide">
                 <h3>Applicazioni</h3>
+                Le applicazioni della trasformata e dalla serie di Fourier sono innumerevoli e spaziano dalla matematica
+                alle scienze — sia teoriche sia sperimentali — e all'informatica. Tra queste, si annoverano le
+                applicazione ne
+                <ul>
+                    <li>
+                        la <b>meccanica quantistica</b>;
+                    </li>
+                    <li>
+                        le procedure di <b>spettroscopia</b>;
+                    </li>
+                    <li>
+                        l'<b>analisi</b> dei segnali <b>audio</b> e la loro compressione;
+                    </li>
+                    <li>
+                        la <b>compressione di immagini</b>.
+                    </li>
+                </ul>
             </div>
 
-            <div class="slide hidden">
+            <!-- Limitazioni della Trasformata di Fourier -->
+
+            <div class="slide">
                 <h3>Limitazioni della Trasformata di Fourier</h3>
+
+                <p>
+                    La principale limitazione della trasformata di Fourier risiede nell'inabilità di restituire —
+                    facilmente fruibili — in merito alla distribuzione temporale (o spaziale) delle frequenze.
+                </p>
+                <p>
+                    Ciò non costituisce un particolare problema quando l'obiettivo dell'analisi è — per esempio —
+                    identificare solamente la tonalità di un segnale musicale, oppure quando il segnale analizzato è
+                    estremamente semplice. È tuttavia significativo per l'analisi di segnali più complessi.
+                </p>
             </div>
+
+            <div class="slide">
+                Ad esempio, la trasformata di un segnale di frequenza crescente nel tempo non è in grado di evidenziare
+                efficacemente tale proprietà.
+
+                <div class="grid-2" style="margin-top: 15px; margin-bottom: 15px;">
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-increasing-1.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize f(t) = \big( T_{2.5} \,
+                        \varphi_{0.5}(t)
+                        \big)^{\frac{1}{5}} \! \cdot \cos(2 \pi t^2)$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-increasing-2.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|$
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                Inoltre, la trasformata di due segnali composti dalle medesime frequenze ma distribuite diversamente nel
+                tempo può risultare ingannevolmente simile.
+
+                <div class="grid-2" style="margin-top: 15px; margin-bottom: 15px;">
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-c1.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize T_{2.5} \, \varphi_{0.6}(t) \cdot
+                        c_1(t)$<br>
+                        $\scriptsize \text{dove} \;\, c_A(t) = \cos(2 \pi \omega_A \cdot t), \;\; \omega_A = 2$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-c2.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize T_{2.5} \, \varphi_{0.6}(t) \cdot
+                        c_2(t)$<br>
+                        $\scriptsize \text{dove} \;\, c_B(t) = \cos(2 \pi \omega_B \cdot t), \;\; \omega_B = 4$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-s1.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize f_1(t) = T_{2.5} \,
+                        \varphi_{0.6}(t) \cdot
+                        (c_A(t) +
+                        c_B(t))$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-s2.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize f_2(t) = T_{1.5} \,
+                        \varphi_{0.6}(t) \cdot
+                        c_A(t) +
+                        T_{3.5} \, \varphi_{0.6}(t) \cdot c_B(t)$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-1.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}_1|$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-2.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}_2|$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Il principio di indeterminazione -->
 
             <div class="slide">
                 <h2>Il principio di indeterminazione</h2>
+
+                Un'altra limitazione della trasformata di Fourier è data dal principio di indeterminazione, secondo cui
+                una
+                funzione $f$ e la sua trasformata $\hat{f}$ non possono essere localizzate su insiemi arbitrariamente
+                piccoli.
             </div>
 
             <div class="slide">
@@ -748,12 +859,12 @@
                     \begin{array}{l l l}
                     \Delta_f \, x
                     & \!\!\! \triangleq \, \displaystyle\min_{a \, \in \, \spR}
-                    \Big( \int_{\spR} (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\frac{1}{\, 2}}
+                    \Big( \int_{\spR} (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\frac{1}{2}}
                     & \!\!\!\! = \, \displaystyle\min_{a \, \in \, \spR}
                     \normaLL{(X - a) f} \, , \\[1em]
                     \Delta_f \, \omega
                     & \!\!\! \, \triangleq \displaystyle\min_{b \, \in \, \spR}
-                    \Big( \int_{\spR} (\omega - b)^2 \, |\hat{f}(\omega)|^2 \, d\omega \Big)^{\frac{1}{\, 2}}
+                    \Big( \int_{\spR} (\omega - b)^2 \, |\hat{f}(\omega)|^2 \, d\omega \Big)^{\frac{1}{2}}
                     & \!\!\!\! = \, \displaystyle\min_{b \, \in \, \spR}
                     \normaLL{(X - b) \hat{f}} \, .
                     \end{array}
@@ -777,9 +888,40 @@
                 \normaLL{f} = 1 \quad \Longrightarrow \quad \Delta_f \, x \cdot \Delta_f \, \omega \geqslant \frac{1}{4
                 \pi} \, .
                 \]
-                ovvero <i>non è possibile ottenere una dispersione piccola a piacere sia nel dominio dei tempi sia in
-                    quello delle frequenze.</i>
+                ovvero non è possibile ottenere una dispersione piccola a piacere sia nel dominio dei tempi sia in
+                quello delle frequenze.
             </div>
+
+            <div class="slide">
+                Pertanto, sussiste una relazione di dualità tra la durata del segnale e la banda delle sue frequenze.
+
+                <div class="grid-2" style="margin-top: 15px;">
+                    <div class="centered-element">
+                        <img src="imgs/svg/uncertainty-1.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize f_1(t) = \varphi_{\frac{1}{\,
+                        40}} \cos(2 \pi \, 8 \cdot t)$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/uncertainty-2.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize f_2(t) =
+                        \varphi_{\,\frac{3}{5}} \cos(2 \pi \, 8 \cdot t)$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/uncertainty-ft-1.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}_1|$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/uncertainty-ft-2.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}_2|$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Il principio di indeterminazione di Donoho-Stark -->
 
             <div class="slide">
                 <h3>Il principio di indeterminazione di Donoho-Stark</h3>
@@ -792,6 +934,16 @@
                     \[
                     \Big( \int_{T^c} |f(x)|^2 \, dx \Big)^{\frac{1}{2}} \leqslant \varepsilon \normaLL{f} \, .
                     \]
+                </div>
+
+                <div class="centered-element">
+                    <img src="imgs/svg/epsilon-concentration.svg" style="width: 60%;"><br>
+
+                    <span class="img-label orange dash"></span> $\scriptsize f, \quad$
+                    <span class="img-label grey" style="opacity: 0.6;">[ ]</span> $\scriptsize T, \quad$
+                    <span class="img-label grey dots" style="opacity: 0.6;"></span> $\scriptsize |f|^2, \quad$
+                    <span class="img-label orange square"></span> $\scriptsize \int_{T^C} |f|^2, \quad$
+                    <span class="img-label orange square" style="opacity: 0.4;"></span> $\scriptsize \normaLL{f}^2$
                 </div>
             </div>
 
@@ -807,8 +959,14 @@
                 </div>
             </div>
 
+            <!-- Trasformata di Gabor -->
+
             <div class="slide">
                 <h2>La trasformata di Gabor</h2>
+
+                Al fine di superare l'inefficacia della trasformata di Fourier di fornire informazioni riguardante la
+                distribuzione temporale (o spaziale) delle frequenze, è possibile — ispirandosi al funzionamento
+                dell'apparato uditivo umano — immaginare di segmentare un segnale prima che questo venga analizzato.
             </div>
 
             <div class="slide">
@@ -831,7 +989,8 @@
 
             <div class="slide">
                 Essendo $V_g f$ in generale complesso, per visualizzare la trasformata di Gabor è solitamente impiegato
-                lo <b>spettrogramma</b>, ovvero $|V_g f(x, \omega)|^2$ per $x \in \Dom f, \; \omega \in \Dom \hat{f}$.
+                lo <b>spettrogramma</b>, ovvero $|V_g f(x, \omega)|^2$ per $x \in \Dom f \,$ e $\, \omega \in \Dom
+                \hat{f}$.
             </div>
 
             <div class="slide">
@@ -1163,6 +1322,33 @@
             </div>
 
             <div class="slide">
+                <div class="centered-element" style="margin-top: 10px;">
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$
+
+                    <img src="imgs/svg/denoising-1.svg" style="width: 100%; margin-top: 10px;">
+                </div>
+                <div class="grid-2" style="margin-top: 20px; margin-bottom: 20px;">
+                    <div class="centered-element">
+                        <span class="img-label light-blue square"></span> $\scriptsize |V_g f|^2$
+
+                        <img src="imgs/jpg/denoising-1.jpg" loading="lazy"
+                            style="width: 100%; margin-top: 10px; margin-right: 5px;">
+                    </div>
+                    <div class="centered-element">
+                        <span class="img-label light-blue square"></span> $\scriptsize |a \cdot V_g f|^2$
+
+                        <img src="imgs/jpg/denoising-2.jpg" loading="lazy"
+                            style="width: 100%; margin-top: 10px; margin-left: 5px;">
+                    </div>
+                </div>
+                <div class="centered-element" style="margin-bottom: 20px;">
+                    <span class="img-label light-blue dash"></span> $\scriptsize \tilde{f} \; \text{(denoised signal)}$
+
+                    <img src="imgs/svg/denoising-2.svg" style="width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+
+            <div class="slide">
                 <h4>Taglio tempo-frequenza</h4>
 
                 È inoltre possibile rimuovere — con maggior efficacia rispetto a quanto reso possibile dall'elaborazione
@@ -1180,38 +1366,336 @@
             </div>
 
             <div class="slide">
+                <div class="centered-element" style="margin-top: 10px;">
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$
+
+                    <img src="imgs/svg/time-frequency-cut-1.svg" style="width: 100%; margin-top: 10px;">
+                </div>
+                <div class="grid-2" style="margin-top: 20px; margin-bottom: 20px;">
+                    <div class="centered-element">
+                        <span class="img-label light-blue square"></span> $\scriptsize |V_g f|^2$
+
+                        <div style="position: relative;">
+                            <img src="imgs/jpg/time-frequency-cut-1.jpg" loading="lazy"
+                                style="position: relative; width: 100%; margin-right: 5px;">
+                            <img src="imgs/svg/time-frequency-cut-frame-1.svg"
+                                style="position: absolute; top: 0; left: 0; width: 100%;">
+                        </div>
+                    </div>
+                    <div class="centered-element">
+                        <span class="img-label light-blue square"></span> $\scriptsize |a \cdot V_g f|^2$
+
+                        <div style="position: relative;">
+                            <img src="imgs/jpg/time-frequency-cut-2.jpg" loading="lazy"
+                                style="position: relative; width: 100%; margin-right: 5px;">
+                            <img src="imgs/svg/time-frequency-cut-frame-2.svg"
+                                style="position: absolute; top: 0; left: 0; width: 100%;">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="centered-element" style="margin-top: -50px; margin-bottom: 20px;">
+                    <span class="img-label light-blue dash"></span> $\scriptsize \tilde{f} \; \text{(cut signal)}$
+
+                    <img src="imgs/svg/time-frequency-cut-2.svg" style="width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+
+            <!-- Analogia con lo spartito musicale -->
+
+            <div class="slide">
                 <h3>Analogia con lo spartito musicale</h3>
+
+                <p>
+                    È possibile osservare un'analogia tra lo spettrogramma e una partitura musicale. Infatti, entrambe
+                    sono rappresentazioni di un segnale che mettono in relazione tempo e frequenza.
+                </p>
+                <p>
+                    Matematicamente, il segnale definito da uno spartito può essere descritto utilizzando una funzione
+                    definita a tratti, per cui ciascun tratto è un'onda sinusoidale $\sin(2 \pi \omega t)$, dove
+                    $\omega$ è la frequenza della nota corrispondente. Nel sistema occidentale a 12 note con
+                    temperamento equabile, scelta una frequenza di base $\omega_0$, le frequenze delle note $A,B,C, ...$
+                    della scala sono date da
+                    \[
+                    \omega_A = 2^{\frac{0}{12}} \omega_0, \;\; w_{A\sharp} = w_{B\flat} = 2^{\frac{1}{12}} \omega_0,
+                    \;\; ... \;\; \omega_{G\sharp} = 2^{\frac{11}{12}} \omega_0 \, .
+                    \]
+                </p>
             </div>
 
             <div class="slide">
+                Eventualmente, l'onda sinusoidale $s(t)$ corrsipondete ad una nota può essere moltiplicata per una
+                <b><i>curva ADSR</i></b> (<i>Attack-Decay-Sustain-Release</i>), denotata con $c(t)$ nell'immagine, che
+                modula in volume della nota nel tempo.
+
+                <div class="centered-element" style="margin-top: 20px; margin-bottom: 20px;">
+                    <img src="imgs/svg/adsr-curve.svg" style="width: 80%;"><br>
+
+                    <span class="img-label grey dash"></span> $\scriptsize s(t), \quad$
+                    <span class="img-label grey dots"></span> $\scriptsize c(t), \quad$
+                    <span class="img-label light-blue dash"></span> $\scriptsize f(t) = c(t) \cdot s(t)$
+                </div>
+            </div>
+
+            <div class="slide">
+                Si osservi, ad esempio, lo spettrogramma della prima battuta della <i>Toccata</i> di Léon Boëllmann,
+                tratta dalla <i>Suite Gothique</i>, Op. 25 (1895).
+
+                <div class="centered-element" style="margin-top: 20px; margin-bottom: 20px;">
+                    <img src="imgs/svg/boellmann-score.svg" width="90%"><br>
+
+                    <span class="img-label light-blue square"></span> $\scriptsize |V_g f|^2$<br>
+
+                    <img src="imgs/jpg/boellman-toccata.jpg" loading="lazy" width="80%"
+                        style="margin-top: 5px; margin-bottom: 10px;"><br>
+
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$<br>
+
+                    <img src="imgs/svg/boellman-signal.svg" width="80%" style="margin-top: 5px;">
+                </div>
+            </div>
+
+            <div class="slide">
+                <p>
+                    Tuttaiva, in una partitura, ogni nota rappresenta un suono ben localizzato nel tempo e con una
+                    precisa frequenza. Lo stesso non si può dire dello spettrogramma. È possibile far variare la
+                    larghezza della finestra impiegata nell'analisi, migliorando la risoluzione temporale o quella nel
+                    dominio delle frequenza. È però impossibile migliorare al contempo entrambe.
+                </p>
+                <p>
+                    Per una finestra gaussiana più stretta $\varphi_{a_1}$, lo spettrogramma $|V_{\varphi_{a_1}} f(x,
+                    \omega)|^2$ presenta una maggiore risoluzione temporale, ma peggiora quella delle frequenza.
+                </p>
+            </div>
+
+            <div class="slide">
+                <div class="grid-2-left" style="margin-top: 10px; margin-bottom: 20px">
+                    <div class="centered-element">
+                        <img src="imgs/jpg/gabor-uncertainty-1.jpg" loading="lazy" width="100%">
+
+                        <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_{a_1}} f|^2$
+                    </div>
+                    <div class="centered-element" style="margin-top: 50%;">
+                        <img src="imgs/svg/gabor-uncertainty-1.svg" width="90%"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_{a_1}$
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                Vicevera, per una finestra guassiana più larga $\varphi_{a_2}$, lo spettrogramma $|V_{\varphi_{a_2}}
+                f(x, \omega)|^2$ presenta una maggiore risoluzione nel dominio delle frequenza, ma peggiora quella
+                temporale.
+            </div>
+
+            <div class="slide">
+                <div class="grid-2-left" style="margin-top: 10px; margin-bottom: 20px">
+                    <div class="centered-element">
+                        <img src="imgs/jpg/gabor-uncertainty-2.jpg" loading="lazy" width="100%">
+
+                        <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_{a_1}} f|^2$
+                    </div>
+                    <div class="centered-element" style="margin-top: 50%;">
+                        <img src="imgs/svg/gabor-uncertainty-2.svg" width="90%"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_{a_1}$
+                    </div>
+                </div>
+            </div>
+
+            <!-- Principio di indeterminazione per la trasformata di Gabor -->
+
+            <div class="slide">
                 <h3>Principio di indeterminazione per la trasformata di Gabor</h3>
+
+                <p>
+                    Si può formalizzare maggiormente quando descritto nella precedente sezione, che è diretta
+                    conseguenza del principio di indeterminazione per la trasformata di Fourier.
+                </p>
+                <p>
+                    Sia $f \in \spLLd$ un segnale e $\varphi_a$ una finestra gaussiana. Fissato $x \in \spR^d$, si ha
+                    \[
+                    V_{g_a} f(x, \omega) = (F_a)\,\hat{}\, (x) \quad \text{dove} \quad F_a(t) \triangleq f(t) \cdot T_x
+                    \bar{\varphi}_a (t) \, .
+                    \]
+                    Dalla disuguaglianza HPW segue
+                    \[
+                    \Delta_{F_a} t \cdot \Delta_{\widehat{F}_a} \omega \geqslant \frac{1}{4\pi} \normaLL{F_a} \, ,
+                    \]
+                    dove $\Delta_{F_a} t \,$ e $\, \Delta_{F_a} \omega$ sono le deviazioni standard.
+                </p>
+                <p>
+                    Finestre più strette causano minor dispersione temporale. La disuguaglianza deve allora essere
+                    compensata da un incremento nella dispersione delle frequenze e viceversa.
+                </p>
+            </div>
+
+            <div class="slide">
+                <h4>Principio di indeterminazione di Lieb</h4>
+
+                È inoltre possibile formulare il principio di indeterminazione in una forma simile a quella di
+                Donoho-Stark e che coinvolge direttamente la trasfromata di Gabor.
+
+                <div class="theorem">
+                    Per $\, \varepsilon > 0$,
+                    \[
+                    \begin{rcases}
+                    f, g \in \spLLd \tc \normaLL{f} = \normaLL{g} = 1 \, , & \\
+                    U \subseteq \spR[2] \tc \int_U |V_g f (x, \omega)|^2 \, dx \, d\omega \geqslant 1 - \varepsilon &
+                    \end{rcases}
+                    \; \Longrightarrow \;
+                    |U| \geqslant 1 - \varepsilon \, .
+                    \]
+                </div>
+
+                <div class="proof ending-formula">
+                    \[
+                    \begin{gathered}
+                    |V_g f (x, \omega)| = |\inprod{f}{M_\omega}|
+                    \vertarrowbox{\; \leqslant \;\;}{\mathclap{\text{Cauchy-Schwartz}}}
+                    \normaLL{f} \normaLL{g} = 1 \quad \forall (x, \omega) \in \spR^{2d} \\[1em]
+                    \hspace{-.5cm}
+                    \Longrightarrow \;\;
+                    \underbracket{1 - \varepsilon \leqslant \textstyle\int_U |V_g f|^2 \, dx \,
+                    d\omega}_{\text{hypothesis}}
+                    \, \leqslant \, \underbracket{\norma{V_g f}_{L^\infty}^2 |U| \leqslant |U|}_{\text{previous step}}
+                    \end{gathered}
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <p>
+                    Ciò significa che un sengale non può essere concetrato su insiemi arbitrariamenti piccoli nello
+                    spazio tempo-frequenza, indipendentemente dalla rappresentazione impiegata.
+                </p>
+                <p>
+                    In effetti, poiché $\normaLL{f} = \normaLL{g} = 1$ implica $\normaLL{V_g f} = $, più $V_g f$ è
+                    concentrato su $U$, maggiore diventa la misura di $U$. Viceversa, se $V_g f$ è
+                    $\varepsilon$-concentrato su $U$, allora $|U| \to 1 \,$ per $\, \varepsilon \to 0$.
+                </p>
+            </div>
+
+            <!-- Oltre la trasformata di Gabor -->
+
+            <div class="slide">
+                <h3>Oltre la trasformata di Gabor</h3>
+
+                <p>
+                    Al fine di migliorare sia la risoluzione temporale sia quelle delle frequenze, possiamo immaginare
+                    di combinare due rappresentazioni ottenute con due differenti finestre.
+                </p>
+                <p>
+                    Consideriamo un segnale $f \tc \spR \, \longrightarrow \, \spR$ e due finestre $g_1, g_2 \tc \spR \,
+                    \longrightarrow \, \spR$.
+                </p>
+                <div class="definition named">
+                    <span class="definition-label">Spettrogramma a due finestre</span>
+                    Lo spettrogramma di un segnale $f$ rispetto a due finestre $g_1$ e $g_2$ è definito come
+                    \[
+                    \Spectrogram_{g_1, \, g_2} f \triangleq V_{g_1} f \cdot \overline{V_{g_2} f} \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                In particolare, per $g_1 = g_2$, si ha
+                \[
+                \Spectrogram_{g_1, \, g_1} f \triangleq \Spectrogram_{g_1} f = V_{g_1} f \cdot \overline{V_{g_1} f} =
+                \underbracket{|V_{g_1} f|^2}_{\mathclap{\text{spectrogram of} \; V_{g_1} f}} \, .
+                \]
+                Poiché $\Spectrogram_{g_1, \, g_2}$ è solitamente complesso, consideriamo $|\Spectrogram_{g_1, \, g_2}
+                f|$ al fine di visualizzarlo graficamente. Allora
+                \[
+                |\Spectrogram_{g_1, \, g_2} f| = |V_{g_1} f| \cdot |\overline{V_{g_2} f}| = |V_{g_1} f| \cdot |V_{g_2}
+                f| =
+                \Spectrogram_{g_1}^{\frac{1}{2}} \cdot \Spectrogram_{g_2}^{\frac{1}{2}} \, .
+                \]
+            </div>
+
+            <div class="slide">
+                Sia ora $f \tc \spR \, \longrightarrow \, \spR$ una semplice onda sinusoidale, eventualmente
+                moltiplicata per una curva ADSR. Consideriamo poi due finestre gaussiane $\varphi_{a_1}, \varphi_{a_2}$
+                con $a \lt b$. Allora $\Spectrogram_{\varphi_a, \, \varphi_b} \, f (x, \omega)$ offrirà dei
+                miglioramenti in termini sia di risoluzione temporale sia delle frequenze. Infatti
+                \[
+                \begin{split}
+                |\Spectrogram_{\varphi_a, \, \varphi_b} \, f (x, \omega)| \approx 0
+                & \quad \text{if} \quad |V_{\varphi_a} f (x, \omega)| \approx 0 \;\; \lor \;\; |V_{\varphi_b} f (x,
+                \omega)| \approx 0 \\
+                |\Spectrogram_{\varphi_a, \, \varphi_b} \, f (x, \omega)| \not\approx 0
+                & \quad \text{if} \quad |V_{\varphi_a} f (x, \omega)| \not\approx 0 \;\; \land \;\; |V_{\varphi_b} f (x,
+                \omega)| \not\approx 0 \, .
+                \end{split}
+                \]
+            </div>
+
+            <div class="slide">
+                <div class="centered-element" style="margin-top: 20px;">
+                    <img src="imgs/svg/two-windows-1_1.svg" width="72.5%"><br>
+
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$
+                </div>
+                <div class="grid-2" style="margin-top: 15px;">
+                    <div class="centered-element" style="margin-right: 5px;">
+                        <img src="imgs/svg/two-windows-1_2.svg" width="50%"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_a$<br>
+
+                        <img src="imgs/jpg/two-windows-1_1.jpg" width="75%"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |V_{\varphi_a} f|^2$
+                    </div>
+                    <div class="centered-element" style="margin-left: 5px;">
+                        <img src="imgs/svg/two-windows-1_3.svg" width="50%"><br>
+
+                        <span class="img-label light-blue square"></span> $\scriptsize \varphi_b$<br>
+
+                        <img src="imgs/jpg/two-windows-1_2.jpg" width="75%"><br>
+
+                        <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_b} f|^2$
+                    </div>
+                </div>
+                <div class="centered-element">
+                    <img src="imgs/jpg/two-windows-1_3.jpg" width="75%"><br>
+
+                    <span class="img-label light-blue square"></span> $\scriptsize f$
+                </div>
+            </div>
+
+            <div class="slide">
+                <h4>Frequenze fantasma</h4>
             </div>
 
             <div style="margin-top: 1000px;"></div>
+
         </main>
+    </div>
 
-        <div class="play-pause-controls">
-            <span id="presentation-play" class="material-symbols-sharp button play">
-                present_to_all
+
+    <div class="play-pause-controls">
+        <span id="presentation-play" class="material-symbols-sharp button play">
+            present_to_all
+        </span>
+        <span id="presentation-pause" class="material-symbols-sharp button pause">
+            pause_presentation
+        </span>
+    </div>
+
+    <div id="presentation-controls" class="presentation-controls">
+        <div class="arrows">
+            <span id="previous" class="material-symbols-sharp button">
+                arrow_back_ios
             </span>
-            <span id="presentation-pause" class="material-symbols-sharp button pause">
-                pause_presentation
+            <span id="next" class="material-symbols-sharp button">
+                arrow_forward_ios
             </span>
         </div>
+        <div id="progress-bar" class="progress-bar">
 
-        <div id="presentation-controls" class="presentation-controls">
-            <div class="arrows">
-                <span id="previous" class="material-symbols-sharp button">
-                    arrow_back_ios
-                </span>
-                <span id="next" class="material-symbols-sharp button">
-                    arrow_forward_ios
-                </span>
-            </div>
-            <div id="progress-bar" class="progress-bar">
-
-            </div>
         </div>
+    </div>
     </div>
 
     <!-- MathJax -->

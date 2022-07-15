@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="53.251099mm"
+   height="7.7986975mm"
+   viewBox="0 0 53.251097 7.7986971"
+   version="1.1"
+   id="svg17624"
+   sodipodi:docname="two-windows-3_2.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <defs
+     id="defs17618" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="128.97843"
+     inkscape:cy="12.310519"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="1341"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata17621">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(18.468009,-106.72297)">
+    <g
+       id="g18683"
+       transform="matrix(0.21166666,0,0,0.21166665,-28.928575,76.645004)"
+       style="stroke-width:1.88976;stroke-miterlimit:10;stroke-dasharray:none">
+      <path
+         id="path18685"
+         style="fill:none;stroke:#1484e6;stroke-width:1.88976;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="M 49.419998,178 C 87.779999,178 126.14,178 164.5,178 C 165.63036,175.00774 167.91939,172.38748 168.41399,169.02725 C 170.95664,160.61597 171.18007,151.52765 174.58,143.40759 C 176.99567,142.5912 177.02847,147.38554 177.74979,149.09066 C 180.0199,157.87087 180.29852,167.39575 184.66,175.49139 C 185.50779,178.45221 187.75292,178.19053 190.53999,178 C 227.35999,178 264.18,178 301,178" />
+    </g>
+  </g>
+</svg>

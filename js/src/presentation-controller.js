@@ -1,16 +1,6 @@
 // patch all methods
 seamless.polyfill();
 
-window.onload = () => {
-    // Removes the spinning loader
-    document.getElementById("loading-container").style.opacity = 0;
-    document.getElementById("loading-container").remove();
-    // Makes page content visible 
-    document.getElementById("page-container").style = "visibility: visible; opacity: 1;";
-
-    plotsManager.init();
-}
-
 /**
  * Presentation mode controller.
  */
@@ -87,9 +77,11 @@ let presentationController = new function () {
 
     window.onload = () => {
         // Removes the spinning loader
+        document.getElementById("loading-container").style.opacity = 0;
         document.getElementById("loading-container").remove();
         // Makes page content visible 
-        document.getElementById("page-container").style = "visibility: visible; opacity: 1;";
+        document.getElementById("page-container").style.visibility = "visible";
+        document.getElementById("page-container").style.opacity = 1;
 
         if (presentationMode) {
             // Start the presentation
@@ -232,7 +224,7 @@ let presentationController = new function () {
 
         // Sets the background of each slide to hidden color, aside from the currently selected one
         for (let i = 0; i < slides.length; i++) {
-            slides[i].style.opacity = i == currentSlideIndex ? "1" : ".2";
+            slides[i].style.opacity = i == currentSlideIndex ? "1" : ".1";
         }
 
         // Updates the progress bar

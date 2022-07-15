@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32.6898mm"
+   height="13.16199mm"
+   viewBox="0 0 32.6898 13.16199"
+   version="1.1"
+   id="svg42054"
+   sodipodi:docname="gabor-uncertainty-1.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <defs
+     id="defs42048" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="20.269318"
+     inkscape:cy="-6.2300791"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="1341"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata42051">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-142.97207,-133.25941)">
+    <g
+       id="g43789"
+       transform="matrix(0.21166666,0,0,0.21166666,29.400202,124.87331)"
+       style="stroke-width:1.88976383;stroke-miterlimit:4;stroke-dasharray:none">
+      <path
+         id="path43791"
+         style="fill:none;stroke:#1484e6;stroke-width:1.88976383;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 536.56,100.85714 C 556.84001,100.85714 577.12001,100.85714 597.40002,100.85714 C 599.64989,97.216641 602.04461,93.601952 602.9095,89.327641 C 606.9884,74.487749 607.90202,58.970447 611.67993,44.074063 C 612.13596,42.606395 613.16931,39.044042 614.79993,41.285553 C 617.56381,48.114787 618.12861,55.581011 619.50602,62.770122 C 621.35055,73.147606 622.47092,83.792245 626.12769,93.728375 C 626.9955,96.358574 628.93621,98.401206 630.15997,100.85714 C 650.43998,100.85714 670.71999,100.85714 691,100.85714" />
+    </g>
+  </g>
+</svg>

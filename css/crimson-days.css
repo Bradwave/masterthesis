@@ -181,6 +181,8 @@ h3 {
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 20pt;
+    padding-left: 60px;
+    text-indent: -60px;
     counter-set: subsection definition theorem;
 }
 
@@ -243,6 +245,12 @@ a {
     grid-template-columns: 1fr 1fr;
 }
 
+.grid-2-left {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1.5fr .5fr;
+}
+
 /* 3 Column Grid Layout */
 
 .grid-3 {
@@ -259,6 +267,23 @@ a {
 
 /* Labels */
 
+span.img-label {
+    margin-right: 5px;
+}
+
+span.img-label.dash::before {
+    content: "━";
+    font-weight: bold;
+}
+
+span.img-label.dots::before {
+    content: "┈";
+}
+
+span.img-label.square::before {
+    content: "■";
+}
+
 span.img-label.light-blue {
     color: var(--thm-blue);
 }
@@ -268,7 +293,7 @@ span.img-label.orange {
 }
 
 span.img-label.grey {
-    color: #333333;
+    color: #555555;
 }
 
 /* -- 2.3 Canvas -- */
