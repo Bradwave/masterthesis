@@ -96,82 +96,8 @@
             <!-- Introduzione -->
 
             <div class="slide">
-                <h2>Introduzione all'analisi armonica e tempo-frequenza</h2>
+                <h2>Introduzione all'analisi armonica</h2>
 
-                Il concetto di <b><i>segnale</i></b> è alla base dell'analisi tempo-frequenza. I segnali
-                <ul>
-                    <li>
-                        possono descrivere un'ampia pletora di quantità misurabili che variano nel tempo o nello spazio;
-                    </li>
-                    <li>
-                        matematicamente, sono modellizzati da funzioni.
-                    </li>
-                </ul>
-                Uno degli obiettivi dell'analisi tempo-frequenza è quello di fornire diversi tipi di rappresentazione
-                per un segnale, in modo da evidenziarne diverse caratteristiche e operare efficacemente su di essi.
-            </div>
-
-            <!-- Spazi di funzioni integrabili -->
-
-            <div class="slide">
-                <h3>Spazi di funzioni integrabili</h3>
-
-                <div class="definition">
-                    Dato un insieme non vuoto $\Omega$, una $\sigma$-algebra $\mathfrak{M}$ su $\Omega$ e una misura
-                    positiva $\mu$, uno <b>spazio di misura</b> è definito da $(\Omega, \mathfrak{M}, \mu)$.
-                </div>
-
-                <div class="definition">
-                    Per $p \in (0, \infty)$, lo <b>spazio $L^p$</b> delle funzioni a $p$-esima potenza sommabile è
-                    definito da
-                    \[
-                    L^p(\Omega, \mathfrak{M}, \mu) \triangleq \Big\{ \, f \in \mathcal{M}(\Omega, \spR) \tc
-                    \int_{\Omega} |f(x)|^p \, d \mu \lt \infty \, \Big\}
-                    \]
-                    dove $\mathcal{M}(\Omega, \spR) \triangleq \big\{ \ f \tc \Omega \, \longrightarrow \,
-                    \spR \tc f \; \text{è misurabile} \, \big\}$. Per $p = \infty$,
-                    \[
-                    L^\infty(\Omega, \mathfrak{M}, \mu) \triangleq \big\{ \, f \in \mathcal{M}(\Omega, \spR) \: :
-                    \: \exists \, C \geqslant 0 \tc |f(x)| \lt C \; \text{per q.o.} \; x \in \spR \, \big\} \, .
-                    \]
-                    Le definizioni sono analoghe per $\mathcal{M}(\Omega, \mathbb{C})$.
-                </div>
-            </div>
-
-            <div class="slide">
-                Gli spazi $L^p$ sono spazi vettoriali $\forall p \in (0, \infty]$ e di Banach $\forall p \in [1,
-                \infty]$.
-
-                <div class="definition">
-                    Sugli spazi $L^p$, la <b>norma</b> è definita come
-                    \[
-                    \norma{f}_{L^p} \triangleq \big( \textstyle\int_\Omega |f|^p \, d\mu \big)^{\frac{1}{p}}
-                    \quad \forall f \in L^p, \; \forall p \in (0, \infty) \, ;
-                    \]
-                    \[
-                    \norma{f}_{L^\infty} \triangleq \inf \big\{ C \geqslant 0 \tc |f| \lt C \; \text{q.o. su} \;
-                    \Omega \big\} \quad \forall f \in L^\infty \, .
-                    \]
-                </div>
-            </div>
-
-            <div class="slide">
-                <p>
-                    In particolare, siamo interessati al caso $\Omega = \spR^d$.
-                </p>
-                <p>
-                    Per $\spLLd$, è possibile definire un prodotto interno
-                    \[
-                    \inprod{f}{g} \triangleq \intRd f(x) \, \overline{g(x)} \, dx
-                    \]
-                    che induce la norma $\norma{f} = \sqrt{\inprod{f}{f}} = \normaLL {f}$. Pertanto, lo spazio $\spLLd$
-                    è di <b>Hilbert</b> e vale quindi il <b>teorema di rappresentazione di Riesz-Fréchet</b>.
-                </p>
-            </div>
-
-            <!-- Definizione e principali proprietà -->
-
-            <div class="slide">
                 <h3>La trasformata di Fourier</h3>
 
                 <div class="definition named highlighted">
@@ -182,35 +108,11 @@
                     \triangleq \intRd f(x) \, \eFtr{x}{\omega} \, dx \, .
                     \]
                 </div>
+
+                La definizione può essere estesa a $L^2$ con una procedimento per densità.
             </div>
 
             <div class="slide">
-                <div class="theorem properties">
-                    Se $f \in \spLd$, allora
-                    <ul style="margin-top: 5px;">
-                        <li>
-                            $\hat{f} \in C(\spR^d) \cap L^\infty(\spR^d)$;
-                        </li>
-                        <li>
-                            $\norma{\hat{f}}_{L^\infty(\spR^d)} \geqslant \normaLd{f}$;
-                        </li>
-                        <li style="margin-top: 10px;">
-                            $\Ftr \tc \spLd \, \longrightarrow \, L^\infty (\spR^d)$ è lineare e limitato.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="theorem lemma named">
-                    <span class="theorem-label">Riemann-Lebesgue</span>
-                    Se $f \in \spLd$, allora $\hat{f}$ è uniformemente continua e $\lim_{\, |\omega| \, \to \, \infty}
-                    |\hat{f}(\omega)| = 0$. Quindi
-                    \[
-                    \Ftr \tc \spLd \, \longrightarrow \, C_0(\spR^d) \triangleq \big\{ f \in C(\spR^d) \tc
-                    \textstyle\lim_{\, |\omega| \, \to \, \infty} |\hat{f}(\omega)| = 0 \, \big\}
-                    \]
-                </div>
 
                 <div class="theorem named">
                     <span class="theorem-label">Plancherel</span>
@@ -1784,6 +1686,12 @@
 
 
     <div class="play-pause-controls">
+        <span id="text-decrease" class="material-symbols-sharp button" style="margin-right: 10px;">
+            text_decrease
+        </span>
+        <span id="text-increase" class="material-symbols-sharp button" style="margin-right: 30px;">
+            text_increase
+        </span>
         <span id="presentation-play" class="material-symbols-sharp button play">
             present_to_all
         </span>

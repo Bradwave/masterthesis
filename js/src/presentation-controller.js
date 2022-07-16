@@ -147,6 +147,19 @@ let presentationController = new function () {
                     break;
             }
         });
+
+        document.getElementById("text-increase").onclick = () => {
+            let pageContent = document.getElementById("page-content");
+            const currentSize = parseFloat(window.getComputedStyle(pageContent, null).getPropertyValue('font-size'));
+            console.log(currentSize)
+            pageContent.style.fontSize = (currentSize + 1) + "px";
+        }
+
+        document.getElementById("text-decrease").onclick = () => {
+            pageContentStyle = document.getElementById("page-content").style;
+            pageContentStyle.fontSize =
+                (pageContentStyle.fontSize - 1 > 8 ? pageContentStyle.fontSize - 1 : 8) + "px";
+        }
     }
 
     /**
