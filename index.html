@@ -74,7 +74,7 @@
             \)
 
             <div id="title">
-                <p style="margin-top: 30pt; font-size: 10pt;">
+                <p style="margin-top: 30pt; font-size: 80%;">
                     UNIVERSITÀ DEGLI STUDI DI TORINO<br>
                     DIPARTIMENTO DI MATEMATICA <i>GIUSEPPE PEANO</i>
                 </p>
@@ -96,8 +96,82 @@
             <!-- Introduzione -->
 
             <div class="slide">
-                <h2>Introduzione all'analisi armonica</h2>
+                <h2>Introduzione all'analisi armonica e tempo-frequenza</h2>
 
+                Uno dei principali oggetti di studio dell'analisi tempo-frequenza è il <b><i>segnale</i></b>. I segnali
+                <ul>
+                    <li>
+                        possono descrivere un'ampia pletora di quantità misurabili che variano nel tempo o nello spazio;
+                    </li>
+                    <li>
+                        matematicamente, sono modellizzati da funzioni.
+                    </li>
+                </ul>
+                Tra gli obiettivi dell'analisi tempo-frequenza vi è quello di fornire diversi tipi di rappresentazione
+                per un segnale, in modo da evidenziarne differenti caratteristiche e operare efficacemente su di essi.
+            </div>
+
+            <!-- Spazi di funzioni integrabili -->
+
+            <div class="slide hidden">
+                <h3>Spazi di funzioni integrabili</h3>
+
+                <div class="definition">
+                    Dato un insieme non vuoto $\Omega$, una $\sigma$-algebra $\mathfrak{M}$ su $\Omega$ e una misura
+                    positiva $\mu$, uno <b>spazio di misura</b> è definito da $(\Omega, \mathfrak{M}, \mu)$.
+                </div>
+
+                <div class="definition">
+                    Per $p \in (0, \infty)$, lo <b>spazio $L^p$</b> delle funzioni a $p$-esima potenza sommabile è
+                    definito da
+                    \[
+                    L^p(\Omega, \mathfrak{M}, \mu) \triangleq \Big\{ \, f \in \mathcal{M}(\Omega, \spR) \tc
+                    \int_{\Omega} |f(x)|^p \, d \mu \lt \infty \, \Big\}
+                    \]
+                    dove $\mathcal{M}(\Omega, \spR) \triangleq \big\{ \ f \tc \Omega \, \longrightarrow \,
+                    \spR \tc f \; \text{è misurabile} \, \big\}$. Per $p = \infty$,
+                    \[
+                    L^\infty(\Omega, \mathfrak{M}, \mu) \triangleq \big\{ \, f \in \mathcal{M}(\Omega, \spR) \: :
+                    \: \exists \, C \geqslant 0 \tc |f(x)| \lt C \; \text{per q.o.} \; x \in \spR \, \big\} \, .
+                    \]
+                    Le definizioni sono analoghe per $\mathcal{M}(\Omega, \mathbb{C})$.
+                </div>
+            </div>
+
+            <div class="slide hidden">
+                Gli spazi $L^p$ sono spazi vettoriali $\forall p \in (0, \infty]$ e di Banach $\forall p \in [1,
+                \infty]$.
+
+                <div class="definition">
+                    Sugli spazi $L^p$, la <b>norma</b> è definita come
+                    \[
+                    \norma{f}_{L^p} \triangleq \big( \textstyle\int_\Omega |f|^p \, d\mu \big)^{\frac{1}{p}}
+                    \quad \forall f \in L^p, \; \forall p \in (0, \infty) \, ;
+                    \]
+                    \[
+                    \norma{f}_{L^\infty} \triangleq \inf \big\{ C \geqslant 0 \tc |f| \lt C \; \text{q.o. su} \;
+                    \Omega \big\} \quad \forall f \in L^\infty \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide hidden">
+                <p>
+                    In particolare, siamo interessati al caso $\Omega = \spR^d$.
+                </p>
+                <p>
+                    Per $\spLLd$, è possibile definire un prodotto interno
+                    \[
+                    \inprod{f}{g} \triangleq \intRd f(x) \, \overline{g(x)} \, dx
+                    \]
+                    che induce la norma $\norma{f} = \sqrt{\inprod{f}{f}} = \normaLL {f}$. Pertanto, lo spazio $\spLLd$
+                    è di <b>Hilbert</b> e vale quindi il <b>teorema di rappresentazione di Riesz-Fréchet</b>.
+                </p>
+            </div>
+
+            <!-- La trasformata di Fourier -->
+
+            <div class="slide">
                 <h3>La trasformata di Fourier</h3>
 
                 <div class="definition named highlighted">
@@ -108,8 +182,35 @@
                     \triangleq \intRd f(x) \, \eFtr{x}{\omega} \, dx \, .
                     \]
                 </div>
+            </div>
 
-                La definizione può essere estesa a $L^2$ con una procedimento per densità.
+            <div class="slide hidden">
+                <div class="theorem properties">
+                    Se $f \in \spLd$, allora
+                    <ul style="margin-top: 5px;">
+                        <li>
+                            $\hat{f} \in C(\spR^d) \cap L^\infty(\spR^d)$;
+                        </li>
+                        <li>
+                            $\norma{\hat{f}}_{L^\infty(\spR^d)} \geqslant \normaLd{f}$;
+                        </li>
+                        <li style="margin-top: 10px;">
+                            $\Ftr \tc \spLd \, \longrightarrow \, L^\infty (\spR^d)$ è lineare e limitato.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide hidden">
+                <div class="theorem lemma named">
+                    <span class="theorem-label">Riemann-Lebesgue</span>
+                    Se $f \in \spLd$, allora $\hat{f}$ è uniformemente continua e $\lim_{\, |\omega| \, \to \, \infty}
+                    |\hat{f}(\omega)| = 0$. Quindi
+                    \[
+                    \Ftr \tc \spLd \, \longrightarrow \, C_0(\spR^d) \triangleq \big\{ f \in C(\spR^d) \tc
+                    \textstyle\lim_{\, |\omega| \, \to \, \infty} |\hat{f}(\omega)| = 0 \, \big\}
+                    \]
+                </div>
             </div>
 
             <div class="slide">
@@ -135,33 +236,32 @@
                 <h4>Visualizzazione grafica della trasformata di Fourier</h4>
 
                 <p>
-                    Per $f \tc \spR \, \longrightarrow \, \spR$, l'espressione $c(t) = f(t) \, \eFtr{\omega}{t}$ per $t
-                    \in \spR$ può essere interpretata come la curva nel piano complessa ottenuta dalle rotazioni intorno
-                    all'origine con frequenza $\omega$ a distanza variabile nel tempo $f(t)$.
+                    Dato $f \tc \spR \, \longrightarrow \, \spR$,
+                    \[
+                    c(t, \omega) = f(t) \, \eFtr{\omega}{t} \quad \text{per} \; t \in \spR
+                    \]
+                    è la curva nel piano complessa ottenuta dalle rotazioni intorno all'origine con frequenza $\omega$ a
+                    distanza variabile nel tempo $f(t)$.
                 </p>
                 <p>
-                    Il centro di massa della curva per $t \in [T_1, T_2] \subset \spR$ è dato da
-                    \[
-                    c_{\text{cdm}} = \frac{1}{T_2 - T_1} \int_{T_1}^{T_2} \! c(t) \, dt
-                    \]
-                    e quindi anche la trasformata di Fourier $\hat{f}(\omega) = \int_{\spR} c(t, \omega) \, dt$ può
+                    La trasformata di Fourier $\hat{f}(\omega) = \int_{\spR} c(t, \omega) \, dt$ può
                     essere interpreta come una misura del centro di massa della curva $c(t, \omega) = f(t) \,
                     \eFtr{\omega}{t}, \; t \in \spR$.
                 </p>
             </div>
 
             <div class="slide">
-                <div class="grid-2">
-                    <div class="centered-element">
+                <div class="grid-2 spaced">
+                    <div class="centered-element" style="left: 0;">
                         <span class="img-label light-blue dash"></span> $\scriptsize\, c(t), \quad \bullet \;
                         c_{\textrm{cdm}}$<br>
 
-                        <div class="plot-container" id="ft-winding" style="margin-top: 5px;">
+                        <div class="plot-container" id="ft-winding" style="margin-top: 5%;">
                             <canvas name="plot" class="plot main" id="canvas-ft-winding" tabindex="3"
-                                style="width: 200px; height: 200px;"></canvas>
+                                style="width: 300px; height: 300px;"></canvas>
                             <div name="plot-loader" id="loader-3" class="plot loader"></div>
                         </div>
-                        <div class="plot-controls" style="margin-top: 10px;">
+                        <div class="plot-controls" style="margin-top: 5%;">
                             <div>
                                 <span class="material-symbols-sharp button" id="play-pause-winding">
                                     play_arrow
@@ -175,12 +275,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="centered-element">
-                        <img src="imgs/svg/visualization-ft.svg" style="width: 100%; margin-top: 20px;">
+                    <div class="centered-element" style="top: 30%;">
+                        <img src="imgs/svg/visualization-ft.svg" style="width: 100%;">
 
                         <span class="img-label light-blue dash"></span> $\scriptsize f$
 
-                        <div class="plot-container" id="ft-transform" style="margin-top: 20px;">
+                        <div class="plot-container" id="ft-transform" style="margin-top: 20px; margin-bottom: 10px;">
                             <canvas name="plot" class="plot main" id="canvas-ft-transform" tabindex="2"
                                 style="height: 100px;"></canvas>
                             <div name="plot-loader" id="loader-2" class="plot loader"></div>
@@ -1686,12 +1786,6 @@
 
 
     <div class="play-pause-controls">
-        <span id="text-decrease" class="material-symbols-sharp button" style="margin-right: 10px;">
-            text_decrease
-        </span>
-        <span id="text-increase" class="material-symbols-sharp button" style="margin-right: 30px;">
-            text_increase
-        </span>
         <span id="presentation-play" class="material-symbols-sharp button play">
             present_to_all
         </span>
