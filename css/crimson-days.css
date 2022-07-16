@@ -116,11 +116,17 @@
 .page-container {
     display: grid;
     gap: 10px;
-    grid-template-columns: minmax(150px, 1fr) 3fr 1fr;
+    grid-template-columns: minmax(150px, 1fr) 1.5fr 1fr;
 }
 
 .page-content {
     padding: 10px;
+}
+
+@media (max-width:1400px) {
+    .page-container {
+        grid-template-columns: minmax(150px, 1fr) 3fr 1fr;
+    }
 }
 
 @media (max-width: 768px), (orientation: portrait), (hover: none) {

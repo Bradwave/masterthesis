@@ -797,7 +797,7 @@
                     <span class="theorem-label">Disuguaglianza HPW</span>
                     $\forall f \in L^2(\spR), \; a, b \in \spR$,
                     \[
-                    \Big( \int_\spR (x - a)^2 |f(x)|^2 \, dx \Big)^{\! \frac{1}{2}} \Big( \int_\spR (\omega - b)
+                    \Big( \int_\spR (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\! \frac{1}{2}} \Big( \int_\spR (\omega - b)^2 \,
                     |\hat{f}(\omega)|^2 \, d\omega \Big)^{\! \frac{1}{2}} \geqslant \frac{1}{4\pi} \normaLL{f}^2 \, .
                     \]
                 </div>
@@ -1015,7 +1015,7 @@
                 \cdot T_x \bar{g} \in \spLd$ e quindi la trasformata è definita puntualmente.
 
                 <div class="definition named">
-                    <span>Trasformata di Gabor su $L^2$</span>
+                    <span class="definition-label">Trasformata di Gabor su $L^2$</span>
                     Se $g, \in \spLLd \tc g \neq 0$, la trasformata di gabor definisce una mappa lineare
                     \[
                     \begin{array}{r c c c}
@@ -1124,24 +1124,24 @@
                 H & \longleftrightarrow & H^*
                 \end{array}
                 \quad \text{con} \quad
-                h_x (y) = \inprod{y, x}, \forall y \in H \, .
+                h_x (y) = \inprod{y}{x}, \;\; \forall y \in H \, .
                 \]
             </div>
 
             <div class="slide">
                 Possiamo quindi definire
                 \[
-                \ell \tc y \in H \, \longmapsto \, \int_{\spR^n} \inprod{y}{\phi(t)} \, dt \, ,
+                \ell \tc y \in H \, \longmapsto \, \int_{\spR^n} \inprod{y}{\phi(t)\!} \, dt \, ,
                 \]
                 che è lineare in $y$. Se $\int \norma{\phi(t)} \, dt = C$, allora $|\ell(y)| \leqslant C \norma{y}$ e
                 quindi $\ell$ è lineare e limitato, cioè $l \in H^*$. Pertanto, dal teorema di rappresentazione di
                 Riesz-Fréchet, si ha
                 \[
-                \exists ! \; x \in H \tc \ell(y) = \inprod{y}{x} \;\; forall y \in H
+                \exists ! \; x \in H \tc \ell(y) = \inprod{y}{x} \;\; \forall y \in H
                 \]
                 e possiamo identificare $\ell \equiv x \in H$. Quindi
                 \[
-                \ell(y) = \int_{\spR^n} \inprod{y, \phi(t)} \, dt \mathop{=}^{\text{def}}
+                \ell(y) = \int_{\spR^n} \inprod{y}{\phi(t)\!} \, dt \mathop{=}^{\text{def}}
                 \overbracket{\inprod{y}{\underbracket{\int_{\spR^n} \phi(t) \, dt}_{x \, \equiv \ell}}}^{\inprod{y}{x}}
                 \, .
                 \]
@@ -1622,10 +1622,10 @@
                 \[
                 \begin{split}
                 |\Spectrogram_{\varphi_a, \, \varphi_b} \, f (x, \omega)| \approx 0
-                & \quad \text{if} \quad |V_{\varphi_a} f (x, \omega)| \approx 0 \;\; \lor \;\; |V_{\varphi_b} f (x,
+                & \quad \text{se} \quad |V_{\varphi_a} f (x, \omega)| \approx 0 \;\; \lor \;\; |V_{\varphi_b} f (x,
                 \omega)| \approx 0 \\
                 |\Spectrogram_{\varphi_a, \, \varphi_b} \, f (x, \omega)| \not\approx 0
-                & \quad \text{if} \quad |V_{\varphi_a} f (x, \omega)| \not\approx 0 \;\; \land \;\; |V_{\varphi_b} f (x,
+                & \quad \text{se} \quad |V_{\varphi_a} f (x, \omega)| \not\approx 0 \;\; \land \;\; |V_{\varphi_b} f (x,
                 \omega)| \not\approx 0 \, .
                 \end{split}
                 \]
@@ -1641,7 +1641,7 @@
                     <div class="centered-element" style="margin-right: 5px;">
                         <img src="imgs/svg/two-windows-1_2.svg" width="50%"><br>
 
-                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_a$<br>
+                        <span class="img-label light-blue square"></span> $\scriptsize \varphi_a$<br>
 
                         <img src="imgs/jpg/two-windows-1_1.jpg" width="75%"><br>
 
@@ -1650,14 +1650,14 @@
                     <div class="centered-element" style="margin-left: 5px;">
                         <img src="imgs/svg/two-windows-1_3.svg" width="50%"><br>
 
-                        <span class="img-label light-blue square"></span> $\scriptsize \varphi_b$<br>
+                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_b$<br>
 
                         <img src="imgs/jpg/two-windows-1_2.jpg" width="75%"><br>
 
                         <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_b} f|^2$
                     </div>
                 </div>
-                <div class="centered-element">
+                <div class="centered-element" style="margin-bottom: 20px;">
                     <img src="imgs/jpg/two-windows-1_3.jpg" width="75%"><br>
 
                     <span class="img-label light-blue square"></span> $\scriptsize f$
@@ -1666,6 +1666,115 @@
 
             <div class="slide">
                 <h4>Frequenze fantasma</h4>
+
+                <p>
+                    Apparentemente, è stato possibile bypassare le limitazioni introdotte dal principio di
+                    indeterminazione.
+                    Tuttavia, diversi esempi mettono il luce come il principio di indeterminazioni si manifesti in
+                    realtà in
+                    una nuova e sorprendente forma.
+                </p>
+                <p>
+                    Si consideri un segnale $f(t)$ composto da due diverse onde sinusoidali
+                    \[
+                    f(t) =
+                    \begin{cases}
+                    \sin(2 \pi \, \omega_1 \cdot t) & \text{se} \;\; t \in [t_{1, 1}, t_{1, 2}] \\
+                    \sin(2 \pi \, \omega_2 \cdot t) & \text{se} \;\; t \in [t_{2, 1}, t_{2, 2}] \\
+                    0 & \text{otherwise}
+                    \end{cases} \\[.5em]
+                    \]
+                    dove $t_{1, 1} < t_{1, 2} < t_{2, 1} < t_{2, 2}$, mentre $\omega_1, \omega_2 \in (\omega -
+                        \varepsilon, \, \omega + \varepsilon)$ per un certo $\omega$ e un sufficientemente piccolo
+                        $\varepsilon$. </p>
+            </div>
+
+            <div class="slide">
+                <div class="centered-element" style="margin-top: 20px;">
+                    <img src="imgs/svg/two-windows-2_1.svg" width="72.5%"><br>
+
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$
+                </div>
+                <div class="grid-2" style="margin-top: 15px;">
+                    <div class="centered-element" style="margin-right: 5px;">
+                        <img src="imgs/svg/two-windows-2_2.svg" width="50%"><br>
+
+                        <span class="img-label light-blue square"></span> $\scriptsize \varphi_a$<br>
+
+                        <img src="imgs/jpg/two-windows-2_1.jpg" width="75%"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |V_{\varphi_a} f|^2$
+                    </div>
+                    <div class="centered-element" style="margin-left: 5px;">
+                        <img src="imgs/svg/two-windows-2_3.svg" width="50%"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_b$<br>
+
+                        <img src="imgs/jpg/two-windows-2_2.jpg" width="75%"><br>
+
+                        <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_b} f|^2$
+                    </div>
+                </div>
+                <div class="centered-element" style="margin-bottom: 20px;">
+                    <img src="imgs/jpg/two-windows-2_3.jpg" width="75%"><br>
+
+                    <span class="img-label light-blue square"></span> $\scriptsize f$
+                </div>
+            </div>
+
+            <div class="slide">
+                <p>
+                    È possibile osservare artefatti in intorni di $(t_{1, 2}, \, \omega_2)$ e $(t_{2, 1}, \, \omega_1)$.
+                    In
+                    effetti,
+                    \[
+                    |V_{\varphi_a} \, f (x, \omega)| \not\approx 0
+                    \;\; \land \;\;
+                    |V_{\varphi_b} \, f (x, \omega)| \not\approx 0
+                    \;\; \Longrightarrow \;\;
+                    |\Spectrogram_{\varphi_a, \varphi_b} \, f (x, \omega)| \not\approx 0
+                    \]
+                    per $(x, \omega) \in I_1$ e $(x, \omega) \in I_2$, intorni di $(t_{1, 2}, \, \omega_2)$ e $(t_{2,
+                    1}, \,
+                    \omega_1)$ rispettivamente. Pertanto, appaiono nello spettrogramma delle frequenze non presenti nel
+                    sengale di partenza e che pertanto vengono chiamate <b>frequenze fantasma</b>.
+                </p>
+                <p>
+                    Tale fenomeno è ulteriormente amplificato per segnali più complessi.
+                </p>
+            </div>
+
+            <div class="slide">
+                <div class="centered-element" style="margin-top: 20px;">
+                    <img src="imgs/svg/two-windows-3_1.svg" width="72.5%"><br>
+
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$
+                </div>
+                <div class="grid-2" style="margin-top: 15px;">
+                    <div class="centered-element" style="margin-right: 5px;">
+                        <img src="imgs/svg/two-windows-3_2.svg" width="50%"><br>
+
+                        <span class="img-label light-blue square"></span> $\scriptsize \varphi_a$<br>
+
+                        <img src="imgs/jpg/two-windows-3_1.jpg" width="75%"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |V_{\varphi_a} f|^2$
+                    </div>
+                    <div class="centered-element" style="margin-left: 5px;">
+                        <img src="imgs/svg/two-windows-3_3.svg" width="50%"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_b$<br>
+
+                        <img src="imgs/jpg/two-windows-3_2.jpg" width="75%"><br>
+
+                        <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_b} f|^2$
+                    </div>
+                </div>
+                <div class="centered-element" style="margin-bottom: 20px;">
+                    <img src="imgs/jpg/two-windows-3_3.jpg" width="75%"><br>
+
+                    <span class="img-label light-blue square"></span> $\scriptsize f$
+                </div>
             </div>
 
             <div style="margin-top: 1000px;"></div>
