@@ -121,7 +121,7 @@
 
 .page-content {
     padding: 10px;
-    font-size: 21pt;
+    font-size: 20pt;
 }
 
 @media (max-width:1400px) {
@@ -138,6 +138,21 @@
     .page-content {
         padding: 40px;
     }
+}
+
+/* -- Spacing -- */
+
+.spaced {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.spaced-top {
+    margin-top: 5%;
+}
+
+.spaced-bottom {
+    margin-bottom: 5%;
 }
 
 /* -- 2.2 Body -- */
@@ -171,15 +186,15 @@ h2 {
     margin-bottom: 30px;
     font-size: 175%;
     font-weight: bold;
-    padding-left: 60px;
-    text-indent: -60px;
+    padding-left: 85px;
+    text-indent: -85px;
     counter-set: section subsection;
 }
 
 h2::before {
     counter-increment: chapter;
     content: counter(chapter);
-    margin-right: 44px;
+    margin-right: 60px;
 }
 
 /* Section */
@@ -195,7 +210,7 @@ h3 {
 h3::before {
     counter-increment: section;
     content: counter(chapter) "."counter(section);
-    margin-right: 26px;
+    margin-right: 30px;
 }
 
 /* Subsection */
@@ -245,9 +260,11 @@ a {
     grid-template-columns: 1fr 1fr;
 }
 
-.grid-2-left {
-    display: grid;
-    gap: 10px;
+.grid-2.right {
+    grid-template-columns: .5fr 1.5fr;
+}
+
+.grid-2.left {
     grid-template-columns: 1.5fr .5fr;
 }
 
@@ -605,13 +622,13 @@ input[type=number] {
 div.definition {
     margin-top: 15px;
     margin-bottom: 15px;
-    padding-left: 10px;
-    border-left: var(--def-orange) solid 3pt;
+    padding-left: 2%;
+    border-left: var(--def-orange) solid 5pt;
     font-style: italic;
 }
 
 div.definition.highlighted {
-    padding: 5px 10px 5px 10px;
+    padding: 1% 2% 1% 2%;
     background-color: rgba(var(--def-orange-rgb), 0.1);
 }
 
@@ -654,13 +671,13 @@ span.definition-label.no-dash::after {
 div.theorem {
     margin-top: 15px;
     margin-bottom: 15px;
-    padding-left: 10px;
-    border-left: var(--thm-blue) solid 3pt;
+    padding-left: 2%;
+    border-left: var(--thm-blue) solid 5pt;
     font-style: italic;
 }
 
 div.theorem.highlighted {
-    padding: 5px 10px 5px 10px;
+    padding: 1% 2% 1% 2%;
     background-color: rgba(var(--thm-blue-rgb), 0.1);
 }
 

@@ -25,11 +25,6 @@ let presentationController = new function () {
     */
 
     /**
-     * Div element for the title.
-     */
-    let title;
-
-    /**
      * Slides div elements.
      */
     let slides;
@@ -93,10 +88,6 @@ let presentationController = new function () {
      * Initializes the HTML elements and their listeners
      */
     function initHTMLComponents() {
-
-        // Gets the title div element
-        title = document.getElementById("title");
-
         // Gets the slide div elements
         slides = [...document.querySelectorAll(".slide:not(.hidden)")];
 
@@ -156,12 +147,9 @@ let presentationController = new function () {
     function togglePresentation(isActive) {
         presentationMode = isActive;
 
-        // Sets the opacity of the title div element
-        title.style.opacity = presentationMode ? "0.1" : "1";
-
         // Sets the opacity of the hidden slides div elements
         hiddenSlides.forEach(slide => {
-            slide.style.opacity = presentationMode ? "0.1" : "1";
+            slide.style.opacity = presentationMode ? "0.075" : "1";
         })
 
         // Shows or hides the controls for the presentation
@@ -224,7 +212,7 @@ let presentationController = new function () {
 
         // Sets the background of each slide to hidden color, aside from the currently selected one
         for (let i = 0; i < slides.length; i++) {
-            slides[i].style.opacity = i == currentSlideIndex ? "1" : ".1";
+            slides[i].style.opacity = i == currentSlideIndex ? "1" : ".075";
         }
 
         // Updates the progress bar

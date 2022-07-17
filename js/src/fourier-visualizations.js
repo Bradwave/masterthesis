@@ -212,7 +212,7 @@ let ftvPlots = function (ids, options) {
         // -- Transform Plot --
 
         tCtx.strokeStyle = "#1484E6";
-        tCtx.lineWidth = 1.75;
+        tCtx.lineWidth = 3;
 
         tCtx.beginPath();
 
@@ -253,7 +253,7 @@ let ftvPlots = function (ids, options) {
         // -- Winding Plot --
 
         wCtx.strokeStyle = "#1484E6";
-        wCtx.lineWidth = 1.5;
+        wCtx.lineWidth = 3;
 
         wCtx.beginPath();
 

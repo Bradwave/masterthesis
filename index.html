@@ -73,12 +73,14 @@
             }
             \)
 
-            <div id="title">
+            <div style="margin-top: 100px;"></div>
+
+            <div class="slide">
                 <p style="margin-top: 30pt; font-size: 80%;">
                     UNIVERSITÀ DEGLI STUDI DI TORINO<br>
                     DIPARTIMENTO DI MATEMATICA <i>GIUSEPPE PEANO</i>
                 </p>
-                <p style="font-size: 11pt;">
+                <p>
                     <b>Tesi di Laurea Magistrale</b> — A.A. 2021/2022
                 </p>
                 <h1 style="margin-top: 30pt;">
@@ -97,76 +99,6 @@
 
             <div class="slide">
                 <h2>Introduzione all'analisi armonica e tempo-frequenza</h2>
-
-                Uno dei principali oggetti di studio dell'analisi tempo-frequenza è il <b><i>segnale</i></b>. I segnali
-                <ul>
-                    <li>
-                        possono descrivere un'ampia pletora di quantità misurabili che variano nel tempo o nello spazio;
-                    </li>
-                    <li>
-                        matematicamente, sono modellizzati da funzioni.
-                    </li>
-                </ul>
-                Tra gli obiettivi dell'analisi tempo-frequenza vi è quello di fornire diversi tipi di rappresentazione
-                per un segnale, in modo da evidenziarne differenti caratteristiche e operare efficacemente su di essi.
-            </div>
-
-            <!-- Spazi di funzioni integrabili -->
-
-            <div class="slide hidden">
-                <h3>Spazi di funzioni integrabili</h3>
-
-                <div class="definition">
-                    Dato un insieme non vuoto $\Omega$, una $\sigma$-algebra $\mathfrak{M}$ su $\Omega$ e una misura
-                    positiva $\mu$, uno <b>spazio di misura</b> è definito da $(\Omega, \mathfrak{M}, \mu)$.
-                </div>
-
-                <div class="definition">
-                    Per $p \in (0, \infty)$, lo <b>spazio $L^p$</b> delle funzioni a $p$-esima potenza sommabile è
-                    definito da
-                    \[
-                    L^p(\Omega, \mathfrak{M}, \mu) \triangleq \Big\{ \, f \in \mathcal{M}(\Omega, \spR) \tc
-                    \int_{\Omega} |f(x)|^p \, d \mu \lt \infty \, \Big\}
-                    \]
-                    dove $\mathcal{M}(\Omega, \spR) \triangleq \big\{ \ f \tc \Omega \, \longrightarrow \,
-                    \spR \tc f \; \text{è misurabile} \, \big\}$. Per $p = \infty$,
-                    \[
-                    L^\infty(\Omega, \mathfrak{M}, \mu) \triangleq \big\{ \, f \in \mathcal{M}(\Omega, \spR) \: :
-                    \: \exists \, C \geqslant 0 \tc |f(x)| \lt C \; \text{per q.o.} \; x \in \spR \, \big\} \, .
-                    \]
-                    Le definizioni sono analoghe per $\mathcal{M}(\Omega, \mathbb{C})$.
-                </div>
-            </div>
-
-            <div class="slide hidden">
-                Gli spazi $L^p$ sono spazi vettoriali $\forall p \in (0, \infty]$ e di Banach $\forall p \in [1,
-                \infty]$.
-
-                <div class="definition">
-                    Sugli spazi $L^p$, la <b>norma</b> è definita come
-                    \[
-                    \norma{f}_{L^p} \triangleq \big( \textstyle\int_\Omega |f|^p \, d\mu \big)^{\frac{1}{p}}
-                    \quad \forall f \in L^p, \; \forall p \in (0, \infty) \, ;
-                    \]
-                    \[
-                    \norma{f}_{L^\infty} \triangleq \inf \big\{ C \geqslant 0 \tc |f| \lt C \; \text{q.o. su} \;
-                    \Omega \big\} \quad \forall f \in L^\infty \, .
-                    \]
-                </div>
-            </div>
-
-            <div class="slide hidden">
-                <p>
-                    In particolare, siamo interessati al caso $\Omega = \spR^d$.
-                </p>
-                <p>
-                    Per $\spLLd$, è possibile definire un prodotto interno
-                    \[
-                    \inprod{f}{g} \triangleq \intRd f(x) \, \overline{g(x)} \, dx
-                    \]
-                    che induce la norma $\norma{f} = \sqrt{\inprod{f}{f}} = \normaLL {f}$. Pertanto, lo spazio $\spLLd$
-                    è di <b>Hilbert</b> e vale quindi il <b>teorema di rappresentazione di Riesz-Fréchet</b>.
-                </p>
             </div>
 
             <!-- La trasformata di Fourier -->
@@ -178,37 +110,9 @@
                     <span class="definition-label">Trasformata di Fourier</span>
                     La <b>Trasformata di Fourier</b> su $L^1$ è un operatore lineare definito da
                     \[
-                    \Ftr \tc f \in \spLd \, \longmapsto \, \hat{f} \tc \spR^d \, \longrightarrow \, \hat{f}(\omega)
-                    \triangleq \intRd f(x) \, \eFtr{x}{\omega} \, dx \, .
-                    \]
-                </div>
-            </div>
-
-            <div class="slide hidden">
-                <div class="theorem properties">
-                    Se $f \in \spLd$, allora
-                    <ul style="margin-top: 5px;">
-                        <li>
-                            $\hat{f} \in C(\spR^d) \cap L^\infty(\spR^d)$;
-                        </li>
-                        <li>
-                            $\norma{\hat{f}}_{L^\infty(\spR^d)} \geqslant \normaLd{f}$;
-                        </li>
-                        <li style="margin-top: 10px;">
-                            $\Ftr \tc \spLd \, \longrightarrow \, L^\infty (\spR^d)$ è lineare e limitato.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="slide hidden">
-                <div class="theorem lemma named">
-                    <span class="theorem-label">Riemann-Lebesgue</span>
-                    Se $f \in \spLd$, allora $\hat{f}$ è uniformemente continua e $\lim_{\, |\omega| \, \to \, \infty}
-                    |\hat{f}(\omega)| = 0$. Quindi
-                    \[
-                    \Ftr \tc \spLd \, \longrightarrow \, C_0(\spR^d) \triangleq \big\{ f \in C(\spR^d) \tc
-                    \textstyle\lim_{\, |\omega| \, \to \, \infty} |\hat{f}(\omega)| = 0 \, \big\}
+                    \Ftr \tc f \in \spLd \, \longmapsto \, \hat{f} \tc \spR^d \, \longrightarrow \, \spC \tc
+                    \hat{f}(\omega)
+                    \triangleq \intRd f(x) \, \eFtr{\omega}{x} \, dx \, .
                     \]
                 </div>
             </div>
@@ -238,30 +142,45 @@
                 <p>
                     Dato $f \tc \spR \, \longrightarrow \, \spR$,
                     \[
-                    c(t, \omega) = f(t) \, \eFtr{\omega}{t} \quad \text{per} \; t \in \spR
+                    c(t, \omega) = f(t) \, \eFtr{\omega}{t} \quad \text{per} \;\, t \in \spR
                     \]
-                    è la curva nel piano complessa ottenuta dalle rotazioni intorno all'origine con frequenza $\omega$ a
+                    è la <b>curva nel piano complessa</b> ottenuta dalle rotazioni intorno all'origine con frequenza
+                    $\omega$ a
                     distanza variabile nel tempo $f(t)$.
                 </p>
                 <p>
                     La trasformata di Fourier $\hat{f}(\omega) = \int_{\spR} c(t, \omega) \, dt$ può
-                    essere interpreta come una misura del centro di massa della curva $c(t, \omega) = f(t) \,
+                    essere interpreta come una misura del <b>centro di massa</b> della curva $c(t, \omega) = f(t) \,
                     \eFtr{\omega}{t}, \; t \in \spR$.
                 </p>
             </div>
 
             <div class="slide">
                 <div class="grid-2 spaced">
-                    <div class="centered-element" style="left: 0;">
+                    <div class="centered-element" style="padding-top: 20%;">
+                        <img src="imgs/svg/visualization-ft.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize f$
+
+                        <div class="plot-container spaced" id="ft-transform">
+                            <canvas name="plot" class="plot main" id="canvas-ft-transform" tabindex="2"
+                                style="height: 100px;"></canvas>
+                            <div name="plot-loader" id="loader-2" class="plot loader"></div>
+                        </div>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|, \quad \bullet \;\,
+                        |c_{\textrm{cdm}}|$
+                    </div>
+                    <div class="centered-element">
                         <span class="img-label light-blue dash"></span> $\scriptsize\, c(t), \quad \bullet \;
                         c_{\textrm{cdm}}$<br>
 
-                        <div class="plot-container" id="ft-winding" style="margin-top: 5%;">
+                        <div class="plot-container spaced" id="ft-winding">
                             <canvas name="plot" class="plot main" id="canvas-ft-winding" tabindex="3"
-                                style="width: 300px; height: 300px;"></canvas>
+                                style="width: 400px; height: 400px;"></canvas>
                             <div name="plot-loader" id="loader-3" class="plot loader"></div>
                         </div>
-                        <div class="plot-controls" style="margin-top: 5%;">
+                        <div class="plot-controls">
                             <div>
                                 <span class="material-symbols-sharp button" id="play-pause-winding">
                                     play_arrow
@@ -274,20 +193,6 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div class="centered-element" style="top: 30%;">
-                        <img src="imgs/svg/visualization-ft.svg" style="width: 100%;">
-
-                        <span class="img-label light-blue dash"></span> $\scriptsize f$
-
-                        <div class="plot-container" id="ft-transform" style="margin-top: 20px; margin-bottom: 10px;">
-                            <canvas name="plot" class="plot main" id="canvas-ft-transform" tabindex="2"
-                                style="height: 100px;"></canvas>
-                            <div name="plot-loader" id="loader-2" class="plot loader"></div>
-                        </div>
-
-                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|, \quad \bullet \;\,
-                        |c_{\textrm{cdm}}|$
                     </div>
                 </div>
             </div>
@@ -305,15 +210,15 @@
                     \]
                 </div>
 
-                <div class="grid-2" style="margin-bottom: 20px;">
+                <div class="grid-2 spaced">
                     <div class=" centered-element">
-                        <img src="imgs/svg/gaussian-ft-1.svg" style="width: 100%;">
+                        <img src="imgs/svg/gaussian-ft-1.svg" style="width: 80%;"><br>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3, \quad$
                         <span class="img-label grey dots"></span> $\scriptsize \Ftr \varphi_3$
                     </div>
                     <div class="centered-element">
-                        <img src="imgs/svg/gaussian-ft-2.svg" style="width: 100%;">
+                        <img src="imgs/svg/gaussian-ft-2.svg" style="width: 80%;"><br>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3, \quad$
                         <span class="img-label grey dots"></span> $\scriptsize \varphi_3$
@@ -323,35 +228,33 @@
 
             <div class="slide">
                 <div class="grid-2">
-                    <div>
-                        <div class="theorem proposition">
-                            Per $x, \omega \in \spR$,
-                            \[
-                            \Rect(x) \, \stackrel{\Ftr \,}{\longmapsto} \, \Sinc(\pi \omega) \, ,
-                            \]
-                            dove
-                            \[
-                            \Rect(x) \triangleq
-                            \begin{cases}
-                            0 & \text{se} \; |x| \gt \frac{1}{2} \\
-                            \frac{1}{2} & \text{se} \; |x| = \frac{1}{2} \\
-                            1 & \text{se} \; |x| \lt \frac{1}{2} \\
-                            \end{cases}
-                            \]
-                            \[
-                            \Sinc(\pi \omega) \triangleq \frac{\sin(\pi \omega)}{\pi \omega} \, .
-                            \]
-                        </div>
+                    <div class="theorem proposition" style="padding-left: 4%;">
+                        Per $x, \omega \in \spR$,
+                        \[
+                        \Rect(x) \, \stackrel{\Ftr \,}{\longmapsto} \, \Sinc(\pi \omega) \, ,
+                        \]
+                        dove
+                        \[
+                        \Rect(x) \triangleq
+                        \begin{cases}
+                        0 & \text{se} \; |x| \gt \frac{1}{2} \\
+                        \frac{1}{2} & \text{se} \; |x| = \frac{1}{2} \\
+                        1 & \text{se} \; |x| \lt \frac{1}{2} \\
+                        \end{cases}
+                        \]
+                        \[
+                        \Sinc(\pi \omega) \triangleq \frac{\sin(\pi \omega)}{\pi \omega} \, .
+                        \]
                     </div>
                     <div class="centered-element" style="display: grid; place-items: center;">
-                        <img src="imgs/svg/rect-ft-1.svg" style="width: 50%;">
+                        <img src="imgs/svg/rect-ft-1.svg" style="width: 40%;">
 
                         <div>
                             <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3, \quad$
                             <span class="img-label grey dots"></span> $\scriptsize \Ftr \varphi_3$
                         </div>
 
-                        <img src="imgs/svg/rect-ft-2.svg" style="width: 50%; margin-top: 20px;">
+                        <img src="imgs/svg/rect-ft-2.svg" class="spaced" style="width: 40%;">
 
                         <div>
                             <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3, \quad$
@@ -359,59 +262,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Estensione della trasformata di Fourier -->
-
-            <div class="slide">
-                <h4>Estensione della trasformata di Fourier</h4>
-                <p>
-                    Nonostante, in generale, non esistano relazioni di inclusione tra gli spazi $L^p$, la trasformata di
-                    Fourier — precedentemente definita su $L^1$ — può essere estesa su $L^2$.
-                </p>
-                <p>
-                    Sia $f \in \spLLd$. Poiché $\spLd \cap \spLLd$ è denso in $\spLLd$, esiste una successione
-                    \[
-                    (f_n)_{n \in \spNa} \subset \spLd \cap \spLLd \tc \normaLL{f_n - f} \, \longrightarrow \, 0 \, .
-                    \]
-                    Si ha che $\hat{f}_n$ è ben definita $\forall n \in \spNa$. Inoltre, $\normaLL{\hat{f}_n -
-                    \hat{f}_m} = \normaLL{f_n - f_m}$
-                    per il teorema i Plancherel, da cui segue che $(\hat{f}_n)_{n \in \spNa}$ è una successione di
-                    Cauchy su $\spLLd$. Poiché $\spLLd$ è uno spazio di Hilbert e quindi uno spazio metrico completo,
-                    $\exists ! \, \tilde{f} \tc \lim_{\, n \, \to \, \infty} \hat{f}_n = \tilde{f}$ con convergenza in
-                    $\spLLd$. La trasformata di Fourier $\hat{f}$ di $f \in \spLLd$ è definita come $\hat{f} \triangleq
-                    \tilde{f}$.
-                </p>
-            </div>
-
-            <div class="slide">
-                Alternativamente, la trasformata di Fourier su $L^2$ può essere definita sfruttando la densità della
-                classe di Schwartz in $L^2$.
-
-                <div class="definition">
-                    Lo <b>spazio di Schwartz</b> è lo spazio delle funzioni lisce che decrescono rapidamente, cioè
-                    \[
-                    \mathcal{S}(\spR^d) \triangleq \big\{\, f \tc \spR^d \, \longrightarrow \, \spR \; (\text{o} \;
-                    \spC) \tc f \in C^\infty \; \text{e decresce rapidamente} \, \big\} \, ,
-                    \]
-                    dove una funzione $f$ decresce rapidamente se
-                    \[
-                    \sup_{x \, \in \, \spR^d} |x^{\beta} D^\alpha f| \lt \infty \quad \forall \alpha, \beta \in \spNa^d
-                    \]
-                    e $D$ è l'operatore di derivazione parziale per cui $D^\alpha f \triangleq \partial_{x_1}^{\alpha_1}
-                    \dots \partial_{x_d}^{\alpha_d} f$.
-                </div>
-            </div>
-
-            <div class="slide">
-                Si ha che $\mathcal{S}(\spR^d) \subset L^p(\spR^d)$, $\forall p \in [1, \infty]$, ed è denso $\forall p
-                \in [1, \infty)$. Inoltre, la trasformata di Fourier è una biiezione $\Ftr \tc \mathcal{S}(\spR^d) \,
-                \longrightarrow \, \mathcal{S}(\spR^d)$ ed è un'isometria su $\mathcal{S}(\spR^d)$ con la norma $L^2$.
-                Allora
-                \[
-                \Ftr \tc \mathcal{S}(\spR^d) \subset \spLLd \, \longrightarrow \, \spLLd
-                \]
-                può essere esteso ad un'isometria su $\spLLd$.
             </div>
 
             <!-- Operatori -->
@@ -422,7 +272,7 @@
                 <h4>Shift tempo-frequenza</h4>
 
                 <div class="definition">
-                    Dati $f \tc \spR^d \, \longrightarrow \, \spR$ (o $\spC$) e $\omega \in \spR^d$, l'<b>operatore di
+                    Dati $f \tc \spR^d \, \longrightarrow \, \spR \,$ e $\, \omega \in \spR^d$, l'<b>operatore di
                         traslazione</b> $T_x$ è definito da
                     \[
                     T_x f(t) \triangleq f(t - x) \, ,
@@ -431,35 +281,34 @@
                     \[
                     M_\omega f(t) \triangleq \eIFtr{\omega}{t} f(t) \, .
                     \]
-                    Le composizioni di una traslazione e una modulazione, ovvero $T_x M_\omega$ oppure $M_\omega T_x$,
-                    sono dette <b>shift tempo-frequenza</b>.
+                    $T_x M_\omega$ oppure $M_\omega T_x$ sono dette <b>shift tempo-frequenza</b>.
                 </div>
             </div>
 
-            <div class="slide" style="margin-top: 10px; margin-bottom: 20px;">
-                <div class="grid-2">
+            <div class="slide">
+                <div class="grid-2 spaced">
                     <div class="centered-element">
                         <span class="img-label orange dash"></span> $\scriptsize T_x f, \quad$
                         <span class="img-label grey dots"></span> $\scriptsize f \triangleq e^{-t^2}$<br>
 
-                        <img src="imgs/svg/translation.svg" style="width: 100%;">
+                        <img src="imgs/svg/translation.svg" style="width: 80%;">
                     </div>
                     <div class="centered-element">
                         <span class="img-label orange dash"></span> $\scriptsize \Real(M_\omega f), \quad$
                         <span class="img-label grey dots"></span> $\scriptsize f$<br>
 
-                        <img src="imgs/svg/modulation.svg" style="width: 100%;">
+                        <img src="imgs/svg/modulation.svg" style="width: 80%;">
                     </div>
                     <div class="centered-element" style="margin-top: 10px;">
                         <span class="img-label orange dash"></span> $\scriptsize \Real(M_\omega T_x f), \quad$
                         <span class="img-label grey dots"></span> $\scriptsize f$<br>
 
-                        <img src="imgs/svg/time-frequency-shift-1.svg" style="width: 100%;">
+                        <img src="imgs/svg/time-frequency-shift-1.svg" style="width: 80%;">
                     </div>
                     <div class="centered-element" style="margin-top: 10px;">
                         <span class="img-label orange dash"></span> $\scriptsize M_\omega T_x f$<br>
 
-                        <img src="imgs/svg/time-frequency-shift-2.svg" style="width: 55%;">
+                        <img src="imgs/svg/time-frequency-shift-2.svg" style="width: 40%;">
                     </div>
                 </div>
             </div>
@@ -494,7 +343,7 @@
                     \]
                 </div>
 
-                <div class="grid-3" style="margin-top: 15px;">
+                <div class="grid-3 spaced-top">
                     <div class="centered-element">
                         <img src="imgs/svg/convolution-1.svg" style="width: 100%;">
 
@@ -511,7 +360,7 @@
                         $\scriptsize (f * g)(+1)$
                     </div>
                 </div>
-                <div class="centered-element" style="margin-top: 10px; margin-bottom: 10px;">
+                <div class="centered-element" style="margin-top: 1%;">
                     <span class="img-label orange square"></span> $\scriptsize (f * g)(\boldsymbol{\cdot}), \quad$
                     <span class="img-label orange dash"></span> $\scriptsize f \cdot g(x - \boldsymbol{\cdot}),
                     \quad$
@@ -520,14 +369,7 @@
                 </div>
             </div>
 
-            <div class="slide">
-                <div class="theorem property">
-                    Per $f, g \in L^1$,
-                    \[
-                    (f * g)\,\hat{} \, = \hat{f} \cdot \hat{g} \, .
-                    \]
-                </div>
-            </div>
+            <div class="spaced"></div>
 
             <div class="slide">
                 <div class="definition">
@@ -537,19 +379,8 @@
                     \]
                     mentre l'<b>involuzione</b> su $\spLd$ è definita come
                     \[
-                    ^* \tc f \, \longmapsto \, f^* \triangleq \overline{\mathcal{I}f} \tc f^*(x) \triangleq
-                    \overline{f(-x)} \, .
-                    \]
-                </div>
-
-                <div class="theorem property">
-                    Per $f, g \in \spLd$,
-                    \[
-                    \widehat{f^*} = \bar{\hat{f}} \, , \quad \widehat{\mathcal{I} f} = \mathcal{I} \hat{f}
-                    \]
-                    e, se entrambi i lati dell'equazione sono definiti,
-                    \[
-                    (f * g)(x) = \inprod{f}{T_x g^*} \, .
+                    ^* \tc f \, \longmapsto \, f^* \triangleq \bar{\mathcal{I}}f \tc f^*(x) \triangleq
+                    \bar{f}(-x) \, .
                     \]
                 </div>
             </div>
@@ -568,82 +399,18 @@
             </div>
 
             <div class="slide">
-                Il segnale $f$ può essere ricostruito perfettamente — usando la sua trasformata $\hat{f}$ — come
-                "<i>somma continua</i>" di frequenze pure $\eIFtr{\omega\,}{\boldsymbol{\,\cdot}}$. Pertanto, ne
-                deduciamo che la trasformata di Fourier non causa alcuna perdita di informazione.
-
-                <div class="centered-element" style="margin-top: 15px;">
-                    <img src="imgs/svg/inverse-ft-1.svg" style="width: 100%; margin-top: 15px;">
-
-                    <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|$
-
-                    <img src="imgs/svg/inverse-ft-2.svg" style="width: 100%; margin-top: 20px;">
-
-                    <span class="img-label light-blue dash"></span> $\scriptsize f$
-                </div>
-            </div>
-
-            <div class="slide">
                 <div class="theorem proposition">
                     Il teorema di inversione è equivalente al teorema di Plancherel.
                 </div>
 
-                <div class="proof ending-formula">
-                    $\framebox{$\Longleftarrow \,$}$ Supponendo vero il teorema di Placherel,
-                    \[
-                    \Ftr \; \text{unitario} \; \Longrightarrow \; \Ftr^{-1} = \Ftr^* \, ,
-                    \]
-                    dove $\Ftr^*$ è l'operatore aggiunto. Segue immediatamente la formula di inversione.
+                <div class="centered-element spaced-top">
+                    <img src="imgs/svg/inverse-ft-1.svg" style="width: 80%; margin-top: 15px;"><br>
 
-                    <p></p>
+                    <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|$<br>
 
-                    $\framebox{$\Longrightarrow \,$}$ Supponendo vera la formula di inversione $\forall f \tc f, \hat{f}
-                    \in \spLd$,
-                    \[
-                    \begin{split}
-                    \normaLL{f}^2 & = \intRd |f(x)|^2 \, dx = \intRd f(x) \overline{f(x)} \, dx \\
-                    & = \intRd f(x) \underbracket{f^*(-x)}_{f^*(0 - x)} \, fx = f * f^*(0) \\
-                    & = \intRd (f * f^*)\,\hat{}\, (\omega) \, d\omega = \intRd \hat{f}(\omega) \widehat{f^*}(\omega) \,
-                    d\omega \\
-                    & = \intRd \hat{f}(\omega) \bar{\hat{f}}(\omega) \, d\omega = \intRd |\hat{f}(\omega)|^2 \, d\omega
-                    = \normaLL{\hat{f}}^2 \, .
-                    \end{split}
-                    \]
-                </div>
-            </div>
+                    <img src="imgs/svg/inverse-ft-2.svg" style="width: 80%; margin-top: 20px;"><br>
 
-            <div class="slide">
-                <h4>Dimostrazione del teorema di Plancherel</h4>
-
-                La dimostrazione del teorema di Plancherel si basa sul seguente lemma, riguardate la densità dello span
-                degli shift tempo-frequenza delle gaussiane non normalizzate in $\spLLd$:
-
-                <div class="theorem lemma">
-                    $\forall a \gt 0$,
-                    \[
-                    X_a \triangleq \Span\{\, T_x M_\omega \varphi_a \tc x, \omega \in \spR^d \}
-                    \mathop{\subset}_{\textrm{dense}}
-                    \spLLd \, .
-                    \]
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="proof named">
-                    <span class="proof-label">Dim. del teorema di Plancherel</span>
-                    \[
-                    (T_x M_\omega \varphi_1)\,\hat{} \, \vertarrowbox[2pt]{\; = \;}{\hat{\varphi}_1 = \varphi_1}
-                    \eFtr{\omega}{x} T_\omega M_{-x} \varphi_1 \, .
-                    \]
-                    Quindi, $\Ftr \tc X_1 \, \longrightarrow \, X_1 \,$ e $\, \Ftr(X_1)
-                    \displaystyle\mathop{\subset}_{\textrm{dense}}
-                    \spLLd$. Segue che
-                    \[
-                    \inprod{T_x M_\omega \varphi_1}{T_x M_\omega \varphi_1} = \inprod{\Ftr(T_x M_\omega
-                    \varphi)}{\Ftr(T_x M_\omega \varphi)} \, ,
-                    \]
-                    per cui la trasformata di Fourier è un isomorfismo su $X_1$. Poiché $X_1$ è denso in $\spLLd$,
-                    $\Ftr$ si estende ad operatore unitario su $\spLLd$.
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$
                 </div>
             </div>
 
@@ -655,7 +422,7 @@
                 L'analisi dei segnali periodici può essere condotta per mezzo della <b><i>serie di Fourier</i></b>.
 
                 <div class="theorem proposition">
-                    Per $f, \in L^2(\mathbb{T}^d)$, dove $\mathbb{T}^d = \spR^d /spZ^d$,
+                    Per $f, \in L^2(\mathbb{T}^d)$, dove $\mathbb{T}^d = \spR^d / \, \spZ^d$,
                     \[
                     \underbracket{\hat{f}(n) \triangleq \int_{[0, 1]^d} f(x) \, \eFtr{n}{x} \, dx}_{
                     n\textit{-esimo coefficiente di Fourier}} \quad \land \quad f = \underbracket{\sum_{n \, \in \,
@@ -664,8 +431,8 @@
                     \]
                     Inoltre,
                     \[
-                    \underbracket{\!\int_{[0, 1]^d} |f(x)|^2 \, dx = \normaLL{f}^2 = \sum_{n \, \in \, \spZ^d
-                    |\hat{f}(n)|^2}}_{\textit{identità di Parseval}} \, .
+                    \underbracket{\!\int_{[0, 1]^d} |f(x)|^2 \, dx = \normaLL{f}^2 = \sum_{n \, \in \, \spZ^d}
+                    |\hat{f}(n)|^2}_{\textit{identità di Parseval}} \, .
                     \]
                 </div>
             </div>
@@ -674,50 +441,28 @@
                 <h4>Visualizzazione grafica della serie di Fourier</h4>
             </div>
 
-            <!-- Applicazioni -->
-
-            <div class="slide">
-                <h3>Applicazioni</h3>
-                Le applicazioni della trasformata e dalla serie di Fourier sono innumerevoli e spaziano dalla matematica
-                alle scienze — sia teoriche sia sperimentali — e all'informatica. Tra queste, si annoverano le
-                applicazione ne
-                <ul>
-                    <li>
-                        la <b>meccanica quantistica</b>;
-                    </li>
-                    <li>
-                        le procedure di <b>spettroscopia</b>;
-                    </li>
-                    <li>
-                        l'<b>analisi</b> dei segnali <b>audio</b> e la loro compressione;
-                    </li>
-                    <li>
-                        la <b>compressione di immagini</b>.
-                    </li>
-                </ul>
-            </div>
-
             <!-- Limitazioni della Trasformata di Fourier -->
 
             <div class="slide">
                 <h3>Limitazioni della Trasformata di Fourier</h3>
 
                 <p>
-                    La principale limitazione della trasformata di Fourier risiede nell'inabilità di restituire —
-                    facilmente fruibili — in merito alla distribuzione temporale (o spaziale) delle frequenze.
-                </p>
-                <p>
-                    Ciò non costituisce un particolare problema quando l'obiettivo dell'analisi è — per esempio —
-                    identificare solamente la tonalità di un segnale musicale, oppure quando il segnale analizzato è
-                    estremamente semplice. È tuttavia significativo per l'analisi di segnali più complessi.
+                    Una delle principali limitazioni della trasformata di Fourier risiede nell'inabilità di restituire
+                    informazioni — facilmente fruibili — in merito alla distribuzione temporale (o spaziale) delle
+                    frequenze.
                 </p>
             </div>
 
             <div class="slide">
-                Ad esempio, la trasformata di un segnale di frequenza crescente nel tempo non è in grado di evidenziare
-                efficacemente tale proprietà.
+                <h4>Esempi</h4>
 
-                <div class="grid-2" style="margin-top: 15px; margin-bottom: 15px;">
+                <ul>
+                    <li>
+                        Segnali di <b>frequenza crescente</b> nel tempo:
+                    </li>
+                </ul>
+
+                <div class="grid-2 spaced">
                     <div class="centered-element">
                         <img src="imgs/svg/limitation-ft-increasing-1.svg" style="width: 100%;">
 
@@ -734,8 +479,12 @@
             </div>
 
             <div class="slide">
-                Inoltre, la trasformata di due segnali composti dalle medesime frequenze ma distribuite diversamente nel
-                tempo può risultare ingannevolmente simile.
+                
+                <ul>
+                    <li>
+                        Segnali composti dalle <b>stesse onde sinusoidali</b> ma con <b>diversa distribuzione temporale</b>.
+                    </li>
+                </ul>
 
                 <div class="grid-2" style="margin-top: 15px; margin-bottom: 15px;">
                     <div class="centered-element">
@@ -799,21 +548,18 @@
                     <span class="theorem-label">Disuguaglianza HPW</span>
                     $\forall f \in L^2(\spR), \; a, b \in \spR$,
                     \[
-                    \Big( \int_\spR (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\! \frac{1}{2}} \Big( \int_\spR (\omega - b)^2 \,
-                    |\hat{f}(\omega)|^2 \, d\omega \Big)^{\! \frac{1}{2}} \geqslant \frac{1}{4\pi} \normaLL{f}^2 \, .
+                    \underbracket{
+                    \Big( \int_\spR (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\! \frac{1}{2}}}_{
+                    \sim \; \text{misura di dispersione di} \; f
+                    } \; \underbracket{\Big( \int_\spR (\omega - b)^2 \, |\hat{f}(\omega)|^2 \, d\omega \Big)^{\!
+                    \frac{1}{2}}}_{
+                    \sim \; \text{misura di dispersione di} \; \hat{f}
+                    } \geqslant \frac{1}{4\pi} \normaLL{f}^2 \, .
                     \]
                 </div>
             </div>
 
             <div class="slide">
-                <div class="definition">
-                    L'<i>operatore di moltiplicazione</i> $X$ e quello di <i>differenziazione</i> $P$ sono operatori
-                    autoaggiunti definiti rispettivamente da
-                    \[
-                    X f(x) \triangleq x f(x) \quad \text{e} \quad P f(x) \triangleq \frac{1}{2 \pi i} f^\prime (x) \, .
-                    \]
-                </div>
-
                 La dimostrazione della disuguaglianza HPW si basa sul seguente lemma, che è già di per sé una versione
                 astratta del principio di indeterminazione:
 
@@ -828,59 +574,32 @@
             </div>
 
             <div class="slide">
-                <div class="proof named ending-formula">
-                    <span class="proof-label">Dim. della disuguaglianza HPW</span>
-                    Per $f \in \cap \, \{ \Dom X, \Dom P, \Dom XP \, \Dom PX \}$,
-                    \[
-                    [X, P] f(x) = \frac{1}{2 \pi i} \big( x f^\prime(x) - (x f)^\prime (x) \big) = - \frac{1}{2 \pi i}
-                    f(x) \, .
-                    \]
-                    Allora,
-                    \[
-                    \frac{1}{4 \pi} \normaLL{f}^2 = \frac{1}{2} |\inprod{[X, P], f}| \vertarrowbox{\; =
-                    \;}{\text{Lemma}} \normaLL{(X - a) f} \, \normaLL{(P - b) f}
-                    \]
-                    dove
-                    \[
-                    \begin{split}
-                    \normaLL{(P - b) f} & \vertarrowbox{\; = \;}{\text{Parseval}}
-                    \normaLL{\Ftr(\underbracket{Pf}_{\mathclap{\frac{1}{2\pi i}D f}} - bf)} \\
-                    & \quad = \normaLL{\frac{1}{\cancel{2 \pi i}} \cancel{(2 \pi i)} x \hat{f} - (b f)\,\hat{} \,} =
-                    \normaLL{(X - b) \hat{f}} \\
-                    & \quad = \Big( \intRd (\omega - b)^2 |\hat{f}|^2 \, d\omega \Big)^{\frac{1}{2}} \, , \\[1em]
-                    \normaLL{(X - a) f} & \quad = \Big( \intRd (x - a)^2 |f(x)|^2 \, d\omega \Big)^{\frac{1}{2}} \, .
-                    \end{split}
-                    \]
-                </div>
-            </div>
-
-            <div class="slide" style="margin-top: 5px;">
                 <div class="definition named">
                     <span class="definition-label no-dash">Deviazioni standard</span>
                     \[
-                    \begin{array}{l l l}
-                    \Delta_f \, x
-                    & \!\!\! \triangleq \, \displaystyle\min_{a \, \in \, \spR}
-                    \Big( \int_{\spR} (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\frac{1}{2}}
-                    & \!\!\!\! = \, \displaystyle\min_{a \, \in \, \spR}
-                    \normaLL{(X - a) f} \, , \\[1em]
-                    \Delta_f \, \omega
-                    & \!\!\! \, \triangleq \displaystyle\min_{b \, \in \, \spR}
+                    \begin{gathered}
+                    \Delta_f \, x \triangleq \, \min_{a \, \in \, \spR}
+                    \Big( \int_{\spR} (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\frac{1}{2}} \\
+                    \Delta_f \, \omega \triangleq \min_{b \, \in \, \spR}
                     \Big( \int_{\spR} (\omega - b)^2 \, |\hat{f}(\omega)|^2 \, d\omega \Big)^{\frac{1}{2}}
-                    & \!\!\!\! = \, \displaystyle\min_{b \, \in \, \spR}
-                    \normaLL{(X - b) \hat{f}} \, .
-                    \end{array}
+                    \end{gathered}
                     \]
                 </div>
 
-                Se $\Delta_f \, x \lt \infty$ e $\Delta_f \, \omega \lt \infty$, le deviazioni standard sono minimizzate
+                Se $\Delta_f \, x \lt \infty \,$ e $\, \Delta_f \, \omega \lt \infty$, le deviazioni standard sono minimizzate
                 per
                 \[
-                a = \intRd x |f(x)|^2 \, dx
+                a = \underbracket{\intRd x |f(x)|^2 \, dx}_{
+                \text{valore atteso di} \; F
+                }
                 \quad e \quad
-                b = \intRd \omega |\hat{f}(\omega)|^2 \, d\omega \, .
+                b = \underbracket{\intRd \omega |\hat{f}(\omega)|^2 \, d\omega}_{
+                \text{valore atteso di} \; \widehat{F}
+                } \, ,
                 \]
-                $\Delta_f \, x$ e $\Delta_f \, \omega$ possono essere interpretate come la dispersione dell'energia del
+                dove $F$ e $\widehat{F}$ sono variabili aleatorie di cui $|f(x)|^2$ e $|\hat{f}|^2$ sono le funzioni di
+                densità di probabilità $\Delta_f \, x$ e $\Delta_f \, \omega$ possono quindi essere interpretate come la
+                dispersione dell'energia del
                 segnale.
             </div>
 
@@ -888,16 +607,18 @@
                 Con questa notazione, il principio di indeterminazione di Heisenberg-Pauli-Weyl diventa
                 \[
                 \normaLL{f} = 1 \quad \Longrightarrow \quad \Delta_f \, x \cdot \Delta_f \, \omega \geqslant \frac{1}{4
-                \pi} \, .
+                \pi} \, ,
                 \]
-                ovvero non è possibile ottenere una dispersione piccola a piacere sia nel dominio dei tempi sia in
-                quello delle frequenze.
+                <div class="centered-element spaced-bottom">
+                    <i>non è possibile ottenere una dispersione piccola a piacere<br>
+                        sia nel dominio dei tempi sia in quello delle frequenze.</i>
+                </div>
             </div>
 
             <div class="slide">
                 Pertanto, sussiste una relazione di dualità tra la durata del segnale e la banda delle sue frequenze.
 
-                <div class="grid-2" style="margin-top: 15px;">
+                <div class="grid-2" style="margin-top: 2%;">
                     <div class="centered-element">
                         <img src="imgs/svg/uncertainty-1.svg" style="width: 100%;">
 
@@ -923,6 +644,8 @@
                 </div>
             </div>
 
+            <div style="margin-top: 2%;"></div>
+
             <!-- Il principio di indeterminazione di Donoho-Stark -->
 
             <div class="slide">
@@ -938,7 +661,7 @@
                     \]
                 </div>
 
-                <div class="centered-element">
+                <div class="centered-element spaced-bottom">
                     <img src="imgs/svg/epsilon-concentration.svg" style="width: 60%;"><br>
 
                     <span class="img-label orange dash"></span> $\scriptsize f, \quad$
@@ -961,6 +684,8 @@
                 </div>
             </div>
 
+            <div style="margin-top: 5%;"></div>
+
             <!-- Trasformata di Gabor -->
 
             <div class="slide">
@@ -975,56 +700,34 @@
                 <h3>Fondamenti della trasformata di Gabor</h3>
 
                 <div class="definition named highlighted">
-                    <span>Trasformata di Gabor</span>
-                    Fissata una funzione fissa $g \tc g \neq 0$, detta funzione finestra, la <b>trasformata di Gabor</b>
-                    — detta anche Short Time Fourier Transform (STFT) — di una funzione $f$ rispetto a $g$ è definita da
+                    <span class="definition-label">Trasformata di Gabor su $L^2$</span>
+                    Fissata una funzione $g \in \spLLd \tc g \neq 0$, detta funzione finestra, la <b>trasformata di
+                        Gabor</b> — detta anche Short Time Fourier Transform (STFT) — di una funzione $f \in \spLLd$
+                    rispetto a $g$ è definita puntualmente da
                     \[
                     \begin{gathered}
                     V_g \tc f \, \longmapsto V_g f \\
-                    V_g f(x, \omega) \triangleq \intRd f(t) \overline{g(t - x)} \, \eFtr{\omega}{t} \, dt \, , \quad
-                    \text{per} \; x, \omega \in \spR^d \, ,
+                    V_g f(x, \omega) \triangleq \intRd f(t) \, \bar{g}(t - x) \, \eFtr{\omega}{t} \, dt \quad
+                    \text{per} \; x, \omega \in \spR^d \, .
                     \end{gathered}
                     \]
-                    quando l'integrale è definito.
                 </div>
             </div>
 
             <div class="slide">
-                Essendo $V_g f$ in generale complesso, per visualizzare la trasformata di Gabor è solitamente impiegato
-                lo <b>spettrogramma</b>, ovvero $|V_g f(x, \omega)|^2$ per $x \in \Dom f \,$ e $\, \omega \in \Dom
-                \hat{f}$.
-            </div>
+                Essendo $V_g f$ in generale complesso, per visualizzare la trasformata di Gabor è solitamente
+                impiegato lo <b>spettrogramma</b>, ovvero $|V_g f(x, \omega)|^2$ per $x \in \Dom f \,$ e $\, \omega
+                \in \Dom \hat{f}$.
 
-            <div class="slide">
-                La trasformata di Gabor può essere espressa in varie forme.
+                <div class="centered-element spaced">
+                    <span class="img-label orange square"></span> $\scriptsize |V_g f|^2$<br>
 
-                <div class="theorem lemma">
-                    Per $f, g \in \spLLd$,
-                    \[
-                    \begin{split}
-                    V_g f(x, \omega) & = (f \cdot T_x \bar{g})\,\hat{}\: (\omega) \\[.5em]
-                    & = \inprod{f}{M_\omega T_x g} \\[.5em]
-                    & = \inprod{\hat{f}}{T_\omega M_x \hat{g}} \\[.5em]
-                    & = \eFtr{\omega}{x} V_{\hat{g}} \hat{f} (\omega, -x) \\
-                    & = (\hat{f} * M:x \hat{g}^*)(\omega)
-                    \end{split}
-                    \]
-                </div>
-            </div>
+                    <img src="imgs/jpg/spectrogram-odj.jpg" width="75%">
 
-            <div class="slide">
-                Da $V_g f(x, \omega) = (f \cdot T_x \bar{g})\,\hat{}\: (\omega)$ segue che, per $f, g \in \spLLd$, $f
-                \cdot T_x \bar{g} \in \spLd$ e quindi la trasformata è definita puntualmente.
-
-                <div class="definition named">
-                    <span class="definition-label">Trasformata di Gabor su $L^2$</span>
-                    Se $g, \in \spLLd \tc g \neq 0$, la trasformata di gabor definisce una mappa lineare
-                    \[
-                    \begin{array}{r c c c}
-                    V_g \tc \!\!\! & \spLLd & \! \longrightarrow & \! \spLLdd \\
-                    & f & \! \longmapsto & \! V_g f \, .
-                    \end{array}
-                    \]
+                    <p style="font-size: 75%;">
+                        Spettrogramma di un estratto della melodia dall'inno europeo,<br>
+                        tratto da <i>Nona Sinfonia</i> di Beethoven e noto anche come <i>Inno alla Gioia</i>.
+                    </p>
                 </div>
             </div>
 
@@ -1039,7 +742,7 @@
                 & \!\! \longrightarrow \!\! & \spLLdd \\
 
                 && f, g
-                & \!\! \stackrel{\overline{\otimes}}{\longmapsto}
+                & \!\! \stackrel{\bar{\otimes}}{\longmapsto}
                 \!\! & f \otimes \bar{g}
                 & \!\! \stackrel{\mathcal{T}_a}{\longmapsto}
                 \!\! & \mathcal{T_a} (f \otimes \bar{g})
@@ -1047,13 +750,13 @@
                 \!\! & \Ftr_2 \mathcal{T}_a (f \otimes \bar{g}) \, ,
                 \end{array}
                 \]
-                dove $\overline{\otimes}$ è un <i>prodotto tensoriale</i>, $\mathcal{T}_a$ una <i>trasformazione
+                dove $\bar{\otimes}$ è un <i>prodotto tensoriale</i>, $\mathcal{T}_a$ una <i>trasformazione
                     asimmetrica di coordinate</i> e $\Ftr_2$ una <i>trasformata parziale di Fourier</i>, definiti
                 rispettivamente come
                 \[
                 \begin{array}{c c c c r c l}
-                \overline{\otimes} & \tc & \spLLd & \longrightarrow \spLLdd \tc
-                & f \overline{\otimes} g \, (x, t)
+                \bar{\otimes} & \tc & \spLLd & \longrightarrow \spLLdd \tc
+                & f \bar{\otimes} g \, (x, t)
                 & \triangleq & f \otimes \bar{g} (x, t) \triangleq f(x) \, \bar{g}(t) \, , \\[.5em]
                 \mathcal{T}_a & \tc & \spLLdd & \longrightarrow \spLLdd \tc
                 & \mathcal{T}_a F(x, t)
@@ -1069,36 +772,38 @@
                 Gli operatori $\mathcal{T}_a$ e $\Ftr_2$ sono isometrici su $\spLLd$. Inoltre, se $f, g \in \spLLd$,
                 allora
                 \[
-                \normaLLdd{f \overline{\otimes} g} = \normaLLd{f} \, \normaLLd{g} \, .
+                \normaLLdd{f \bar{\otimes} g} = \normaLLd{f} \, \normaLLd{g} \, .
                 \]
             </div>
 
             <div class="slide">
                 <h4>Ortogonalità</h4>
 
-                <div class="theorem">
-                    Per $j = 1, 2$, se $f_j, g_j \in \spLLd$, allora $V_{g_j} f_j \in \spLLdd$ e vale l'<b>equivalenza
-                        di ortogonalità</b>
+                <div class="theorem named">
+                    <span class="theorem-label">Relazione di ortogonalità</span>
+                    Per $j = 1, 2$, se $f_j, g_j \in \spLLd$, allora $V_{g_j} f_j \in \spLLdd$ e vale un analogo del
+                    teorema di Plancherel:
                     \[
                     \inprod{V_{g_1} f_1}{V_{g_2} f_2}_{\spLLdd}
-                    = \inprod{f_1}{f_2} \overline{\inprod{g_1}{g_2}} \, .
+                    = \inprod{f_1}{f_2}_{\spLLd} {\mathop{\inprod{g_1}{g_2}}^{\text{_________}}}_{\spLLd} \, .
                     \]
                 </div>
 
                 <div class="proof ending-formula">
-                    RIcordando che l'isometria $\Ftr_2 \mathcal{T}_a$ preserva il prodotto interno, segue che
+                    Ricordando che l'isometria $\Ftr_2 \mathcal{T}_a$ preserva il prodotto interno, segue che
                     \[
                     \begin{split}
                     \inprod{V_{g_1} f_1}{V_{g_2} f_2}_{\spLLd}
                     & =
                     \inprod{\Ftr_2 \mathcal{T}_a (f_1 \otimes \bar{g}_1)}{\Ftr_2 \mathcal{T}_a (f_2 \otimes \bar{g}_2)}
                     \\
-                    & = \inprod{f_1 \otimes \bar{g}_1}{f_2 \otimes \bar{g}_2} \mathop{=}^{\text{def}} \inprod{f_1
+                    & = \inprod{f_1 \otimes \bar{g}_1}{f_2 \otimes \bar{g}_2} \mathop{=}^{\text{def}} \, \inprod{f_1
                     \bar{g}_1}{f_2
                     \bar{g}_2} \\[.2em]
-                    & = \intRd f_1(t) \overline{f_2(t)} \, \Big( \intRd \overline{g_1(t - x)} g_2(t - x) dx \Big) \ dt
+                    & = \intRd f_1(t) \, \bar{f}_2(t) \, \Big( \intRd \bar{g}_1(t - x) \, g_2(t - x) dx \Big)
+                    \ dt
                     \\[.2em]
-                    & = \inprod{f_1}{f_2} \overline{\inprod{g_1}{g_2}} \, .
+                    & = \inprod{f_1}{f_2}_{\spLLd} {\mathop{\inprod{g_1}{g_2}}^{\text{_________}}}_{\spLLd} \, .
                     \end{split}
                     \]
                 </div>
@@ -1107,106 +812,21 @@
             <div class="slide">
                 <h3>Formula di inversione</h3>
 
-                Come per la trasformata di Fourier, è possibile ricostruire il segnale un segnale a partire dalla sua
-                trasformata di Gabor. Tuttavia, occorre prestare attenzione all'integrazione dell'operatore $\phi \tc
-                \spR^{2d} \, \longrightarrow \, \spLLdd$, dato dalla combinazione della trasformata di Gabor e una
-                finestra di decodifica \, .
-            </div>
+                <p>
+                    Come per la trasformata di Fourier, è possibile ricostruire un segnale $f$ a partire dalla
+                    sua trasformata di Gabor $V_g f$. La formulazione della trasformata inversa si fonda sul
+                    concetto di integrale a valori vettoriali.
+                </p>
 
-            <div class="slide">
-                Sia $\phi \tc \spR^n \, \longrightarrow \, H$ dove $H$ è uno spazio di Hilbert. Vogliamo pertanto
-                definire
-                \[
-                \int_{\spR^n} \phi(t) \, dt \in H \, .
-                \]
-                Poiché $H$ è uno spazio di Hilbert, si può definire una biiezione tra $H$ e il suo duale $H^*$
-                \[
-                \begin{array}{c c c}
-                x & \longleftrightarrow & h_x \\
-                H & \longleftrightarrow & H^*
-                \end{array}
-                \quad \text{con} \quad
-                h_x (y) = \inprod{y}{x}, \;\; \forall y \in H \, .
-                \]
-            </div>
-
-            <div class="slide">
-                Possiamo quindi definire
-                \[
-                \ell \tc y \in H \, \longmapsto \, \int_{\spR^n} \inprod{y}{\phi(t)\!} \, dt \, ,
-                \]
-                che è lineare in $y$. Se $\int \norma{\phi(t)} \, dt = C$, allora $|\ell(y)| \leqslant C \norma{y}$ e
-                quindi $\ell$ è lineare e limitato, cioè $l \in H^*$. Pertanto, dal teorema di rappresentazione di
-                Riesz-Fréchet, si ha
-                \[
-                \exists ! \; x \in H \tc \ell(y) = \inprod{y}{x} \;\; \forall y \in H
-                \]
-                e possiamo identificare $\ell \equiv x \in H$. Quindi
-                \[
-                \ell(y) = \int_{\spR^n} \inprod{y}{\phi(t)\!} \, dt \mathop{=}^{\text{def}}
-                \overbracket{\inprod{y}{\underbracket{\int_{\spR^n} \phi(t) \, dt}_{x \, \equiv \ell}}}^{\inprod{y}{x}}
-                \, .
-                \]
-            </div>
-
-            <div class="slide">
-                Ciò significa che possiamo formalmente definire
-                \[
-                \int_{\spR^n} \phi(t) \, dt \mathop{=}^{\text{def}} x
-                \quad \text{dove} \quad
-                x \in H \tc \underbracket{\int_{\spR^n} \inprod{y}{\phi(t)} \, dt}_{\ell(y)} = \inprod{y}{x} \;\;
-                \forall y \in H \, .
-                \]
-                Nel caso di nostro interesse, abbiamo $H = \spLLd$, $F \in \spLLdd$ e la finestra di decodifica fissata
-                $\gamma \in \spLLd \tc \gamma \neq 0$. Pertanto
-                \[
-                \begin{gathered}
-                \phi \tc t = (x, \omega) \in \spR^{2d} \, \longmapsto \, F(x, \omega) M_\omega T_x \gamma \in \spLLdd =
-                H \, , \\
-                \ell \tc h \in \spLLd \, \longmapsto \, \int_{\spR^{2d}} F(x, \omega) \overline{\inprod{h}{M_\omega T_x
-                \gamma}_{\spLLd}} \, dx \, d\omega \, .
-                \end{gathered}
-                \]
-            </div>
-
-            <div class="slide">
-                Chiaramente, $\ell$ è lineare e si $|\ell(h)| \leqslant \normaLLdd{f} \normaLLd {\gamma} \normaLLd{h}$.
-                Quindi $\ell$ è un funzionale lineare e limitato e si può applicare il teorema di rappresentazione di
-                Riesz-Fréchet, da cui
-                \[
-                \exists ! \; f = \int_{\spR^{2d}} F(x, \omega) M_\omega T_x \gamma \, dx \, d\omega \in \spLLd \tc
-                \ell(h) = \inprod{h}{f}_{\spLLd} \, .
-                \]
-                con $\normaLLd{f} \leqslant \normaLLdd{F} \normaLLd{\gamma}$
-            </div>
-
-            <div class="slide">
                 <div class="theorem named highligted">
                     <span class="theorem-label">Formula di inversione della trasformata di Gabor</span>
-                    Date due funzioni finestra $g, \gamma \in \spLLd \tc \inprod{g, \gamma} \neq 0$,
+                    Date due funzioni finestra (rispettivamente di codifica e decodifica) $\, g, \gamma \in \spLLd \tc
+                    \inprod{\gamma}{g} \neq 0$,
                     \[
-                    f = \frac{1}{\gamma} \int_{\spR^{2d}} V_g f(x, \omega) M_\omega T_x \gamma \, d\omega \, dx \quad
+                    f = \frac{1}{\inprod{\gamma}{g}} \int_{\spR^{2d}} V_g f(x, \omega) M_\omega T_x \gamma \, d\omega \,
+                    dx \quad
                     \forall f \in \spLLd \, .
                     \]
-                </div>
-
-                <div class="proof">
-                    L'integrale
-                    \[
-                    \tilde{f} = \frac{1}{\gamma} \int_{\spR^{2d}} V_g f(x, \omega) M_\omega T_x \gamma \, d\omega \, dx
-                    \]
-                    è ben definito in $\spLLd$ poiché $V_g f \in \spLLdd$. Inoltre,
-                    \[
-                    \begin{split}
-                    \inprod{\widetilde{f}}{h}
-                    & = \dfrac{1}{\inprod{\gamma}{g}} \intRdd \! V_g f (x, \omega) \, \overline{\inprod{h}{M_\omega T_x
-                    \gamma}} \, dx \, d\omega \\
-                    & = \dfrac{1}{\inprod{\gamma}{g}} \inprod{V_g f}{V_\gamma \, h}
-                    \, = \, \inprod{f}{h} \, ,
-                    \end{split}
-                    \]
-                    poiché dalla relazione di ortogonalità si ha $\inprod{V_g f}{V_\gamma h} = \inprod{f}{h}
-                    \inprod{\gamma}{g}$. Quindi $\tilde{f} = f$.
                 </div>
             </div>
 
@@ -1216,26 +836,24 @@
                 L'analisi di un segnale si divide in tre fasi
                 <ul>
                     <li>
-                        <b>Analisi</b>: viene fornita una nuova rappresentazione dl segnale nello spazio tempo-frequenza
-                        per mezzo della trasformata di Gabor.
+                        <b>Analisi</b>:
                         \[
                         f(x) \, \longmapsto \, V_g f(x, \omega)
                         \]
                     </li>
                     <li>
-                        <b>Processing</b> (o <b>elaborazione</b>): $V_g f$ è trasformato ulteriormente
+                        <b>Processing</b> (o <b>elaborazione</b>):
                         \[
                         \mathfrak{F} \tc V_g f(x, \omega) \, \longmapsto \, \mathfrak{F} V_g f(x, \omega) \, .
                         \]
                         Ad esempio, $V_g f(x, \omega)$ può essere moltiplicato per una funzione $a(x, \omega)$ che
-                        assume valore zero in alcune aree
+                        assume valore zero in alcuni sottoinsiemi dello spazio tempo-frequenza:
                         \[
                         \mathfrak{F} \tc V_g f(x, \omega) \, \longmapsto \, a(x, \omega) \, V_g f(x, \omega) \, .
                         \]
                     </li>
                     <li>
-                        <b>Sintesi</b> (o <b>ricostruzione</b>): il segnale $f$ è ricostruito a partire dalla sua
-                        rappresentazione, eventualmente processata.
+                        <b>Sintesi</b> (o <b>ricostruzione</b>):
                         \[
                         \widetilde{f}(x) = \intRdd \! \mathfrak{F} \, V_g f(x, \omega) M_\omega T_x \gamma \, dx \,
                         d\omega \, .
@@ -1248,105 +866,64 @@
                 <div class="definition named">
                     <span class="definition-label">Operatore di localizzazione</span>
                     La seguente combinazione di analisi, elaborazione e sintesi è detta <b>operatore di
-                        localizzazione</b> con simbolo $a \in \spLLdd$:
+                        localizzazione</b> con simbolo $a \in \spLLdd$
                     \[
                     f(t) \: \longmapsto \:
-                    \widetilde{f}(t) \triangleq \underbracket{\intRdd \overbracket{a(x, \omega) \, \underbracket{V_g
-                    f(x, \omega)}_{\text{analisi}}}^{\text{elaborazione}} M_\omega T_x \gamma \, dx \,
-                    d\omega}_{\text{sintesi}}
-                    \, .
+                    \widetilde{f}(t) \triangleq \underbracket{\intRdd \overbracket{\underbracket{a(x, \omega)}_{
+                    \text{simbolo}
+                    } \, \underbracket{V_g f(x, \omega)}_{
+                    \text{analisi}
+                    }}^{
+                    \text{elaborazione}
+                    } M_\omega T_x \gamma \, dx \, d\omega}_{
+                    \text{sintesi}
+                    } \, .
                     \]
                 </div>
-            </div>
-
-            <div class="slide">
-                <h4>Limitatezza e compattezza</h4>
-
-                Consideriamo ora l'operatore di localizzazione della forma
-                \[
-                D_{F, \varphi, \psi} f (t) \triangleq \intRdd \underbracket{F(z)}_{\text{symbol}}
-                \inprod{f}{\varphi_z}_{\spLLd} \, \psi_z (t) \, dz \quad t \in \spR^d
-                \]
-                dove $z = (x, \omega)$ e $\varphi_z(t) = e^{i t \cdot \omega} \varphi(t - x)$.
-            </div>
-
-            <div class="slide">
-                <div class="theorem">
-                    Per $p \in [1, \infty]$, se $F \in \spLdd$, $\psi \in L^p(\spR^d)$, $\varphi \in
-                    L^{p^\prime}(\spR^d)$, allora $D_{F, \psi, \varphi} \tc L^p(\spR^d) \, \longrightarrow \,
-                    L^p(\spR^d)$ è limitato e
-                    \[
-                    \norma{D_{F, \varphi, \psi}}_{L^p} \leqslant \norma{\psi}_{L^p} \, \norma{\varphi}_{L^{p^\prime}} \,
-                    \normaL{F}
-                    \, .
-                    \]
-                </div>
-
-                <div class="theorem">
-                    Per $p \in [1, \infty]$, se $F \in L^p(\spR^d)$ e $\varphi, \psi \in \spLLd$, allora $D_{F, \psi,
-                    \varphi} \tc \spLLd \, \longrightarrow \, \spLLd$ è un operatore lineare e limitato e
-                    \[
-                    \normaLL{D_{F, \varphi, \psi}} \leqslant \norma{F}_{L^p} \, \normaLL{\psi} \, \normaLL{\varphi} \, .
-                    \]
-                </div>
-            </div>
-
-            <div class="slide">
-                In ultima istanza, la compattezza e la Limitatezza di $D_{F, \varphi, \psi} \tc L^q(\spR^d) \,
-                \longrightarrow
-                \, L^q(\spR^d)$ possono essere dimostrate per $F \in L^p(\spR^{2d})$, $p \in [1, \infty]$, $\varphi,
-                \psi
-                \in \spLd \cap L^\infty(\spR^d)$
-                e
-                \[
-                q \in \big[ \tfrac{2p}{p + 1}, \tfrac{2p}{p - 1} \big] \, .
-                \]
-                Inoltre, possono essere fornite delle stime di $\norma{D_{F, \varphi, \psi}}_{L^q}$.
             </div>
 
             <div class="slide">
                 <h4><i>Denoising</i> di un segnale audio</h4>
 
-                Consideriamo un segnale reale $f \tc \spR \, \longrightarrow \, \spR$ degradato da <i>rumore bianco</i>
-                con volume inferiore a quello del segnale pulito. La rimozione del rumore (<b><i>denoising</i></b>) può
-                essere condotta moltiplicando $V_g f(x, \omega)$ per una funzione $a(x, \omega)$ nulla per $(x, \omega)$
-                tali che $|V_g f(x, \omega)|^2 \lt A$, dove $A$ è una certa soglia.
+                Consideriamo un segnale reale $f \tc \spR \, \longrightarrow \, \spR \,$ degradato da <i>rumore
+                    bianco</i> con volume inferiore a quello del segnale "pulito". La rimozione del rumore
+                (<b><i>denoising</i></b>) può essere condotta moltiplicando $V_g f(x, \omega)$ per una funzione $a(x,
+                \omega)$ nulla per $(x, \omega)$ tali che $|V_g f(x, \omega)|^2 \lt A$, dove $A$ è un certo valore
+                soglia.
                 \[
-                \hspace{-1.5em} V_g f(x, \omega) \, \longrightarrow \, a(x, \omega) V_g f(x, \omega)
+                \hspace{-1.5em} V_g f(x, \omega) \, \longmapsto \, a(x, \omega) \, V_g f(x, \omega)
                 \quad \text{dove} \quad
                 a(x, \omega) = \begin{cases}
                 0 & \text{se} \; |V_g f(x, \omega)|^2 \lt A \\
                 1 & \text{altrimenti}.
                 \end{cases}
                 \]
-                Tale operazione comporta una perdita di informazione, che occorre limitare il più possibile al solo
-                rumore. Sussiste un compromesso tra rumore rimosso e qualità del segnale sintetizzato.
             </div>
 
             <div class="slide">
-                <div class="centered-element" style="margin-top: 10px;">
+                <div class="centered-element" style="margin-top: 2%;">
                     <span class="img-label light-blue dash"></span> $\scriptsize f$
 
-                    <img src="imgs/svg/denoising-1.svg" style="width: 100%; margin-top: 10px;">
+                    <img src="imgs/svg/denoising-1.svg" width="100%" style="margin-top: 2%;">
                 </div>
-                <div class="grid-2" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="grid-2 spaced">
                     <div class="centered-element">
                         <span class="img-label light-blue square"></span> $\scriptsize |V_g f|^2$
 
-                        <img src="imgs/jpg/denoising-1.jpg" loading="lazy"
-                            style="width: 100%; margin-top: 10px; margin-right: 5px;">
+                        <img src="imgs/jpg/denoising-1.jpg" loading="lazy" width="100%"
+                            style="margin-top: 2%; margin-right: 4%;">
                     </div>
                     <div class="centered-element">
                         <span class="img-label light-blue square"></span> $\scriptsize |a \cdot V_g f|^2$
 
-                        <img src="imgs/jpg/denoising-2.jpg" loading="lazy"
-                            style="width: 100%; margin-top: 10px; margin-left: 5px;">
+                        <img src="imgs/jpg/denoising-2.jpg" loading="lazy" width="100%"
+                            style="margin-top: 2%; margin-right: 4%;">
                     </div>
                 </div>
-                <div class="centered-element" style="margin-bottom: 20px;">
+                <div class="centered-element" style="margin-bottom: 2%;">
                     <span class="img-label light-blue dash"></span> $\scriptsize \tilde{f} \; \text{(denoised signal)}$
 
-                    <img src="imgs/svg/denoising-2.svg" style="width: 100%; margin-top: 10px;">
+                    <img src="imgs/svg/denoising-2.svg" width="100%" style="margin-top: 2%">
                 </div>
             </div>
 
@@ -1354,11 +931,11 @@
                 <h4>Taglio tempo-frequenza</h4>
 
                 È inoltre possibile rimuovere — con maggior efficacia rispetto a quanto reso possibile dall'elaborazione
-                della trasformata di Fourier — una frequenza indesiderate moltiplicando $V_g f (x, \omega)$ per una
-                funzione nulla nell'area $R \in \spR^{2d}$ (ad esempio $R = [x_1, x_2] \times [\omega_1, \omega_2]$) in
-                cui tale frequenza è localizzata.
+                della trasformata di Fourier — una frequenza limitata nel tempo moltiplicando $V_g f (x, \omega)$ per
+                una funzione nulla nell'area $R \in \spR^{2d}$ (ad esempio $R = [x_1, x_2] \times [\omega_1, \omega_2]$)
+                in cui tale frequenza è localizzata.
                 \[
-                \hspace{-1.5em} V_g f(x, \omega) \, \longrightarrow \, a(x, \omega) V_g f(x, \omega)
+                \hspace{-1.5em} V_g f(x, \omega) \, \longrightarrow \, a(x, \omega) \, V_g f(x, \omega)
                 \quad \text{dove} \quad
                 a(x, \omega) = \begin{cases}
                 0 & \text{se} \; (x, \omega) \in R \\
@@ -1368,38 +945,37 @@
             </div>
 
             <div class="slide">
-                <div class="centered-element" style="margin-top: 10px;">
+                <div class="centered-element" style="margin-top: 2%;">
                     <span class="img-label light-blue dash"></span> $\scriptsize f$
 
-                    <img src="imgs/svg/time-frequency-cut-1.svg" style="width: 100%; margin-top: 10px;">
+                    <img src="imgs/svg/time-frequency-cut-1.svg" width="100%" style="margin-top: 2%;">
                 </div>
-                <div class="grid-2" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="grid-2" style="margin-top: 2%; margin-bottom: 2%">
                     <div class="centered-element">
                         <span class="img-label light-blue square"></span> $\scriptsize |V_g f|^2$
 
                         <div style="position: relative;">
-                            <img src="imgs/jpg/time-frequency-cut-1.jpg" loading="lazy"
-                                style="position: relative; width: 100%; margin-right: 5px;">
-                            <img src="imgs/svg/time-frequency-cut-frame-1.svg"
-                                style="position: absolute; top: 0; left: 0; width: 100%;">
+                            <img src="imgs/jpg/time-frequency-cut-1.jpg" loading="lazy" width="100%"
+                                style="position: relative; margin-right: 4%;">
+                            <img src="imgs/svg/time-frequency-cut-frame-1.svg" width="100%"
+                                style="position: absolute; top: 0; left: 0;">
                         </div>
                     </div>
                     <div class="centered-element">
                         <span class="img-label light-blue square"></span> $\scriptsize |a \cdot V_g f|^2$
 
                         <div style="position: relative;">
-                            <img src="imgs/jpg/time-frequency-cut-2.jpg" loading="lazy"
-                                style="position: relative; width: 100%; margin-right: 5px;">
-                            <img src="imgs/svg/time-frequency-cut-frame-2.svg"
-                                style="position: absolute; top: 0; left: 0; width: 100%;">
+                            <img src="imgs/jpg/time-frequency-cut-2.jpg" loading="lazy" width="100%"
+                                style="position: relative; margin-right: 4%;">
+                            <img src="imgs/svg/time-frequency-cut-frame-2.svg" width="100%"
+                                style="position: absolute; top: 0; left: 0;">
                         </div>
                     </div>
-
                 </div>
-                <div class="centered-element" style="margin-top: -50px; margin-bottom: 20px;">
+                <div class="centered-element" style="margin-top: -8%; margin-bottom: 4%;">
                     <span class="img-label light-blue dash"></span> $\scriptsize \tilde{f} \; \text{(cut signal)}$
 
-                    <img src="imgs/svg/time-frequency-cut-2.svg" style="width: 100%; margin-top: 10px;">
+                    <img src="imgs/svg/time-frequency-cut-2.svg" width="100%" style="margin-top: 2%;">
                 </div>
             </div>
 
@@ -1408,21 +984,41 @@
             <div class="slide">
                 <h3>Analogia con lo spartito musicale</h3>
 
-                <p>
-                    È possibile osservare un'analogia tra lo spettrogramma e una partitura musicale. Infatti, entrambe
-                    sono rappresentazioni di un segnale che mettono in relazione tempo e frequenza.
-                </p>
-                <p>
-                    Matematicamente, il segnale definito da uno spartito può essere descritto utilizzando una funzione
-                    definita a tratti, per cui ciascun tratto è un'onda sinusoidale $\sin(2 \pi \omega t)$, dove
-                    $\omega$ è la frequenza della nota corrispondente. Nel sistema occidentale a 12 note con
-                    temperamento equabile, scelta una frequenza di base $\omega_0$, le frequenze delle note $A,B,C, ...$
-                    della scala sono date da
-                    \[
-                    \omega_A = 2^{\frac{0}{12}} \omega_0, \;\; w_{A\sharp} = w_{B\flat} = 2^{\frac{1}{12}} \omega_0,
-                    \;\; ... \;\; \omega_{G\sharp} = 2^{\frac{11}{12}} \omega_0 \, .
-                    \]
-                </p>
+                Lo spettrogramma è il <b>corrispondente matematico</b> di una partitura musicale.
+            </div>
+
+            <div class="slide">
+                <div class="centered-element" style="margin-top: 20px; margin-bottom: 20px;">
+                    <p style="font-size: 75%;">
+                        <i>Toccata</i> di Léon Boëllmann, dalla <i>Suite Gothique</i>, Op. 25 (1895).
+                    </p>
+
+                    <img src="imgs/svg/boellmann-score.svg" width="90%"
+                        style="margin-bottom: -2%; transform: translate(-2%, 0);"><br>
+
+                    <span class="img-label light-blue square"></span> $\scriptsize |V_g f|^2$<br>
+
+                    <img src="imgs/jpg/boellman-toccata.jpg" loading="lazy" width="80%"
+                        style="margin-top: 2%; margin-bottom: 2%;"><br>
+
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$<br>
+
+                    <img src="imgs/svg/boellman-signal.svg" width="80%" style="margin-top: 1%;">
+                </div>
+            </div>
+
+            <div style="margin-top: 2%;"></div>
+
+            <div class="slide">
+                Matematicamente, il segnale definito da uno spartito può essere descritto utilizzando una funzione
+                definita a tratti, per cui ciascun tratto è un'onda sinusoidale $s(t) \triangleq \sin(2 \pi \omega t)$,
+                dove $\omega$ è la frequenza della nota corrispondente. Nel sistema occidentale a 12 note con
+                temperamento equabile, scelta una frequenza di base $\omega_0$, le frequenze delle note $A,B,C, ...$
+                della scala sono date da
+                \[
+                \omega_A = 2^{\frac{0}{12}} \omega_0, \;\; w_{A\sharp} = w_{B\flat} = 2^{\frac{1}{12}} \omega_0,
+                \;\; ... \;\; \omega_{G\sharp} = 2^{\frac{11}{12}} \omega_0 \, .
+                \]
             </div>
 
             <div class="slide">
@@ -1430,7 +1026,7 @@
                 <b><i>curva ADSR</i></b> (<i>Attack-Decay-Sustain-Release</i>), denotata con $c(t)$ nell'immagine, che
                 modula in volume della nota nel tempo.
 
-                <div class="centered-element" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="centered-element spaced">
                     <img src="imgs/svg/adsr-curve.svg" style="width: 80%;"><br>
 
                     <span class="img-label grey dash"></span> $\scriptsize s(t), \quad$
@@ -1440,38 +1036,20 @@
             </div>
 
             <div class="slide">
-                Si osservi, ad esempio, lo spettrogramma della prima battuta della <i>Toccata</i> di Léon Boëllmann,
-                tratta dalla <i>Suite Gothique</i>, Op. 25 (1895).
-
-                <div class="centered-element" style="margin-top: 20px; margin-bottom: 20px;">
-                    <img src="imgs/svg/boellmann-score.svg" width="90%"><br>
-
-                    <span class="img-label light-blue square"></span> $\scriptsize |V_g f|^2$<br>
-
-                    <img src="imgs/jpg/boellman-toccata.jpg" loading="lazy" width="80%"
-                        style="margin-top: 5px; margin-bottom: 10px;"><br>
-
-                    <span class="img-label light-blue dash"></span> $\scriptsize f$<br>
-
-                    <img src="imgs/svg/boellman-signal.svg" width="80%" style="margin-top: 5px;">
-                </div>
-            </div>
-
-            <div class="slide">
                 <p>
-                    Tuttaiva, in una partitura, ogni nota rappresenta un suono ben localizzato nel tempo e con una
+                    Tuttavia, in una partitura, ogni nota rappresenta un suono ben localizzato nel tempo e con una
                     precisa frequenza. Lo stesso non si può dire dello spettrogramma. È possibile far variare la
                     larghezza della finestra impiegata nell'analisi, migliorando la risoluzione temporale o quella nel
                     dominio delle frequenza. È però impossibile migliorare al contempo entrambe.
                 </p>
-                <p>
-                    Per una finestra gaussiana più stretta $\varphi_{a_1}$, lo spettrogramma $|V_{\varphi_{a_1}} f(x,
-                    \omega)|^2$ presenta una maggiore risoluzione temporale, ma peggiora quella delle frequenza.
-                </p>
             </div>
 
             <div class="slide">
-                <div class="grid-2-left" style="margin-top: 10px; margin-bottom: 20px">
+                Per una finestra gaussiana più stretta $\varphi_{a_1}$, lo spettrogramma $|V_{\varphi_{a_1}} f(x,
+                \omega)|^2$ presenta una maggiore risoluzione temporale, ma peggiora la risoluzione nel dominio delle
+                frequenze.
+
+                <div class="grid-2 left spaced-top">
                     <div class="centered-element">
                         <img src="imgs/jpg/gabor-uncertainty-1.jpg" loading="lazy" width="100%">
 
@@ -1485,14 +1063,14 @@
                 </div>
             </div>
 
-            <div class="slide">
-                Vicevera, per una finestra guassiana più larga $\varphi_{a_2}$, lo spettrogramma $|V_{\varphi_{a_2}}
-                f(x, \omega)|^2$ presenta una maggiore risoluzione nel dominio delle frequenza, ma peggiora quella
-                temporale.
-            </div>
+            <div style="margin-top: 5%;"></div>
 
             <div class="slide">
-                <div class="grid-2-left" style="margin-top: 10px; margin-bottom: 20px">
+                Vicevera, per una finestra guassiana più larga $\varphi_{a_2}$, lo spettrogramma $|V_{\varphi_{a_2}}
+                f(x, \omega)|^2$ presenta una maggiore risoluzione nel dominio delle frequenza, ma peggiora la
+                risoluzione temporale.
+
+                <div class="grid-2 left spaced-top">
                     <div class="centered-element">
                         <img src="imgs/jpg/gabor-uncertainty-2.jpg" loading="lazy" width="100%">
 
@@ -1512,24 +1090,21 @@
                 <h3>Principio di indeterminazione per la trasformata di Gabor</h3>
 
                 <p>
-                    Si può formalizzare maggiormente quando descritto nella precedente sezione, che è diretta
-                    conseguenza del principio di indeterminazione per la trasformata di Fourier.
+                    Quando descritto è diretta conseguenza del principio di indeterminazione per la trasformata di
+                    Fourier.
                 </p>
                 <p>
                     Sia $f \in \spLLd$ un segnale e $\varphi_a$ una finestra gaussiana. Fissato $x \in \spR^d$, si ha
                     \[
-                    V_{g_a} f(x, \omega) = (F_a)\,\hat{}\, (x) \quad \text{dove} \quad F_a(t) \triangleq f(t) \cdot T_x
+                    V_{\varphi_a} f(x, \omega) = (F_a)\,\hat{}\, (\omega) \quad \text{dove} \quad F_a(t) \triangleq f(t)
+                    \cdot T_x
                     \bar{\varphi}_a (t) \, .
                     \]
                     Dalla disuguaglianza HPW segue
                     \[
-                    \Delta_{F_a} t \cdot \Delta_{\widehat{F}_a} \omega \geqslant \frac{1}{4\pi} \normaLL{F_a} \, ,
+                    \Delta_{F_a} t \cdot \Delta_{F_a} \omega \geqslant \frac{1}{4\pi} \normaLL{F_a} \, ,
                     \]
                     dove $\Delta_{F_a} t \,$ e $\, \Delta_{F_a} \omega$ sono le deviazioni standard.
-                </p>
-                <p>
-                    Finestre più strette causano minor dispersione temporale. La disuguaglianza deve allora essere
-                    compensata da un incremento nella dispersione delle frequenze e viceversa.
                 </p>
             </div>
 
@@ -1544,7 +1119,7 @@
                     \[
                     \begin{rcases}
                     f, g \in \spLLd \tc \normaLL{f} = \normaLL{g} = 1 \, , & \\
-                    U \subseteq \spR[2] \tc \int_U |V_g f (x, \omega)|^2 \, dx \, d\omega \geqslant 1 - \varepsilon &
+                    U \subseteq \spR^{2d} \tc \int_U |V_g f (x, \omega)|^2 \, dx \, d\omega \geqslant 1 - \varepsilon &
                     \end{rcases}
                     \; \Longrightarrow \;
                     |U| \geqslant 1 - \varepsilon \, .
@@ -1569,13 +1144,18 @@
 
             <div class="slide">
                 <p>
-                    Ciò significa che un sengale non può essere concetrato su insiemi arbitrariamenti piccoli nello
-                    spazio tempo-frequenza, indipendentemente dalla rappresentazione impiegata.
+                    Ciò significa che
                 </p>
+                <div class="centered-element">
+                    <i>
+                        un segnale non può essere concentrato su insiemi arbitrariamente piccoli<br>
+                        nello spazio tempo-frequenza, indipendentemente dalla rappresentazione impiegata.
+                    </i>
+                </div>
                 <p>
-                    In effetti, poiché $\normaLL{f} = \normaLL{g} = 1$ implica $\normaLL{V_g f} = $, più $V_g f$ è
-                    concentrato su $U$, maggiore diventa la misura di $U$. Viceversa, se $V_g f$ è
-                    $\varepsilon$-concentrato su $U$, allora $|U| \to 1 \,$ per $\, \varepsilon \to 0$.
+                    In effetti, se $V_g f \,$ è $\, \varepsilon$-concentrato su $U$, allora $|U| \to 1 \,$ per $\,
+                    \varepsilon
+                    \to 0$.
                 </p>
             </div>
 
@@ -1589,14 +1169,15 @@
                     di combinare due rappresentazioni ottenute con due differenti finestre.
                 </p>
                 <p>
-                    Consideriamo un segnale $f \tc \spR \, \longrightarrow \, \spR$ e due finestre $g_1, g_2 \tc \spR \,
+                    Consideriamo un segnale $f \tc \spR \, \longrightarrow \, \spR \,$ e due finestre $\, g_1, g_2 \tc
+                    \spR \,
                     \longrightarrow \, \spR$.
                 </p>
                 <div class="definition named">
                     <span class="definition-label">Spettrogramma a due finestre</span>
                     Lo spettrogramma di un segnale $f$ rispetto a due finestre $g_1$ e $g_2$ è definito come
                     \[
-                    \Spectrogram_{g_1, \, g_2} f \triangleq V_{g_1} f \cdot \overline{V_{g_2} f} \, .
+                    \Spectrogram_{g_1, \, g_2} f \triangleq V_{g_1} f \cdot \mathop{V_{g_2} f}^{\text{______}} \, .
                     \]
                 </div>
             </div>
@@ -1604,13 +1185,15 @@
             <div class="slide">
                 In particolare, per $g_1 = g_2$, si ha
                 \[
-                \Spectrogram_{g_1, \, g_1} f \triangleq \Spectrogram_{g_1} f = V_{g_1} f \cdot \overline{V_{g_1} f} =
-                \underbracket{|V_{g_1} f|^2}_{\mathclap{\text{spectrogram of} \; V_{g_1} f}} \, .
+                \Spectrogram_{g_1, \, g_1} f \triangleq \Spectrogram_{g_1} f = V_{g_1} f \cdot \mathop{V_{g_2}
+                f}^{\text{______}} =
+                \underbracket{|V_{g_1} f|^2}_{\mathclap{\text{spettrogramma di} \; V_{g_1} f}} \, .
                 \]
                 Poiché $\Spectrogram_{g_1, \, g_2}$ è solitamente complesso, consideriamo $|\Spectrogram_{g_1, \, g_2}
-                f|$ al fine di visualizzarlo graficamente. Allora
+                f|$ al fine di visualizzarlo graficamente.
                 \[
-                |\Spectrogram_{g_1, \, g_2} f| = |V_{g_1} f| \cdot |\overline{V_{g_2} f}| = |V_{g_1} f| \cdot |V_{g_2}
+                |\Spectrogram_{g_1, \, g_2} f| = |V_{g_1} f| \cdot |\mathop{V_{g_2} f}^{\text{______}}| = |V_{g_1} f|
+                \cdot |V_{g_2}
                 f| =
                 \Spectrogram_{g_1}^{\frac{1}{2}} \cdot \Spectrogram_{g_2}^{\frac{1}{2}} \, .
                 \]
@@ -1633,48 +1216,51 @@
                 \]
             </div>
 
+            <div style="margin-top: 5%;"></div>
+
             <div class="slide">
-                <div class="centered-element" style="margin-top: 20px;">
-                    <img src="imgs/svg/two-windows-1_1.svg" width="72.5%"><br>
+                <div class="centered-element spaced-top">
+                    <img src="imgs/svg/two-windows-1_1.svg" width="60%"><br>
 
                     <span class="img-label light-blue dash"></span> $\scriptsize f$
                 </div>
-                <div class="grid-2" style="margin-top: 15px;">
-                    <div class="centered-element" style="margin-right: 5px;">
-                        <img src="imgs/svg/two-windows-1_2.svg" width="50%"><br>
+                <div class="grid-2" style="margin-top: 2%;">
+                    <div class="centered-element" style="margin-right: 5%;">
+                        <img src="imgs/svg/two-windows-1_2.svg" width="40%"><br>
 
                         <span class="img-label light-blue square"></span> $\scriptsize \varphi_a$<br>
 
-                        <img src="imgs/jpg/two-windows-1_1.jpg" width="75%"><br>
+                        <img src="imgs/jpg/two-windows-1_1.jpg" loading="lazy" width="60%"><br>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize |V_{\varphi_a} f|^2$
                     </div>
-                    <div class="centered-element" style="margin-left: 5px;">
-                        <img src="imgs/svg/two-windows-1_3.svg" width="50%"><br>
+                    <div class="centered-element" style="margin-left: 5%;">
+                        <img src="imgs/svg/two-windows-1_3.svg" width="40%"><br>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize \varphi_b$<br>
 
-                        <img src="imgs/jpg/two-windows-1_2.jpg" width="75%"><br>
+                        <img src="imgs/jpg/two-windows-1_2.jpg" loading="lazy" width="60%"><br>
 
                         <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_b} f|^2$
                     </div>
                 </div>
-                <div class="centered-element" style="margin-bottom: 20px;">
-                    <img src="imgs/jpg/two-windows-1_3.jpg" width="75%"><br>
+                <div class="centered-element">
+                    <img src="imgs/jpg/two-windows-1_3.jpg" loading="lazy" width="50%"><br>
 
-                    <span class="img-label light-blue square"></span> $\scriptsize f$
+                    <span class="img-label light-blue square"></span> $\scriptsize |\Spectrogram_{\varphi_a, \,
+                    \varphi_b} \, f|$
                 </div>
             </div>
+
+            <div style="margin-top: 5%;"></div>
 
             <div class="slide">
                 <h4>Frequenze fantasma</h4>
 
                 <p>
-                    Apparentemente, è stato possibile bypassare le limitazioni introdotte dal principio di
-                    indeterminazione.
-                    Tuttavia, diversi esempi mettono il luce come il principio di indeterminazioni si manifesti in
-                    realtà in
-                    una nuova e sorprendente forma.
+                    Tuttavia, il principio di indeterminazione è stato bypassato solo apparentemente. Si ripresenta
+                    infatti in una
+                    nuova e sorprendente forma.
                 </p>
                 <p>
                     Si consideri un segnale $f(t)$ composto da due diverse onde sinusoidali
@@ -1687,42 +1273,44 @@
                     \end{cases} \\[.5em]
                     \]
                     dove $t_{1, 1} < t_{1, 2} < t_{2, 1} < t_{2, 2}$, mentre $\omega_1, \omega_2 \in (\omega -
-                        \varepsilon, \, \omega + \varepsilon)$ per un certo $\omega$ e un sufficientemente piccolo
-                        $\varepsilon$. </p>
+                        \varepsilon, \, \omega + \varepsilon)$ per $\varepsilon$ sufficientemente piccolo. </p>
             </div>
 
             <div class="slide">
-                <div class="centered-element" style="margin-top: 20px;">
-                    <img src="imgs/svg/two-windows-2_1.svg" width="72.5%"><br>
+                <div class="centered-element spaced-top">
+                    <img src="imgs/svg/two-windows-2_1.svg" width="60%"><br>
 
                     <span class="img-label light-blue dash"></span> $\scriptsize f$
                 </div>
-                <div class="grid-2" style="margin-top: 15px;">
-                    <div class="centered-element" style="margin-right: 5px;">
-                        <img src="imgs/svg/two-windows-2_2.svg" width="50%"><br>
+                <div class="grid-2" style="margin-top: 2%;">
+                    <div class="centered-element" style="margin-right: 5%;">
+                        <img src="imgs/svg/two-windows-2_2.svg" width="40%"><br>
 
                         <span class="img-label light-blue square"></span> $\scriptsize \varphi_a$<br>
 
-                        <img src="imgs/jpg/two-windows-2_1.jpg" width="75%"><br>
+                        <img src="imgs/jpg/two-windows-2_1.jpg" loading="lazy" width="60%"><br>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize |V_{\varphi_a} f|^2$
                     </div>
-                    <div class="centered-element" style="margin-left: 5px;">
-                        <img src="imgs/svg/two-windows-2_3.svg" width="50%"><br>
+                    <div class="centered-element" style="margin-left: 5%;">
+                        <img src="imgs/svg/two-windows-2_3.svg" width="40%"><br>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize \varphi_b$<br>
 
-                        <img src="imgs/jpg/two-windows-2_2.jpg" width="75%"><br>
+                        <img src="imgs/jpg/two-windows-2_2.jpg" loading="lazy" width="60%"><br>
 
                         <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_b} f|^2$
                     </div>
                 </div>
-                <div class="centered-element" style="margin-bottom: 20px;">
-                    <img src="imgs/jpg/two-windows-2_3.jpg" width="75%"><br>
+                <div class="centered-element">
+                    <img src="imgs/jpg/two-windows-2_3.jpg" loading="lazy" width="50%"><br>
 
-                    <span class="img-label light-blue square"></span> $\scriptsize f$
+                    <span class="img-label light-blue square"></span> $\scriptsize |\Spectrogram_{\varphi_a, \,
+                    \varphi_b} \, f|$
                 </div>
             </div>
+
+            <div style="margin-top: 5%;"></div>
 
             <div class="slide">
                 <p>
@@ -1739,44 +1327,102 @@
                     per $(x, \omega) \in I_1$ e $(x, \omega) \in I_2$, intorni di $(t_{1, 2}, \, \omega_2)$ e $(t_{2,
                     1}, \,
                     \omega_1)$ rispettivamente. Pertanto, appaiono nello spettrogramma delle frequenze non presenti nel
-                    sengale di partenza e che pertanto vengono chiamate <b>frequenze fantasma</b>.
+                    segnale di partenza e che pertanto vengono chiamate <b>frequenze fantasma</b>.
                 </p>
-                <p>
-                    Tale fenomeno è ulteriormente amplificato per segnali più complessi.
-                </p>
+                <div class="centered-element">
+                    <img src="imgs/jpg/two-windows-2_4.jpg" width="50%" style="margin-bottom: 2%;"><br>
+
+                    <span class="img-label light-blue square"></span> $\scriptsize \Spectrogram_{\varphi_a} \, f +
+                    \Spectrogram_{\varphi_b} \, f$
+                </div>
             </div>
 
+            <div style="margin-top: 5%;"></div>
+
             <div class="slide">
-                <div class="centered-element" style="margin-top: 20px;">
-                    <img src="imgs/svg/two-windows-3_1.svg" width="72.5%"><br>
+                Tale fenomeno è ulteriormente amplificato per segnali più complessi.
+            </div>
+
+            <div style="margin-top: 5%;"></div>
+
+            <div class="slide">
+                <div class="centered-element">
+                    <img src="imgs/svg/two-windows-3_1.svg" width="65%"><br>
 
                     <span class="img-label light-blue dash"></span> $\scriptsize f$
                 </div>
-                <div class="grid-2" style="margin-top: 15px;">
-                    <div class="centered-element" style="margin-right: 5px;">
-                        <img src="imgs/svg/two-windows-3_2.svg" width="50%"><br>
+                <div class="grid-2" style="margin-top: 2%;">
+                    <div class="centered-element" style="margin-right: 5%;">
+                        <img src="imgs/svg/two-windows-3_2.svg" width="40%"><br>
 
                         <span class="img-label light-blue square"></span> $\scriptsize \varphi_a$<br>
 
-                        <img src="imgs/jpg/two-windows-3_1.jpg" width="75%"><br>
+                        <img src="imgs/jpg/two-windows-3_1.jpg" loading="lazy" width="60%"><br>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize |V_{\varphi_a} f|^2$
                     </div>
-                    <div class="centered-element" style="margin-left: 5px;">
-                        <img src="imgs/svg/two-windows-3_3.svg" width="50%"><br>
+                    <div class="centered-element" style="margin-left: 5%;">
+                        <img src="imgs/svg/two-windows-3_3.svg" width="40%"><br>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize \varphi_b$<br>
 
-                        <img src="imgs/jpg/two-windows-3_2.jpg" width="75%"><br>
+                        <img src="imgs/jpg/two-windows-3_2.jpg" loading="lazy" width="60%"><br>
 
                         <span class="img-label light-blue square"></span> $\scriptsize |V_{\varphi_b} f|^2$
                     </div>
                 </div>
-                <div class="centered-element" style="margin-bottom: 20px;">
-                    <img src="imgs/jpg/two-windows-3_3.jpg" width="75%"><br>
+                <div class="centered-element">
+                    <img src="imgs/jpg/two-windows-3_3.jpg" loading="lazy" width="55%"><br>
 
-                    <span class="img-label light-blue square"></span> $\scriptsize f$
+                    <span class="img-label light-blue square"></span> $\scriptsize |\Spectrogram_{\varphi_a, \,
+                    \varphi_b} \, f|$
                 </div>
+            </div>
+
+            <div style="margin-top: 5%;"></div>
+
+            <div class="slide">
+                Si può ottenere un parziale miglioramento della rappresentazione dello spettrogramma a due finestre
+                $|\Spectrogram_{\varphi_a, \, \varphi_b} \, f|$ applicando un filtro di <i>denoising</i>, ovvero
+                \[
+                |\Spectrogram_{\varphi_a, \, \varphi_b} \, f| \, \longmapsto \, a(x, \omega) \,
+                |\Spectrogram_{\varphi_a, \, \varphi_b} \, f|
+                \quad \text{dove} \quad
+                a(x, \omega) \triangleq \begin{cases}
+                0 & \text{se} \; |\Spectrogram_{\varphi_a, \, \varphi_b} \, f| \lt A \\
+                1 & \text{altrimenti}.
+                \end{cases}
+                \]
+
+                <div class="centered-element spaced-top">
+                    <img src="imgs/jpg/two-windows-3_4.jpg" width="50%" style="margin-bottom: 2%;"><br>
+
+                    <span class="img-label light-blue square"></span> $\scriptsize a(x, \omega) \,
+                    |\Spectrogram_{\varphi_a, \, \varphi_b} \, f|$
+                </div>
+            </div>
+
+            <div style="margin-top: 10%;"></div>
+
+            <div class="slide">
+                <b style="font-size: 150%">Bibliografia parziale</b>
+
+                <ul>
+                    <li>
+                        K. Gröchenig, <i>Foundations of Time Frequency Analysis</i>, Applied and Numerical Harmonic
+                        Analysis, Birkhäuser Boston Inc, MA, 2000.
+                    </li>
+                    <li>
+                        G. Sanderson [3Blue1Brown], <i><a href="www.youtube.com/watch?v=spUNpyF58BY">But what is the
+                                Fourier Transform? A visual introduction</a></i>, YouTube, 26 gennaio 2018. Accesso
+                        effettuato nel luglio 2022.
+                    </li>
+                    <li>
+                        G. Sanderson [3Blue1Brown], <i><a href="www.youtube.com/watch?v=r6sGWTCMz2k">But what is a
+                                Fourier series? From heat flow to drawing with circles</a></i> YouTube, 30 giugno 2019.
+                        Accesso effettuato nel luglio 2022.
+                    </li>
+                </ul>
             </div>
 
             <div style="margin-top: 1000px;"></div>
