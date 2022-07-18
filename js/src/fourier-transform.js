@@ -96,11 +96,16 @@ let ftvPlots = function (ids, options) {
 
     const playButton = document.getElementById("play-pause-winding");
 
+    // Play/pause animation
     playButton.onclick = () => {
         running = !running;
         toggleAnimation(running);
     }
 
+    /**
+     * Switch on or off the animation.
+     * @param {Boolean} isRunning True if running, false otherwise.
+     */
     function toggleAnimation(isRunning) {
         playButton.innerHTML = isRunning ? "pause" : "play_arrow";
         if (isRunning) {
@@ -111,14 +116,19 @@ let ftvPlots = function (ids, options) {
 
     let skipInterval;
 
+    // Move to previous step.
+
+    document.getElementById("skip-prev-winding").onclick = () => {
+        skipPrev();
+    }
+
     document.getElementById("skip-prev-winding").onmousedown = () => {
         running = false;
         if (!running) toggleAnimation(false);
 
         clearInterval(skipInterval)
         skipInterval = setInterval(function () {
-            frequency = frequency - df < 0 ? 0 : frequency - df;
-            publicAPIs.drawPlot();
+            skipPrev();
         }, 50);
     }
 
@@ -126,23 +136,45 @@ let ftvPlots = function (ids, options) {
         clearInterval(skipInterval);
     }
 
-    document.getElementById("skip-winding").onmousedown = () => {
+    /**
+     * Skips to next step.
+     */
+    function skipPrev() {
+        const newFrequency = frequency - df;
+        frequency = newFrequency < 0 ? maxFreq + newFrequency : newFrequency;
+        publicAPIs.drawPlot();
+    }
+
+    // Move to next step
+
+    document.getElementById("skip-next-winding").onclick = () => {
+        skipNext();
+    }
+
+    document.getElementById("skip-next-winding").onmousedown = () => {
         running = false;
         if (!running) toggleAnimation(false);
 
         clearInterval(skipInterval)
         skipInterval = setInterval(function () {
-            frequency = (frequency + df) % maxFreq;
-            publicAPIs.drawPlot();
+            skipNext();
         }, 50);
     }
 
-    document.getElementById("skip-winding").onmouseup = () => {
+    document.getElementById("skip-next-winding").onmouseup = () => {
         clearInterval(skipInterval);
     }
 
     /**
-     * Init the plot.
+     * Skips to next step.
+     */
+    function skipNext() {
+        frequency = (frequency + df) % maxFreq;
+        publicAPIs.drawPlot();
+    }
+
+    /**
+     * Inits the plot.
      * @param {*} inputOptions 
      */
     publicAPIs.init = function (inputOptions) {
@@ -155,7 +187,8 @@ let ftvPlots = function (ids, options) {
                 * (Math.cos(2 * Math.PI * 2 * t) + Math.cos(2 * Math.PI * 4 * t));
         }
 
-        transformPoints = analysisTools.dft(functionPoints, L, maxFreq, df);
+        transformPoints = analysisTools.dft(functionPoints,
+            { L: L, maxFreq: maxFreq, df: df, complex: false });
 
         scale = 1 / Math.max(...functionPoints);
     }
@@ -171,7 +204,7 @@ let ftvPlots = function (ids, options) {
     const wCtx = windingPlot.getCtx();
 
     /**
-     * Resize the canvas to fill the HTML canvas element.
+     * Resizes the canvas to fill the HTML canvas element.
      */
     publicAPIs.resizeCanvas = () => {
         transformPlot.resizeCanvas();
@@ -222,8 +255,6 @@ let ftvPlots = function (ids, options) {
 
         for (let k = 1; k < M; k += dk * 4) {
             const nextYPos = (0.8 - transformPoints[k].amp * 4);
-
-            // tCtx.lineTo(Math.round(tWidth * k / M), Math.round(tHeight * nextYPos));
 
             tCtx.quadraticCurveTo(
                 tWidth * k / M,

@@ -24,7 +24,11 @@ let plotsManager = new function () {
     let canvases = [...document.getElementsByName("plot")];
 
     function init() {
+        // Fourier transform visualization
         plots.set('ft-winding', new ftvPlots(["ft-transform", "ft-winding"]));
+
+        // Fourier series visualization
+        plots.set('fs-epicycles', new fsvPlots(["fs-path", "fs-epicycles"]));
 
         plots.forEach((plot) => {
             plot.drawPlot();

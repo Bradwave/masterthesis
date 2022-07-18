@@ -134,6 +134,35 @@
                 </div>
             </div>
 
+            <!-- La trasformata di Fourier inversa -->
+
+            <div class="slide">
+                <h4>La trasformata di Fourier inversa</h4>
+
+                <div class="theorem named highlighted">
+                    \[
+                    f, \hat{f} \in \spLd \; \Longrightarrow \; f(x) = \intRd \hat{f}(\omega) \, \eIFtr{x}{\omega} \,
+                    d\omega \quad \forall x \in \spR^d \, .
+                    \]
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="theorem proposition">
+                    Il teorema di inversione è equivalente al teorema di Plancherel.
+                </div>
+
+                <div class="centered-element spaced-top">
+                    <img src="imgs/svg/inverse-ft-1.svg" style="width: 80%; margin-top: 15px;"><br>
+
+                    <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|$<br>
+
+                    <img src="imgs/svg/inverse-ft-2.svg" style="width: 80%; margin-top: 20px;"><br>
+
+                    <span class="img-label light-blue dash"></span> $\scriptsize f$
+                </div>
+            </div>
+
             <!-- Visualizzazione grafica della trasformata di Fourier -->
 
             <div class="slide">
@@ -188,7 +217,7 @@
                                 <span class="material-symbols-sharp button" id="skip-prev-winding">
                                     skip_previous
                                 </span>
-                                <span class="material-symbols-sharp button" id="skip-winding">
+                                <span class="material-symbols-sharp button" id="skip-next-winding">
                                     skip_next
                                 </span>
                             </div>
@@ -283,6 +312,8 @@
                     \]
                     $T_x M_\omega$ oppure $M_\omega T_x$ sono dette <b>shift tempo-frequenza</b>.
                 </div>
+
+                Gli shift tempo-frequenza sono isometrie su $L^p$, $\forall p \in [1, \infty]$.
             </div>
 
             <div class="slide">
@@ -313,107 +344,6 @@
                 </div>
             </div>
 
-            <div class="slide">
-                Gli shift tempo-frequenza sono isometrie su $L^p$, $\forall p \in [1, \infty]$ ed esiste una relazione
-                di commutazione:
-                \[
-                T_x M_\omega = \eFtr{\omega}{x} \, M_\omega T_x
-                \]
-
-                <div class="theorem property named">
-                    \[
-                    (T_x f)\,\hat{} \, = M_{-x} \hat{f} \, ,
-                    \]
-                    \[
-                    (M_\omega f)\,\hat{} \, = T_{\omega} \hat{f} \, ,
-                    \]
-                    \[
-                    (T_x M_\omega f)\, \hat{} \, = \eFtr{\omega}{x} \, T_\omega M_{-x} \hat{f} \, .
-                    \]
-                </div>
-            </div>
-
-            <div class="slide">
-                <h4>Convoluzione, involuzione e riflessione</h4>
-
-                <div class="definition">
-                    Date $f, g \in \spLd$, la <b>convoluzione</b> di $f$ e $g$ è definita come
-                    \[
-                    (f * g)(x) \triangleq \intRd f(y) g(x - y) \, dy \, .
-                    \]
-                </div>
-
-                <div class="grid-3 spaced-top">
-                    <div class="centered-element">
-                        <img src="imgs/svg/convolution-1.svg" style="width: 100%;">
-
-                        $\scriptsize (f * g)(-1)$
-                    </div>
-                    <div class="centered-element">
-                        <img src="imgs/svg/convolution-2.svg" style="width: 100%;">
-
-                        $\scriptsize (f * g)(0)$
-                    </div>
-                    <div class="centered-element">
-                        <img src="imgs/svg/convolution-3.svg" style="width: 100%;">
-
-                        $\scriptsize (f * g)(+1)$
-                    </div>
-                </div>
-                <div class="centered-element" style="margin-top: 1%;">
-                    <span class="img-label orange square"></span> $\scriptsize (f * g)(\boldsymbol{\cdot}), \quad$
-                    <span class="img-label orange dash"></span> $\scriptsize f \cdot g(x - \boldsymbol{\cdot}),
-                    \quad$
-                    <span class="img-label grey dots"></span> $\scriptsize f, \quad$
-                    <span class="img-label grey dash"></span> $\scriptsize g$<br>
-                </div>
-            </div>
-
-            <div class="spaced"></div>
-
-            <div class="slide">
-                <div class="definition">
-                    La <b>riflessione</b> è un operatore definito come
-                    \[
-                    \mathcal{I} \tc f \, \longmapsto \, \mathcal{I} f \tc \mathcal{I} f(x) \triangleq f(-x) \, ,
-                    \]
-                    mentre l'<b>involuzione</b> su $\spLd$ è definita come
-                    \[
-                    ^* \tc f \, \longmapsto \, f^* \triangleq \bar{\mathcal{I}}f \tc f^*(x) \triangleq
-                    \bar{f}(-x) \, .
-                    \]
-                </div>
-            </div>
-
-            <!-- La trasformata di Fourier inversa -->
-
-            <div class="slide">
-                <h3>La trasformata di Fourier inversa</h3>
-
-                <div class="theorem named highlighted">
-                    \[
-                    f, \hat{f} \in \spLd \; \Longrightarrow \; f(x) = \intRd \hat{f}(\omega) \, \eIFtr{x}{\omega} \,
-                    d\omega \quad \forall x \in \spR^d \, .
-                    \]
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="theorem proposition">
-                    Il teorema di inversione è equivalente al teorema di Plancherel.
-                </div>
-
-                <div class="centered-element spaced-top">
-                    <img src="imgs/svg/inverse-ft-1.svg" style="width: 80%; margin-top: 15px;"><br>
-
-                    <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|$<br>
-
-                    <img src="imgs/svg/inverse-ft-2.svg" style="width: 80%; margin-top: 20px;"><br>
-
-                    <span class="img-label light-blue dash"></span> $\scriptsize f$
-                </div>
-            </div>
-
             <!-- La serie di Fourier -->
 
             <div class="slide">
@@ -439,7 +369,39 @@
 
             <div class="slide">
                 <h4>Visualizzazione grafica della serie di Fourier</h4>
+
+                <div class="centered-element">
+                    <div class="plot-container" id="ft-transform">
+                        <canvas name="plot" class="plot" id="canvas-fs-path" tabindex="2"
+                            style="width: 500px; height: 600px;"></canvas>
+                        <canvas name="plot" class="plot stacked" id="canvas-fs-epicycles" tabindex="2"
+                            style="width: 500px; height: 600px;"></canvas>
+                        <div name="plot-loader" id="loader-3" class="plot loader"></div>
+                    </div>
+                    <div class="plot-controls">
+                        <div>
+                            <span class="material-symbols-sharp button" id="play-pause-fs">
+                                play_arrow
+                            </span>
+                            <span class="material-symbols-sharp button" id="skip-prev-fs">
+                                skip_previous
+                            </span>
+                            <span class="material-symbols-sharp button" id="skip-next-fs">
+                                skip_next
+                            </span>
+                            <span class="material-symbols-sharp button" id="less-components">
+                                chevron_left
+                            </span>
+                            <input id="components-number" class="input-box" type="text" maxlength="3" value="1">
+                            <span class="material-symbols-sharp button" id="more-components">
+                                chevron_right
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div style="margin-top: 5%;"></div>
 
             <!-- Limitazioni della Trasformata di Fourier -->
 
@@ -479,10 +441,11 @@
             </div>
 
             <div class="slide">
-                
+
                 <ul>
                     <li>
-                        Segnali composti dalle <b>stesse onde sinusoidali</b> ma con <b>diversa distribuzione temporale</b>.
+                        Segnali composti dalle <b>stesse onde sinusoidali</b> ma con <b>diversa distribuzione
+                            temporale</b>.
                     </li>
                 </ul>
 
@@ -586,7 +549,8 @@
                     \]
                 </div>
 
-                Se $\Delta_f \, x \lt \infty \,$ e $\, \Delta_f \, \omega \lt \infty$, le deviazioni standard sono minimizzate
+                Se $\Delta_f \, x \lt \infty \,$ e $\, \Delta_f \, \omega \lt \infty$, le deviazioni standard sono
+                minimizzate
                 per
                 \[
                 a = \underbracket{\intRd x |f(x)|^2 \, dx}_{
@@ -597,10 +561,11 @@
                 \text{valore atteso di} \; \widehat{F}
                 } \, ,
                 \]
-                dove $F$ e $\widehat{F}$ sono variabili aleatorie di cui $|f(x)|^2$ e $|\hat{f}|^2$ sono le funzioni di
-                densità di probabilità $\Delta_f \, x$ e $\Delta_f \, \omega$ possono quindi essere interpretate come la
-                dispersione dell'energia del
-                segnale.
+                dove $F$ e $\widehat{F}$ sono variabili aleatorie di cui $|f(x)|^2$ e $|\hat{f}(\omega)|^2$ sono le
+                funzioni di
+                densità di probabilità. $\Delta_f \, x$ e $\Delta_f \, \omega$ possono quindi essere interpretate come
+                la
+                dispersione dell'energia del segnale.
             </div>
 
             <div class="slide">
@@ -1473,7 +1438,9 @@
     <script src="js/src/utils.js"></script>
     <script src="js/src/math-utils.js"></script>
     <script src="js/src/plot-structure.js"></script>
-    <script src="js/src/fourier-visualizations.js"></script>
+    <script src="js/src/drawing-coordinates.js"></script>
+    <script src="js/src/fourier-transform.js"></script>
+    <script src="js/src/fourier-series.js"></script>
     <script src="js/src/plots-manager.js"></script>
 </body>
 

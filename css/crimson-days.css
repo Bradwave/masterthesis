@@ -388,6 +388,7 @@ div.play-pause-controls {
 }
 
 .material-symbols-sharp.button {
+    vertical-align: bottom;
     cursor: pointer;
     user-select: none;
     color: var(--dark-grey);
@@ -582,7 +583,7 @@ input.input-box {
     min-width: 10px;
     width: 40px;
     margin-left: -2px;
-    margin-right: 5px;
+    margin-right: -2px;
     background-color: #00000000;
     outline: none;
     border-width: 0;
@@ -597,11 +598,11 @@ input.input-box {
 }
 
 input.input-box:active {
-    border-color: #B01A00;
+    border-color: var(--thm-blue);
 }
 
 input.input-box:hover {
-    border-color: #d43417;
+    border-color: #3494e8;
 }
 
 /* Hides arrows of input box */
