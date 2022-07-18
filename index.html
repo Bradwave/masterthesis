@@ -370,6 +370,12 @@
             <div class="slide">
                 <h4>Visualizzazione grafica della serie di Fourier</h4>
 
+                Dato un qualunque segnale $f \tc \mathbb{T} \, \longrightarrow \, \spC$, il polinomio trigonometrico
+                $f_N(t) = \sum_{n = -N}^N \hat{f}(n) \cdot e^{2 \pi i n \cdot t}$ approssima con crescente precisione
+                $f$ e può essere interpretato come una concatenazione di $2N$ rotazioni nel piano complesso.
+            </div>
+
+            <div class="slide">
                 <div class="centered-element">
                     <div class="plot-container" id="ft-transform">
                         <canvas name="plot" class="plot" id="canvas-fs-path" tabindex="2"
