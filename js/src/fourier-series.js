@@ -38,19 +38,9 @@ let fsvPlots = function (ids, options) {
     let functionPoints = [];
 
     /**
-     * Points of the Fourier transformed function.
+     * Fourier coefficients.
      */
     let coefficients = [];
-
-    /**
-     * Current path.
-     */
-    let path = [];
-
-    /**
-     * Number of sample points.
-     */
-    let N;
 
     /**
      * Scale.
@@ -332,6 +322,11 @@ let fsvPlots = function (ids, options) {
         return width * (xCenter + scale * x);
     }
 
+    /**
+     * Converts x to canvas coordinates.
+     * @param {Number} y Coordinate y.
+     * @returns The canvas coordinates for y.
+     */
     const toCanvasY = (y) => {
         return height * yCenter + width * scale * y;
     }
@@ -391,7 +386,7 @@ let fsvPlots = function (ids, options) {
         // Clears the canvas.
         eCtx.clearRect(0, 0, width, height);
 
-        // -- Partial path --
+        // -- Partial Path --
 
         eCtx.strokeStyle = "#1484E6";
         eCtx.lineWidth = 3;
@@ -452,7 +447,7 @@ let fsvPlots = function (ids, options) {
             }
         }
 
-        // -- Moving point --
+        // -- Moving Point --
 
         eCtx.fillStyle = "#0e5ea4";
 
@@ -468,7 +463,7 @@ let fsvPlots = function (ids, options) {
         // Clears the canvases
         publicAPIs.clearPlot();
 
-        // -- Complete path --
+        // -- Complete Path --
 
         pCtx.strokeStyle = "#888888";
         pCtx.lineWidth = 2;

@@ -12,6 +12,7 @@
 
     <title>Gabor e Indeterminazione</title>
 
+    <link rel="icon" type="image/svg" href="imgs/icon/icon.svg">
     <link rel="stylesheet" href="css/clear-days.css">
 
     <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@latest/lib/bundle.min.js"></script>
@@ -221,9 +222,9 @@
                         <span class="img-label light-blue dash"></span> $\scriptsize f$
 
                         <div class="plot-container spaced" id="ft-transform">
-                            <canvas name="plot" class="plot main" id="canvas-ft-transform" tabindex="2"
+                            <canvas name="plot" class="plot main" id="canvas-ft-transform" tabindex="1"
                                 style="height: 100px;"></canvas>
-                            <div name="plot-loader" id="loader-2" class="plot loader"></div>
+                            <div name="plot-loader" id="loader-1" class="plot loader"></div>
                         </div>
 
                         <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}\,| \quad \bullet \;\,
@@ -235,9 +236,9 @@
                         <span class="img-label grey dots"></span> $\scriptsize \hat{f}$<br>
 
                         <div class="plot-container spaced" id="ft-winding">
-                            <canvas name="plot" class="plot main" id="canvas-ft-winding" tabindex="3"
+                            <canvas name="plot" class="plot main" id="canvas-ft-winding" tabindex="2"
                                 style="width: 400px; height: 400px;"></canvas>
-                            <div name="plot-loader" id="loader-3" class="plot loader"></div>
+                            <div name="plot-loader" id="loader-2" class="plot loader"></div>
                         </div>
                         <div class="plot-controls">
                             <div>
@@ -408,9 +409,9 @@
             <div class="slide">
                 <div class="centered-element">
                     <div class="plot-container" id="ft-transform">
-                        <canvas name="plot" class="plot" id="canvas-fs-path" tabindex="2"
+                        <canvas name="plot" class="plot" id="canvas-fs-path" tabindex="3"
                             style="width: 500px; height: 600px;"></canvas>
-                        <canvas name="plot" class="plot stacked" id="canvas-fs-epicycles" tabindex="2"
+                        <canvas name="plot" class="plot stacked" id="canvas-fs-epicycles" tabindex="4"
                             style="width: 500px; height: 600px;"></canvas>
                         <div name="plot-loader" id="loader-3" class="plot loader"></div>
                     </div>
@@ -437,7 +438,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <!-- Limitazioni della Trasformata di Fourier -->
 
@@ -646,7 +647,8 @@
             </div>
 
             <div class="slide">
-                Pertanto, sussiste una relazione di dualità tra la durata del segnale e la banda delle sue frequenze.
+                Pertanto, sussiste una relazione di dualità tra la durata del segnale e la larghezza di banda nel
+                dominio delle frequenze.
 
                 <div class="grid-2" style="margin-top: 2%;">
                     <div class="centered-element">
@@ -674,7 +676,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 2%;"></div>
+            <div class="medium-separator"></div>
 
             <!-- Il principio di indeterminazione di Donoho-Stark -->
 
@@ -714,7 +716,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <!-- Trasformata di Gabor -->
 
@@ -725,6 +727,49 @@
                 distribuzione temporale (o spaziale) delle frequenze, è possibile — ispirandosi al funzionamento
                 dell'apparato uditivo umano — immaginare di segmentare un segnale prima che questo venga analizzato.
             </div>
+
+            <div class="separator"></div>
+
+            <div class="slide">
+                <div class="centered-element">
+                    <span class="img-label grey dash"></span> $\scriptsize f \quad$
+                    <span class="img-label grey dots"></span> $\scriptsize g \quad$
+                    <span class="img-label orange dash"></span> $\scriptsize f \cdot g(\boldsymbol{\,\cdot} - x)$
+
+                    <div class="plot-container spaced-bottom" id="gt-window">
+                        <canvas name="plot" class="plot main" id="canvas-gt-window" tabindex="5"
+                            style="width: 600px; height: 150px;"></canvas>
+                        <div name="plot-loader" id="loader-4" class="plot loader"></div>
+                    </div>
+
+                    <span class="img-label orange dash"></span> $\scriptsize |V_g f(x, \boldsymbol{\cdot}\,)| \triangleq
+                    |\Ftr \big(f \cdot g(\boldsymbol{\,\cdot} - x) \big)|$
+
+                    <div class="plot-container" id="gt-gabor">
+                        <canvas name="plot" class="plot main" id="canvas-gt-gabor" tabindex="6"
+                            style="width: 600px; height: 150px;"></canvas>
+                        <div name="plot-loader" id="loader-5" class="plot loader"></div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <div class="plot-controls">
+                        <div>
+                            <span class="material-symbols-sharp button" id="play-pause-window">
+                                play_arrow
+                            </span>
+                            <span class="material-symbols-sharp button" id="skip-prev-window">
+                                skip_previous
+                            </span>
+                            <span class="material-symbols-sharp button" id="skip-next-window">
+                                skip_next
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separator"></div>
 
             <div class="slide">
                 <h3>Fondamenti della trasformata di Gabor</h3>
@@ -868,11 +913,11 @@
                     <li>
                         <b>Analisi</b>:
                         \[
-                        f(x) \, \longmapsto \, V_g f(x, \omega)
+                        \smash{f(x) \, \longmapsto \, V_g f(x, \omega)}
                         \]
                     </li>
                     <li>
-                        <b>Processing</b> (o <b>elaborazione</b>):
+                        <b><i>Processing</i></b> (o <b>elaborazione</b>):
                         \[
                         \mathfrak{F} \tc V_g f(x, \omega) \, \longmapsto \, \mathfrak{F} V_g f(x, \omega) \, .
                         \]
@@ -1037,7 +1082,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 2%;"></div>
+            <div class="medium-separator"></div>
 
             <div class="slide">
                 Matematicamente, il segnale definito da uno spartito può essere descritto utilizzando una funzione
@@ -1052,7 +1097,7 @@
             </div>
 
             <div class="slide">
-                Eventualmente, l'onda sinusoidale $s(t)$ corrsipondete ad una nota può essere moltiplicata per una
+                Eventualmente, l'onda sinusoidale $s(t)$ corrispondente ad una nota può essere moltiplicata per una
                 <b><i>curva ADSR</i></b> (<i>Attack-Decay-Sustain-Release</i>), denotata con $c(t)$ nell'immagine, che
                 modula in volume della nota nel tempo.
 
@@ -1093,10 +1138,10 @@
                 </div>
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <div class="slide">
-                Vicevera, per una finestra guassiana più larga $\varphi_{a_2}$, lo spettrogramma $|V_{\varphi_{a_2}}
+                Viceversa, per una finestra gaussiana più larga $\varphi_{a_2}$, lo spettrogramma $|V_{\varphi_{a_2}}
                 f(x, \omega)|^2$ presenta una maggiore risoluzione nel dominio delle frequenza, ma peggiora la
                 risoluzione temporale.
 
@@ -1142,7 +1187,7 @@
                 <h4>Principio di indeterminazione di Lieb</h4>
 
                 È inoltre possibile formulare il principio di indeterminazione in una forma simile a quella di
-                Donoho-Stark e che coinvolge direttamente la trasfromata di Gabor.
+                Donoho-Stark e che coinvolge direttamente la trasformata di Gabor.
 
                 <div class="theorem">
                     Per $\, \varepsilon > 0$,
@@ -1246,7 +1291,7 @@
                 \]
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <div class="slide">
                 <div class="centered-element spaced-top">
@@ -1282,7 +1327,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <div class="slide">
                 <h4>Frequenze fantasma</h4>
@@ -1340,7 +1385,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <div class="slide">
                 <p>
@@ -1367,13 +1412,13 @@
                 </div>
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <div class="slide">
                 Tale fenomeno è ulteriormente amplificato per segnali più complessi.
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <div class="slide">
                 <div class="centered-element">
@@ -1409,7 +1454,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 5%;"></div>
+            <div class="separator"></div>
 
             <div class="slide">
                 Si può ottenere un parziale miglioramento della rappresentazione dello spettrogramma a due finestre
@@ -1432,7 +1477,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 10%;"></div>
+            <div class="large-separator"></div>
 
             <div class="slide">
                 <b style="font-size: 150%">Bibliografia parziale</b>
@@ -1455,11 +1500,27 @@
                 </ul>
             </div>
 
-            <div style="margin-top: 1000px;"></div>
+            <div class="large-separator"></div>
+
+            <div class="slide">
+                <div class="centered-element" style="font-family: 'Roboto-Mono', monospace;">
+                    <a href="https://bradwave.github.io/gabor">Strumento dinamico di analisi</a><br>
+
+                    <p style="font-size: 75%;">
+                        Codice sorgente: <a href="https://github.com/bradwave/gabor"
+                            target="_blank">github.com/bradwave/gabor</a><br>
+                        Codice sorgente della presentazione: <a href="https://github.com/bradwave/masterthesis"
+                            target="_blank">github.com/bradwave/masterthesis</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="large-separator"></div>
 
         </main>
     </div>
 
+    <!-- Controls -->
 
     <div class="play-pause-controls">
         <span id="presentation-play" class="material-symbols-sharp button play">
@@ -1506,6 +1567,7 @@
     <script src="js/src/drawing-coordinates.js"></script>
     <script src="js/src/fourier-transform.js"></script>
     <script src="js/src/fourier-series.js"></script>
+    <script src="js/src/gabor-transform.js"></script>
     <script src="js/src/plots-manager.js"></script>
 </body>
 

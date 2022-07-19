@@ -10,7 +10,7 @@
         - Scrollbar
     2. Components
         2.1 Body
-        2.2 Grid Layout & Images
+        2.2 Grid Layouts, Images & Separators
         2.3 Canvas
         2.4 Presentation
         2.5 Tooltip
@@ -252,7 +252,9 @@ a {
     color: var(--accent);
 }
 
-/* -- 2.2 Grid Layout & Images -- */
+/* -- 2.2 Grid Layouts, Images & Separators -- */
+
+/* -- Grid Layouts -- */
 
 .grid-2 {
     display: grid;
@@ -294,7 +296,7 @@ a {
     text-align: center;
 }
 
-/* Labels */
+/* -- Image Labels -- */
 
 span.img-label {
     margin-right: 5px;
@@ -323,6 +325,20 @@ span.img-label.orange {
 
 span.img-label.grey {
     color: #555555;
+}
+
+/* -- Separators -- */
+
+div.separator {
+    margin-top: 5%;
+}
+
+div.medium-separator {
+    margin-top: 2%;
+}
+
+div.large-separator {
+    margin-top: 10%;
 }
 
 /* -- 2.3 Canvas -- */

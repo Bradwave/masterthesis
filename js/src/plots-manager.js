@@ -30,6 +30,9 @@ let plotsManager = new function () {
         // Fourier series visualization
         plots.set('fs-epicycles', new fsvPlots(["fs-path", "fs-epicycles"]));
 
+        // Gabor transform visualization
+        plots.set('gt-window', new gtvPlots(["gt-window", "gt-gabor"]));
+
         plots.forEach((plot) => {
             plot.drawPlot();
         });
