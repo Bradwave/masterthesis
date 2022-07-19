@@ -410,7 +410,7 @@ let fsvPlots = function (ids, options) {
 
         // -- Epicycles --
 
-        eCtx.strokeStyle = "#55555540";
+        eCtx.strokeStyle = "#55555580";
         eCtx.lineWidth = 1;
 
         let x = 0;
@@ -471,7 +471,7 @@ let fsvPlots = function (ids, options) {
         // -- Complete path --
 
         pCtx.strokeStyle = "#888888";
-        pCtx.lineWidth = 1.5;
+        pCtx.lineWidth = 2;
 
         pCtx.beginPath();
 

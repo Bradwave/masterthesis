@@ -12,7 +12,7 @@
 
     <title>Gabor e Indeterminazione</title>
 
-    <link rel="stylesheet" href="css/crimson-days.css">
+    <link rel="stylesheet" href="css/clear-days.css">
 
     <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@latest/lib/bundle.min.js"></script>
 
@@ -63,6 +63,7 @@
             \DeclareMathOperator{\Span}{span}
             \DeclareMathOperator{\Dom}{dom}
             \DeclareMathOperator{\Real}{Re}
+            \DeclareMathOperator{\Imag}{Im}
             \DeclareMathOperator{\Spectrogram}{Sp}
             \newcommand{\vertarrowbox}[3][3pt]{
             \begin{array}[t]{@{}c@{}}
@@ -148,18 +149,46 @@
             </div>
 
             <div class="slide">
-                <div class="theorem proposition">
+                <div class="theorem">
                     Il teorema di inversione è equivalente al teorema di Plancherel.
                 </div>
 
-                <div class="centered-element spaced-top">
-                    <img src="imgs/svg/inverse-ft-1.svg" style="width: 80%; margin-top: 15px;"><br>
+                <div class="grid-3 small-center centered spaced-top">
+                    <div class="centered-element" style="width: 100%;">
+                        <img src="imgs/svg/visualization-ft.svg" width="100%;">
 
-                    <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|$<br>
+                        <span class="img-label light-blue dash"></span> $\scriptsize f$
+                    </div>
+                    <div>
+                        \[
+                        \begin{gathered}
+                        \mathop{\longmapsto}^{\Ftr} \\
+                        \mathop{\longleftarrow\!\shortmid}_{\Ftr^{-1}}
+                        \end{gathered}
+                        \]
+                    </div>
+                    <div class="centered-element">
+                        <div class="grid-2">
+                            <div class="centered-element">
+                                <img src="imgs/svg/inverse-ft.svg" width="100%;">
 
-                    <img src="imgs/svg/inverse-ft-2.svg" style="width: 80%; margin-top: 20px;"><br>
+                                <span class="img-label light-blue dash"></span> $\scriptsize \hat{f}$
+                            </div>
+                            <div class="centered-element" style="font-size: 60%;">
+                                <img src="imgs/svg/inverse-ft-re.svg" width="100%;">
 
-                    <span class="img-label light-blue dash"></span> $\scriptsize f$
+                                <span class="img-label light-blue dash"></span> $\scriptsize \Real(f)$
+
+                                <img src="imgs/svg/inverse-ft-im.svg" width="100%;" class="spaced-top">
+
+                                <span class="img-label light-blue dash"></span> $\scriptsize \Imag(f)$
+
+                                <img src="imgs/svg/inverse-ft-abs.svg" width="100%;" class="spaced-top">
+
+                                <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}\,|$
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -187,7 +216,7 @@
             <div class="slide">
                 <div class="grid-2 spaced">
                     <div class="centered-element" style="padding-top: 20%;">
-                        <img src="imgs/svg/visualization-ft.svg" style="width: 100%;">
+                        <img src="imgs/svg/visualization-ft.svg" width="100%;">
 
                         <span class="img-label light-blue dash"></span> $\scriptsize f$
 
@@ -197,12 +226,13 @@
                             <div name="plot-loader" id="loader-2" class="plot loader"></div>
                         </div>
 
-                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|, \quad \bullet \;\,
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}\,| \quad \bullet \;\,
                         |c_{\textrm{cdm}}|$
                     </div>
                     <div class="centered-element">
-                        <span class="img-label light-blue dash"></span> $\scriptsize\, c(t), \quad \bullet \;
-                        c_{\textrm{cdm}}$<br>
+                        <span class="img-label light-blue dash"></span> $\scriptsize c(t) \quad \bullet \;\,
+                        c_{\textrm{cdm}} \quad$
+                        <span class="img-label grey dots"></span> $\scriptsize \hat{f}$<br>
 
                         <div class="plot-container spaced" id="ft-winding">
                             <canvas name="plot" class="plot main" id="canvas-ft-winding" tabindex="3"
@@ -243,13 +273,13 @@
                     <div class=" centered-element">
                         <img src="imgs/svg/gaussian-ft-1.svg" style="width: 80%;"><br>
 
-                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3, \quad$
+                        <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3 \quad$
                         <span class="img-label grey dots"></span> $\scriptsize \Ftr \varphi_3$
                     </div>
                     <div class="centered-element">
                         <img src="imgs/svg/gaussian-ft-2.svg" style="width: 80%;"><br>
 
-                        <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3, \quad$
+                        <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3 \quad$
                         <span class="img-label grey dots"></span> $\scriptsize \varphi_3$
                     </div>
                 </div>
@@ -279,14 +309,14 @@
                         <img src="imgs/svg/rect-ft-1.svg" style="width: 40%;">
 
                         <div>
-                            <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3, \quad$
+                            <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3 \quad$
                             <span class="img-label grey dots"></span> $\scriptsize \Ftr \varphi_3$
                         </div>
 
                         <img src="imgs/svg/rect-ft-2.svg" class="spaced" style="width: 40%;">
 
                         <div>
-                            <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3, \quad$
+                            <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3 \quad$
                             <span class="img-label grey dots"></span> $\scriptsize \varphi_3$
                         </div>
                     </div>
@@ -319,19 +349,19 @@
             <div class="slide">
                 <div class="grid-2 spaced">
                     <div class="centered-element">
-                        <span class="img-label orange dash"></span> $\scriptsize T_x f, \quad$
+                        <span class="img-label orange dash"></span> $\scriptsize T_x f \quad$
                         <span class="img-label grey dots"></span> $\scriptsize f \triangleq e^{-t^2}$<br>
 
                         <img src="imgs/svg/translation.svg" style="width: 80%;">
                     </div>
                     <div class="centered-element">
-                        <span class="img-label orange dash"></span> $\scriptsize \Real(M_\omega f), \quad$
+                        <span class="img-label orange dash"></span> $\scriptsize \Real(M_\omega f) \quad$
                         <span class="img-label grey dots"></span> $\scriptsize f$<br>
 
                         <img src="imgs/svg/modulation.svg" style="width: 80%;">
                     </div>
                     <div class="centered-element" style="margin-top: 10px;">
-                        <span class="img-label orange dash"></span> $\scriptsize \Real(M_\omega T_x f), \quad$
+                        <span class="img-label orange dash"></span> $\scriptsize \Real(M_\omega T_x f) \quad$
                         <span class="img-label grey dots"></span> $\scriptsize f$<br>
 
                         <img src="imgs/svg/time-frequency-shift-1.svg" style="width: 80%;">
@@ -352,7 +382,7 @@
                 L'analisi dei segnali periodici può essere condotta per mezzo della <b><i>serie di Fourier</i></b>.
 
                 <div class="theorem proposition">
-                    Per $f, \in L^2(\mathbb{T}^d)$, dove $\mathbb{T}^d = \spR^d / \, \spZ^d$,
+                    Per $f \in L^2(\mathbb{T}^d)$, dove $\mathbb{T}^d = \spR^d / \, \spZ^d$,
                     \[
                     \underbracket{\hat{f}(n) \triangleq \int_{[0, 1]^d} f(x) \, \eFtr{n}{x} \, dx}_{
                     n\textit{-esimo coefficiente di Fourier}} \quad \land \quad f = \underbracket{\sum_{n \, \in \,
@@ -415,7 +445,7 @@
                 <h3>Limitazioni della Trasformata di Fourier</h3>
 
                 <p>
-                    Una delle principali limitazioni della trasformata di Fourier risiede nell'inabilità di restituire
+                    Una delle limitazioni intrinseche della trasformata di Fourier risiede nell'inabilità di restituire
                     informazioni — facilmente fruibili — in merito alla distribuzione temporale (o spaziale) delle
                     frequenze.
                 </p>
@@ -441,7 +471,7 @@
                     <div class="centered-element">
                         <img src="imgs/svg/limitation-ft-increasing-2.svg" style="width: 100%;">
 
-                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}|$
+                        <span class="img-label light-blue dash"></span> $\scriptsize |\hat{f}\,|$
                     </div>
                 </div>
             </div>
@@ -498,6 +528,35 @@
                     </div>
                 </div>
             </div>
+
+            <div style="margin-top: 5%"></div>
+
+            <div class="slide">
+                <div class="grid-2">
+                    <div class="centered-element spaced-bottom">
+                        <img src="imgs/svg/limitation-ft-r1.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \Real(\hat{f}_1)$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-r2.svg" style="width: 100%;">
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \Real(\hat{f}_2)$
+                    </div>
+                    <div class="centered-element spaced-bottom">
+                        <img src="imgs/svg/limitation-ft-cc1.svg" style="width: 50%;"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \hat{f}_1$
+                    </div>
+                    <div class="centered-element">
+                        <img src="imgs/svg/limitation-ft-cc2.svg" style="width: 50%;"><br>
+
+                        <span class="img-label light-blue dash"></span> $\scriptsize \hat{f}_2$
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 5%"></div>
 
             <!-- Il principio di indeterminazione -->
 
@@ -635,10 +694,10 @@
                 <div class="centered-element spaced-bottom">
                     <img src="imgs/svg/epsilon-concentration.svg" style="width: 60%;"><br>
 
-                    <span class="img-label orange dash"></span> $\scriptsize f, \quad$
-                    <span class="img-label grey" style="opacity: 0.6;">[ ]</span> $\scriptsize T, \quad$
-                    <span class="img-label grey dots" style="opacity: 0.6;"></span> $\scriptsize |f|^2, \quad$
-                    <span class="img-label orange square"></span> $\scriptsize \int_{T^C} |f|^2, \quad$
+                    <span class="img-label orange dash"></span> $\scriptsize f \quad$
+                    <span class="img-label grey" style="opacity: 0.6;">[ ]</span> $\scriptsize T \quad$
+                    <span class="img-label grey dots" style="opacity: 0.6;"></span> $\scriptsize |f|^2 \quad$
+                    <span class="img-label orange square"></span> $\scriptsize \int_{T^C} |f|^2 \quad$
                     <span class="img-label orange square" style="opacity: 0.4;"></span> $\scriptsize \normaLL{f}^2$
                 </div>
             </div>
@@ -651,7 +710,7 @@
                     \[
                     |T| \, |\Omega| \geqslant (1 - \varepsilon_T - \varepsilon_\Omega)^2 \, ,
                     \]
-                    dove $|\, \cdot \,|$ + la misura di un insieme misurabile.
+                    dove $|\, \cdot \,|$ è la misura di un insieme misurabile.
                 </div>
             </div>
 
@@ -727,7 +786,7 @@
                 \[
                 \begin{array}{c c c c r c l}
                 \bar{\otimes} & \tc & \spLLd & \longrightarrow \spLLdd \tc
-                & f \bar{\otimes} g \, (x, t)
+                & f \, \bar{\otimes} \, g \, (x, t)
                 & \triangleq & f \otimes \bar{g} (x, t) \triangleq f(x) \, \bar{g}(t) \, , \\[.5em]
                 \mathcal{T}_a & \tc & \spLLdd & \longrightarrow \spLLdd \tc
                 & \mathcal{T}_a F(x, t)
@@ -743,7 +802,7 @@
                 Gli operatori $\mathcal{T}_a$ e $\Ftr_2$ sono isometrici su $\spLLd$. Inoltre, se $f, g \in \spLLd$,
                 allora
                 \[
-                \normaLLdd{f \bar{\otimes} g} = \normaLLd{f} \, \normaLLd{g} \, .
+                \normaLLdd{f \, \bar{\otimes} \, g} = \normaLLd{f} \, \normaLLd{g} \, .
                 \]
             </div>
 
@@ -1000,8 +1059,8 @@
                 <div class="centered-element spaced">
                     <img src="imgs/svg/adsr-curve.svg" style="width: 80%;"><br>
 
-                    <span class="img-label grey dash"></span> $\scriptsize s(t), \quad$
-                    <span class="img-label grey dots"></span> $\scriptsize c(t), \quad$
+                    <span class="img-label grey dash"></span> $\scriptsize s(t) \quad$
+                    <span class="img-label grey dots"></span> $\scriptsize c(t) \quad$
                     <span class="img-label light-blue dash"></span> $\scriptsize f(t) = c(t) \cdot s(t)$
                 </div>
             </div>

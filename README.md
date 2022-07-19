@@ -2,4 +2,4 @@
 
 Presentation (in Italian) of my master's thesis.
 
-Available at [bradwave.github.io/masterthesis]{https://bradwave.github.io/masterthesis/}.
+Available at [bradwave.github.io/masterthesis](https://bradwave.github.io/masterthesis/).

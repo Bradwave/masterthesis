@@ -278,25 +278,58 @@ let ftvPlots = function (ids, options) {
         tCtx.arc(
             tWidth * k,
             tHeight * (0.8 - transformPoints[Math.round(k * M)].amp * 4),
-            5, 0, 2 * Math.PI);
+            6, 0, 2 * Math.PI);
         tCtx.fill();
 
         // -- Winding Plot --
 
-        wCtx.strokeStyle = "#1484E6";
-        wCtx.lineWidth = 3;
+        let xPos = 1;
+        yPos = 1;
+
+        // Center of mass path (Fourier transform)
+
+        wCtx.strokeStyle = "#888888";
+        wCtx.lineWidth = 2;
+        wCtx.setLineDash([3, 3]);
+
+        wCtx.moveTo(wWidth * 0.5, wHeight * 0.5);
 
         wCtx.beginPath();
 
-        let xPos = (1 + scale * functionPoints[0]);
+        for (let f = 0; f < frequency; f += df) {
+            const nextXPos = 1 + 2 * transformPoints[Math.ceil(f / df)].re;
+            const nextYPos = 1 - 2 * transformPoints[Math.ceil(f / df)].im;
+
+            wCtx.quadraticCurveTo(
+                wWidth * 0.5 * xPos,
+                wHeight * 0.5 * yPos,
+                wWidth * 0.25 * (xPos + nextXPos),
+                wHeight * 0.25 * (yPos + nextYPos)
+            );
+
+            xPos = nextXPos;
+            yPos = nextYPos;
+        }
+
+        wCtx.stroke();
+
+        // Winding plot
+
+        wCtx.strokeStyle = "#1484E6";
+        wCtx.lineWidth = 3;
+        wCtx.setLineDash([]);
+
+        wCtx.beginPath();
+
+        xPos = (1 + scale * functionPoints[0]);
         yPos = 1;
 
         wCtx.moveTo(Math.round(wWidth * 0.5 * xPos), Math.round(wHeight * 0.5 * yPos));
 
         for (let n = 1; n < N; n++) {
             const t = L * n / N;
-            const nextXPos = (1 + Math.cos(2 * Math.PI * frequency * t) * scale * functionPoints[n]);
-            const nextYPos = (1 + Math.sin(2 * Math.PI * frequency * t) * scale * functionPoints[n]);
+            const nextXPos = 1 + Math.cos(2 * Math.PI * frequency * t) * scale * functionPoints[n];
+            const nextYPos = 1 + Math.sin(2 * Math.PI * frequency * t) * scale * functionPoints[n];
 
             wCtx.quadraticCurveTo(
                 wWidth * 0.5 * xPos,
@@ -331,7 +364,7 @@ let ftvPlots = function (ids, options) {
         yPos = wHeight * 0.5 * (1 - 2 * transformPoints[Math.floor(frequency / df)].im);
 
         wCtx.beginPath();
-        wCtx.arc(xPos, yPos, 5, 0, 2 * Math.PI);
+        wCtx.arc(xPos, yPos, 6, 0, 2 * Math.PI);
         wCtx.fill();
     }
 

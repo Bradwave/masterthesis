@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="52.49493mm"
+   height="9.8305597mm"
+   viewBox="0 0 52.49493 9.8305597"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="inverse-ft-re.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="81.914826"
+     inkscape:cy="10.294461"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="false"
+     inkscape:bbox-nodes="false"
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:snap-bbox-midpoints="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(368.24841,-245.61679)">
+    <path
+       id="path947"
+       style="fill:none;stroke:#1484e6;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       d="M -368.24841,250.94649 C -364.96497,250.92989 -361.67887,250.97678 -358.39716,250.92885 C -357.65724,250.78067 -356.84659,250.77737 -356.24493,251.30504 C -355.6358,251.82385 -355.08462,251.04723 -354.8976,250.51659 C -354.63095,250.13889 -354.55158,249.32756 -354.00521,249.31377 C -353.31983,250.2544 -353.32898,251.53261 -353.00978,252.6283 C -352.82777,253.1389 -352.86419,253.88785 -352.39542,254.20924 C -351.84334,253.39466 -351.89269,252.29178 -351.6841,251.34407 C -351.40329,249.86243 -351.40159,248.28479 -350.82062,246.88543 C -350.36201,246.98179 -350.43681,247.84045 -350.2871,248.24422 C -349.89666,250.18305 -349.86385,252.20802 -349.22831,254.08777 C -348.82037,254.44723 -348.7253,253.42547 -348.61715,253.16231 C -348.23939,251.89905 -348.23317,250.47336 -347.53103,249.33727 C -347.03478,249.2112 -346.91781,250.00091 -346.69838,250.31771 C -346.46226,250.81156 -346.08699,251.78338 -345.3788,251.37519 C -344.77481,250.88313 -343.99797,250.72101 -343.24407,250.9133 C -342.07165,251.07 -340.89493,250.88223 -339.72702,250.85229 C -339.07996,250.85382 -338.55759,251.80399 -337.92474,251.33165 C -337.30828,250.77692 -337.29713,249.72855 -336.59491,249.28935 C -335.96878,249.74725 -336.00395,250.71718 -335.77251,251.41602 C -335.52017,252.33699 -335.49022,253.3678 -334.98511,254.19141 C -334.53057,254.08217 -334.59168,253.30608 -334.44506,252.91773 C -334.03668,250.95226 -333.99194,248.90691 -333.39282,246.98626 C -332.98275,246.61532 -332.93703,247.73582 -332.83289,248.0019 C -332.40999,250.018 -332.39063,252.13059 -331.72695,254.08646 C -331.36463,254.45708 -331.24815,253.53479 -331.1531,253.3019 C -330.75913,252.0006 -330.75067,250.53534 -330.04652,249.35595 C -329.56131,249.16615 -329.42217,249.98728 -329.21084,250.2962 C -328.98163,250.80615 -328.55941,251.81607 -327.84602,251.35614 C -327.24076,250.84672 -326.44705,250.73764 -325.6938,250.9201 C -323.09531,250.99217 -320.49071,250.92162 -317.88978,250.94649 C -317.17768,250.9465 -316.46558,250.94648 -315.75349,250.94648" />
+  </g>
+</svg>
