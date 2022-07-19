@@ -110,7 +110,7 @@
 
                 <div class="definition named highlighted">
                     <span class="definition-label">Trasformata di Fourier</span>
-                    La <b>Trasformata di Fourier</b> su $L^1$ è un operatore lineare definito da
+                    La <b>trasformata di Fourier</b> su $L^1$ è un operatore lineare definito da
                     \[
                     \Ftr \tc f \in \spLd \, \longmapsto \, \hat{f} \tc \spR^d \, \longrightarrow \, \spC \tc
                     \hat{f}(\omega)
@@ -297,9 +297,9 @@
                         \[
                         \Rect(x) \triangleq
                         \begin{cases}
-                        0 & \text{se} \; |x| \gt \frac{1}{2} \\
-                        \frac{1}{2} & \text{se} \; |x| = \frac{1}{2} \\
-                        1 & \text{se} \; |x| \lt \frac{1}{2} \\
+                        0 & \text{se} \; |x| \gt 1 / 2 \\
+                        1 / 2 & \text{se} \; |x| = 1 / 2 \\
+                        1 & \text{se} \; |x| \lt 1 / 2
                         \end{cases}
                         \]
                         \[
@@ -310,19 +310,19 @@
                         <img src="imgs/svg/rect-ft-1.svg" style="width: 40%;">
 
                         <div>
-                            <span class="img-label light-blue dash"></span> $\scriptsize \varphi_3 \quad$
-                            <span class="img-label grey dots"></span> $\scriptsize \Ftr \varphi_3$
+                            <span class="img-label light-blue dash"></span> $\scriptsize \Rect$
                         </div>
 
                         <img src="imgs/svg/rect-ft-2.svg" class="spaced" style="width: 40%;">
 
                         <div>
-                            <span class="img-label light-blue dash"></span> $\scriptsize \Ftr \varphi_3 \quad$
-                            <span class="img-label grey dots"></span> $\scriptsize \varphi_3$
+                            <span class="img-label light-blue dash"></span> $\scriptsize \Sinc$
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="medium-separator"></div>
 
             <!-- Operatori -->
 
@@ -608,9 +608,9 @@
                     \[
                     \begin{gathered}
                     \Delta_f \, x \triangleq \, \min_{a \, \in \, \spR}
-                    \Big( \int_{\spR} (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\frac{1}{2}} \\
+                    \Big( \int_{\spR} (x - a)^2 \, |f(x)|^2 \, dx \Big)^{\!\frac{1}{2}} \\
                     \Delta_f \, \omega \triangleq \min_{b \, \in \, \spR}
-                    \Big( \int_{\spR} (\omega - b)^2 \, |\hat{f}(\omega)|^2 \, d\omega \Big)^{\frac{1}{2}}
+                    \Big( \int_{\spR} (\omega - b)^2 \, |\hat{f}(\omega)|^2 \, d\omega \Big)^{\!\frac{1}{2}}
                     \end{gathered}
                     \]
                 </div>
@@ -620,14 +620,14 @@
                 per
                 \[
                 a = \underbracket{\intRd x |f(x)|^2 \, dx}_{
-                \text{valore atteso di} \; F
+                \text{valore atteso di} \; X
                 }
                 \quad e \quad
                 b = \underbracket{\intRd \omega |\hat{f}(\omega)|^2 \, d\omega}_{
-                \text{valore atteso di} \; \widehat{F}
+                \text{valore atteso di} \; \widehat{X}
                 } \, ,
                 \]
-                dove $F$ e $\widehat{F}$ sono variabili aleatorie di cui $|f(x)|^2$ e $|\hat{f}(\omega)|^2$ sono le
+                dove $X$ e $\widehat{X}$ sono variabili aleatorie di cui $|f(x)|^2$ e $|\hat{f}(\omega)|^2$ sono le
                 funzioni di
                 densità di probabilità. $\Delta_f \, x$ e $\Delta_f \, \omega$ possono quindi essere interpretate come
                 la
